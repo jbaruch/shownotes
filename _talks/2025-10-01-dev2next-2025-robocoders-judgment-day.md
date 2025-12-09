@@ -5,7 +5,7 @@ layout: talk
 # RoboCoders: Judgment Day – AI IDEs Face Off
 
 **Conference:** Dev2Next 2025  
-**Date:** 2025-10-01  
+**Date:** 2025-10-02  
 **Slides:** [View Slides](https://drive.google.com/file/d/1_yzFXBra52xTXCdfMcGbbNbJDfi6aMOi/view)  
 **Video:** [Watch Video](https://www.youtube.com/watch?v=u6dWLYQHpkg)  
 
