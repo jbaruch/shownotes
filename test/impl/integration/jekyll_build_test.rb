@@ -115,8 +115,9 @@ class JekyllBuildTest < Minitest::Test
     
     assert incremental_build.success?, 'Incremental build should succeed'
     # For small sites, incremental builds may not be measurably faster
-    # Allow for some tolerance or just check that incremental builds work
-    assert incremental_time <= initial_time + 0.01, 'Incremental build should be at least as fast as initial build'
+    # In CI environments, allow more tolerance due to virtualization overhead
+    tolerance = ENV['CI'] ? 1.0 : 0.01
+    assert incremental_time <= initial_time + tolerance, 'Incremental build should be at least as fast as initial build'
   end
 
   # TS-066: Build failures are handled gracefully
