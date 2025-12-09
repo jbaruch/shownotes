@@ -37,17 +37,20 @@ module Jekyll
             # Extract metadata from markdown content
             extracted_title = extract_title_from_content(content)
             doc.data['extracted_title'] = extracted_title
-            doc.data['title'] = extracted_title  # Also set title for Jekyll's default behavior
+            
+            # Check if title was explicitly set in frontmatter
+            # Read the raw file to check if title is in frontmatter
+            raw_content = File.read(doc.path)
+            has_frontmatter_title = raw_content.match?(/^---\s*\n.*^title:/m)
+            
+            # Only override title if it wasn't explicitly set in frontmatter
+            unless has_frontmatter_title
+              doc.data['title'] = extracted_title
+            end
             doc.data['extracted_conference'] = extract_metadata_from_content(content, 'conference')
             doc.data['extracted_date'] = extract_metadata_from_content(content, 'date')
             doc.data['extracted_slides'] = extract_metadata_from_content(content, 'slides')
-            extracted_video = extract_metadata_from_content(content, 'video')
-            doc.data['extracted_video'] = extracted_video
-            
-            # Debug logging for first talk only
-            if doc.path.include?('ai-native-devcon')
-              Jekyll.logger.info "MarkdownTalkProcessor:", "DEBUG: Video extracted for #{File.basename(doc.path)}: '#{extracted_video}'"
-            end
+            doc.data['extracted_video'] = extract_metadata_from_content(content, 'video')
             # Only extract description from content if not already in front matter
             if !doc.data['extracted_description'] || doc.data['extracted_description'].empty?
               doc.data['extracted_description'] = extract_description_from_content(content)
