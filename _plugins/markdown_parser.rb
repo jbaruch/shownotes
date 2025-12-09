@@ -41,7 +41,13 @@ module Jekyll
             doc.data['extracted_conference'] = extract_metadata_from_content(content, 'conference')
             doc.data['extracted_date'] = extract_metadata_from_content(content, 'date')
             doc.data['extracted_slides'] = extract_metadata_from_content(content, 'slides')
-            doc.data['extracted_video'] = extract_metadata_from_content(content, 'video')
+            extracted_video = extract_metadata_from_content(content, 'video')
+            doc.data['extracted_video'] = extracted_video
+            
+            # Debug logging for first talk only
+            if doc.path.include?('ai-native-devcon')
+              Jekyll.logger.info "MarkdownTalkProcessor:", "DEBUG: Video extracted for #{File.basename(doc.path)}: '#{extracted_video}'"
+            end
             # Only extract description from content if not already in front matter
             if !doc.data['extracted_description'] || doc.data['extracted_description'].empty?
               doc.data['extracted_description'] = extract_description_from_content(content)
