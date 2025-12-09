@@ -30,10 +30,14 @@ module Jekyll
         
         talks_collection.docs.each do |doc|
           begin
+            # Force content to be read if not already
+            doc.content
             content = doc.content
             
             # Extract metadata from markdown content
-            doc.data['extracted_title'] = extract_title_from_content(content)
+            extracted_title = extract_title_from_content(content)
+            doc.data['extracted_title'] = extracted_title
+            doc.data['title'] = extracted_title  # Also set title for Jekyll's default behavior
             doc.data['extracted_conference'] = extract_metadata_from_content(content, 'conference')
             doc.data['extracted_date'] = extract_metadata_from_content(content, 'date')
             doc.data['extracted_slides'] = extract_metadata_from_content(content, 'slides')
