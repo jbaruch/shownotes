@@ -7,6 +7,7 @@ layout: talk
 **Conference:** DevFest Toulouse 2025
 **Date:** 2025-11-13
 **Slides:** [View Slides](https://drive.google.com/file/d/1a8LSnuCFJSjKWUS9kdOLHxaWfRGuJHAc/preview)
+**Video:** [Watch Video](https://www.youtube.com/watch?v=wDKzRI8bT6Y)
 
 ## Abstract
 
