@@ -69,13 +69,13 @@ featured_talks_count: 3
 # Featured conferences for "Featured at" logo strip (optional)
 # If configured, shows these specific conferences in order
 # If empty or not set, defaults to most recent unique conferences
-# Example:
-# featured_conferences:
-#   - "Devoxx"
-#   - "QCon"
-#   - "DevNexus"
-#   - "KubeCon"
-featured_conferences: []
+featured_conferences:
+  - "Devoxx"
+  - "DevNexus"
+  - "Javaland"
+  - "Spring I/O"
+  - "JCON"
+  - "Geecon"
 
 # UI Theme customization (all optional) - FR-011, US3
 # See specs/001-ui-ux-redesign/data-model.md for details
