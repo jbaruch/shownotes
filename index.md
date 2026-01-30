@@ -3,7 +3,7 @@ layout: default
 ---
 
 <div class="home-page">
-    <header class="hero-section" {% if site.hero_background %}style="background-image: linear-gradient(135deg, rgba(99, 102, 241, 0.3) 0%, rgba(79, 70, 229, 0.5) 100%), url('{{ site.hero_background }}');"{% endif %}>
+    <header class="hero-section" {% if site.hero_background %}style="--hero-bg-image: url('{{ site.hero_background }}');"{% endif %}>
         {% comment %} Smart avatar logic: GitHub > custom avatar_url {% endcomment %}
         {% if site.speaker %}
         {% assign avatar_url = "" %}
@@ -21,16 +21,40 @@ layout: default
         {% endif %}
         <div class="hero-content">
             {% if site.speaker and site.speaker.display_name and site.speaker.display_name != "" %}
-                <h1>Presentations by {{ site.speaker.display_name }}</h1>
+                <h1>{{ site.speaker.display_name }}</h1>
             {% elsif site.speaker and site.speaker.name and site.speaker.name != "" %}
-                <h1>Presentations by {{ site.speaker.name }}</h1>
+                <h1>{{ site.speaker.name }}</h1>
             {% else %}
-                <h1>Presentations</h1>
+                <h1>Speaker</h1>
             {% endif %}
             {% if site.speaker and site.speaker.bio and site.speaker.bio != "" %}
                 <p class="hero-description">{{ site.speaker.bio }}</p>
             {% endif %}
-            
+
+            {% assign all_talks = site.talks | default: empty %}
+            {% assign talk_count = all_talks.size %}
+            {% assign video_count = 0 %}
+            {% for talk in all_talks %}
+                {% if talk.extracted_video %}
+                    {% assign video_count = video_count | plus: 1 %}
+                {% endif %}
+            {% endfor %}
+
+            {% if talk_count > 0 %}
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <span class="hero-stat__number">{{ talk_count }}</span>
+                    <span class="hero-stat__label">Presentations</span>
+                </div>
+                {% if video_count > 0 %}
+                <div class="hero-stat">
+                    <span class="hero-stat__number">{{ video_count }}</span>
+                    <span class="hero-stat__label">Recorded</span>
+                </div>
+                {% endif %}
+            </div>
+            {% endif %}
+
             {% if site.speaker and site.speaker.social %}
             {% comment %} Check if any social media links are present {% endcomment %}
             {% assign has_social = false %}
@@ -95,6 +119,28 @@ layout: default
     </header>
 
     {% assign talks = site.talks | default: empty %}
+    {% comment %} Conference logo strip - extract unique conferences {% endcomment %}
+    {% assign conferences = "" | split: "" %}
+    {% for talk in talks %}
+        {% if talk.extracted_conference %}
+            {% unless conferences contains talk.extracted_conference %}
+                {% assign conferences = conferences | push: talk.extracted_conference %}
+            {% endunless %}
+        {% endif %}
+    {% endfor %}
+
+    {% if conferences.size > 0 %}
+    <div class="logo-strip">
+        <p class="logo-strip__label">Featured at</p>
+        <div class="logo-strip__logos">
+            {% for conf in conferences limit: 6 %}
+            <span class="logo-strip__logo">{{ conf }}</span>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+
+    {% assign talks = site.talks | default: empty %}
     {% unless talks == empty %}
       {% assign talks = talks | sort: 'extracted_date' | reverse %}
     {% endunless %}
@@ -136,7 +182,12 @@ layout: default
                         <div class="talk-meta">
                             {% if talk.extracted_conference %}
                             <span class="meta-item conference-name">
-                                📍 {{ talk.extracted_conference }}
+                                {{ talk.extracted_conference }}
+                            </span>
+                            {% elsif talk.conference %}
+                            {% comment %}WARNING: Using frontmatter conference as fallback{% endcomment %}
+                            <span class="meta-item conference-name">
+                                {{ talk.conference }}
                             </span>
                             {% elsif talk.conference %}
                             {% comment %}WARNING: Using frontmatter conference as fallback{% endcomment %}
@@ -146,7 +197,12 @@ layout: default
                             {% endif %}
                             {% if talk.extracted_date %}
                             <time class="meta-item date" datetime="{{ talk.extracted_date | date_to_xmlschema }}">
-                                📅 {{ talk.extracted_date | date: "%B %d, %Y" }}
+                                {{ talk.extracted_date | date: "%B %d, %Y" }}
+                            </time>
+                            {% elsif talk.date %}
+                            {% comment %}WARNING: Using page date as fallback{% endcomment %}
+                            <time class="meta-item date" datetime="{{ talk.date | date_to_xmlschema }}">
+                                {{ talk.date | date: "%B %d, %Y" }}
                             </time>
                             {% elsif talk.date %}
                             {% comment %}WARNING: Using page date as fallback{% endcomment %}
@@ -156,11 +212,11 @@ layout: default
                             {% endif %}
                             {% if talk.extracted_video %}
                                 <span class="meta-item status-badge video-published">
-                                    🎥 Video Available
+                                    Video Available
                                 </span>
                             {% else %}
                                 <span class="meta-item status-badge video-pending">
-                                    ⏳ Video Coming Soon
+                                    Video Coming Soon
                                 </span>
                             {% endif %}
                         </div>
@@ -205,7 +261,12 @@ layout: default
                             <div class="talk-meta">
                                 {% if talk.extracted_conference %}
                                 <span class="meta-item conference-name">
-                                    📍 {{ talk.extracted_conference }}
+                                    {{ talk.extracted_conference }}
+                                </span>
+                                {% elsif talk.conference %}
+                                {% comment %}WARNING: Using frontmatter conference as fallback{% endcomment %}
+                                <span class="meta-item conference-name">
+                                    {{ talk.conference }}
                                 </span>
                                 {% elsif talk.conference %}
                                 {% comment %}WARNING: Using frontmatter conference as fallback{% endcomment %}
@@ -215,7 +276,12 @@ layout: default
                                 {% endif %}
                                 {% if talk.extracted_date %}
                                 <time class="meta-item date" datetime="{{ talk.extracted_date | date_to_xmlschema }}">
-                                    📅 {{ talk.extracted_date | date: "%B %d, %Y" }}
+                                    {{ talk.extracted_date | date: "%B %d, %Y" }}
+                                </time>
+                                {% elsif talk.date %}
+                                {% comment %}WARNING: Using page date as fallback{% endcomment %}
+                                <time class="meta-item date" datetime="{{ talk.date | date_to_xmlschema }}">
+                                    {{ talk.date | date: "%B %d, %Y" }}
                                 </time>
                                 {% elsif talk.date %}
                                 {% comment %}WARNING: Using page date as fallback{% endcomment %}
@@ -226,11 +292,11 @@ layout: default
                                 {% comment %} Video publication status - moved to metadata section {% endcomment %}
                                 {% if talk.extracted_video %}
                                     <span class="meta-item status-badge video-published">
-                                        🎥 Video Available
+                                        Video Available
                                     </span>
                                 {% else %}
                                     <span class="meta-item status-badge video-pending">
-                                        ⏳ Video Coming Soon
+                                        Video Coming Soon
                                     </span>
                                 {% endif %}
                             </div>
