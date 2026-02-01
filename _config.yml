@@ -49,7 +49,7 @@ plugins:
 speaker:
   name: "Baruch Sadogursky"
   display_name: ""                 # Optional: Override for display (if empty, uses name)
-  bio: "Developer advocate and expert in DevOps, software development practices, and technology trends. Regular speaker at major conferences about improving developer productivity and software quality."
+  bio: "Developer Advocate obsessed with how AI agents actually write code. At Tessl, an AI agent enablement platform, Baruch focuses on context engineering, management, and sharing."
   avatar_url: ""                   # Optional: Custom avatar URL (fallback if no social media avatars available)
   # Social media handles (all optional - leave empty to hide)
   social:
