@@ -20,6 +20,8 @@ Join us to see if AI coding tools can deliver on their bold promise of transform
 
 - [The Birth of Vibecoding](https://x.com/karpathy/status/1886192184808149383?lang=en)
 - [Intent Integrity Chain Presentation](https://speaking.jbaru.ch/talks/2025-11-01-open-conf-2025-never-trust-a-monkey-the-chasm-the-craft-and-the-chain-of-ai-assisted-code-at-open-conf-2025/)
+* [Spec-kit with skills completed demo](https://github.com/jbaruch/robocoders-jfokus-2026)
+* [Kiro completed demo](https://github.com/gAmUssA/robocoders-jfokus-2026-kiro)
 * [GitHub Spec-kit](https://github.com/github/spec-kit)
 * [Baruch's Spec-kit fork with skills and IIC](https://github.com/jbaruch/spec-kit-skills)
 * [Spec-kit in Tessl Registry](https://tessl.io/registry/tessl-labs/spec-kit/0.6.4)
