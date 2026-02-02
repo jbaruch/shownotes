@@ -7,6 +7,7 @@ layout: talk
 **Conference:** Vaadin Cruise Meetup 2026
 **Date:** 2026-02-01
 **Slides:** [View Slides](https://drive.google.com/file/d/1iWrZa-HKoxUsBhziZJ9U-1tsFZe5wrTe/preview)
+**Video:** [View Video](https://youtu.be/aLaT1NcB9GY)
 
 ## Abstract
 
