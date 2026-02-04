@@ -7,6 +7,7 @@ layout: talk
 **Conference:** JFokus 2026
 **Date:** 2026-02-04
 **Slides:** [View Slides](https://drive.google.com/file/d/1cbwtwcwZpAUhcc1XhDg9h0qUEZE6Tkci/preview)
+**Video:** [View Video](https://youtu.be/sGZRDP533Nc?si=FrFJvedrQEaXOgOc)
 
 ## Abstract
 
