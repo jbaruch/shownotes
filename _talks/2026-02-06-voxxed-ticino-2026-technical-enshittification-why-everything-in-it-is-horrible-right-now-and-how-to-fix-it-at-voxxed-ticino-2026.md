@@ -7,6 +7,7 @@ layout: talk
 **Conference:** Voxxed Days Ticino 2026
 **Date:** 2026-02-06
 **Slides:** [View Slides](https://drive.google.com/file/d/1jh7Yi86vq_mw2oV7AF4TS1w17sRFbZc-/preview)
+**Video:**[View Video](https://youtu.be/QET571NX6ww)
 
 ## Abstract
 
