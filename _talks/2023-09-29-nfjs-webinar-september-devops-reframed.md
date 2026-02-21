@@ -7,7 +7,8 @@ layout: talk
 
 **Conference:** NFJS Webinar September 2023  
 **Date:** 2023-09-29  
-**Slides:** [View Slides](https://drive.google.com/file/d/1i3BuEmc31iOLlKaJMMGmsxSe12QnIMXK/view)  
+**Slides:** [View Slides](https://drive.google.com/file/d/1i3BuEmc31iOLlKaJMMGmsxSe12QnIMXK/view)
+**Video:** [Watch Video](https://www.youtube.com/watch?v=SLGAFtmDCvI)
 
 A presentation at NFJS Webinar September 2023 by 
                     {{ site.speaker.display_name | default: site.speaker.name }}
