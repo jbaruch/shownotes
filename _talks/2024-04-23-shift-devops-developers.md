@@ -8,7 +8,7 @@ layout: talk
 **Conference:** Shift  
 **Date:** 2024-04-23  
 **Slides:** [View Slides](https://drive.google.com/file/d/1vMnV9P4E18FFWTlsYWCmw_i4WeomQfVW/view)  
-**Video:** [Watch Video](https://www.youtube.com/watch?v=uTEL8Ff1Zvk&list=PLIivdWyY5sqJrKl7D2u-gmis8h9K66qoj&index=2)  
+**Video:** [Watch Video](https://www.youtube.com/watch?v=76NjQxjKCAQ)  
 
 A presentation at Shift in
                     April 2024 in
