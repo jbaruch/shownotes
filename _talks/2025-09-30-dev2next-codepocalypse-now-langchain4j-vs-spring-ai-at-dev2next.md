@@ -6,7 +6,8 @@ layout: talk
 
 **Conference:** Dev2Next
 **Date:** 2025-09-29
-**Video:** [Watch Video](https://www.youtube.com/watch?v=UcUE2FHQz2Q&t=3s)
+**Slides:** [View Slides](https://drive.google.com/file/d/1a8LSnuCFJSjKWUS9kdOLHxaWfRGuJHAc/preview)
+**Video:** [Watch Video](https://www.youtube.com/watch?v=wDKzRI8bT6Y)
 
 ## Abstract
 
