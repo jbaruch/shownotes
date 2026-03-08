@@ -25,7 +25,6 @@ This will be a wild but practical run as our spirited speaker converses with Cha
 - [Baruch’s Book Liquid Software](https://amzn.to/47AoDug)
 - [The Culture Map](https://amzn.to/3OX0Pct)
 - [Developer Productivity Engineering (DPE) Handbook](https://gradle.com/developer-productivity-engineering/handbook/)
-- [The ChatGPT conversation during the talk](https://chat.openai.com/share/a43d14f3-ea92-41e7-abb8-07a6f1bd26cb)
 - [Gradle BuildScan®](https://scans.gradle.com/)
 - [Parallel local tests execution](https://docs.gradle.org/current/userguide/performance.html#parallel_execution)
 - [Test Distribution (Parallel cloud test execution)](https://gradle.com/gradle-enterprise-solutions/test-distribution/)

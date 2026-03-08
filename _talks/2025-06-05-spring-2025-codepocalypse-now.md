@@ -23,7 +23,7 @@ This isn’t just a comparison; it’s a live experiment under pressure. Come an
 
 ## Resources
 
-- [Getting started with LangChain4j with Quarkus](https://quarkus.io/quarkus-workshop-langchain4j/step-01/#anatomy-of-the-application)
+- [Getting started with LangChain4j with Quarkus](https://quarkus.io/quarkus-workshop-langchain4j/section-1/step-01/#anatomy-of-the-application)
 - [LangChain4J Chat Memory](https://docs.langchain4j.dev/tutorials/chat-memory/)
 - [LangChain4J RAG](https://docs.langchain4j.dev/tutorials/rag)
 - [Docker Model Runner](https://docs.docker.com/model-runner/)

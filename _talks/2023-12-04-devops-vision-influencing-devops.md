@@ -36,6 +36,6 @@ We look at the arguments, the techniques, and the small tricks, which work in pa
 - [DevOps Tools for Java Developers](https://amzn.to/3Ny2xAB)
 - [Influence Without Authority (3rd Edition)](https://amzn.to/3sUp03o)
 - [Drive: The Surprising Truth About What Motivites Us](https://www.danpink.com/books/drive/)
-- [Range: Why Generalists Triumph in a Specialized World](https://davidepstein.com/the-range/)
+- [Range: Why Generalists Triumph in a Specialized World](https://davidepstein.com/range/)
 - [The Goal: A Process of Ongoing Improvement (30th Anniversary Edition)](https://amzn.to/3uIvjrf)
 - [The Goal: A Business Graphic Novel](https://amzn.to/3uL3n67)

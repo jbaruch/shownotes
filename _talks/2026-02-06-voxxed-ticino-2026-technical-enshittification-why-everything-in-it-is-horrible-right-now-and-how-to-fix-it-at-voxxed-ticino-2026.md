@@ -40,7 +40,7 @@ Join us to learn how to turn things around and ensure long-term success in today
 
 ### Other Incidents
 - [Windows 10 1809 Data Deletion (PCWorld)](https://www.pcworld.com/article/403229/microsoft-halts-windows-10-october-2018-update-rollout-after-confirmed-reports-of-deleted-files.html)
-- [LastPass 2022 Breach — $150M Cyberheist (Krebs on Security)](https://krebsonsecurity.com/2024/03/feds-say-150m-cyberheist-tied-to-lastpass-breach/)
+- [LastPass 2022 Breach — $150M Cyberheist (Krebs on Security)](https://krebsonsecurity.com/2025/03/feds-link-150m-cyberheist-to-2022-lastpass-hacks/)
 - [CrowdStrike July 2024 Outage (Wikipedia)](https://en.wikipedia.org/wiki/2024_CrowdStrike_incident)
 - [Southwest Airlines December 2022 Meltdown — Insiders Point to Outdated Tech (Mercury News)](https://www.mercurynews.com/2022/12/30/how-did-that-southwest-meltdown-happen-insiders-point-to-outdated-tech/)
 - [Southwest Unaffected by CrowdStrike — Thanks to Windows 3.1 (Simple Flying)](https://simpleflying.com/southwest-airlines-old-system-unaffected-it-outage/)
@@ -62,7 +62,7 @@ Join us to learn how to turn things around and ensure long-term success in today
 - [The Art of Business Value — Mark Schwartz](https://itrevolution.com/product/the-art-of-business-value/)
 - [War and Peace and IT — Mark Schwartz](https://itrevolution.com/product/war-and-peace-and-it/)
 - [Liquid Software — Baruch Sadogursky & Ixchel Ruiz](https://www.oreilly.com/library/view/liquid-software/9781492071303/)
-- [DevOps Tools for Java Developers — Baruch Sadogursky](https://www.oreilly.com/library/view/devops-tools-for/9781098144616/)
+- [DevOps Tools for Java Developers — Baruch Sadogursky](https://www.oreilly.com/library/view/devops-tools-for/9781492084013/)
 
 ### Tools & Frameworks
 - [Intent Integrity Chain (GitHub)](https://github.com/intent-integrity-chain)

@@ -54,10 +54,10 @@ Join us to learn how to turn things around and ensure long-term success in today
 - [Characterizing Technical Debt and Antipatterns in AI-Based Systems](https://arxiv.org/abs/2103.09783)
 - [Intuition And Experience Vs. Data-Driven Decision Making](https://blog.cads.ai/intuition-vs-data-driven-decision-making/)
 - [The Tiktokification of Everything](https://www.singlegrain.com/blog/ms/tiktokification/)
-- [Coding Fast and Slow: Applying Kahneman’s Insights to Improve Development Practices and Efficiency](https://speaking.jbaru.ch/HcSyXC/coding-fast-and-slow-applying-kahnemans-insights-to-improve-development-practices-and-efficiency)
+- [Coding Fast and Slow: Applying Kahneman’s Insights to Improve Development Practices and Efficiency](https://speaking.jbaru.ch/talks/2025-09-15-shift-coding-fast/)
 - [Reclaim.ai – smart calendar management](https://reclaim.ai/)
 - [Never Trust a Monkey: The Chasm, the Craft, and the Chain of AI-Assisted Code](https://shownotes.tuxcare.com/never-trust-a-monkey-untecht-jug-nov-2025/)
 - [Books by Mark Schwartz](https://www.amazon.com/stores/author/B01AHGEC2I)
-- [DevOps for Java Developers (or maybe against them?)](https://speaking.jbaru.ch/7y4wIa/devops-for-developers-or-maybe-against-them)
+- [DevOps for Java Developers (or maybe against them?)](https://speaking.jbaru.ch/talks/2025-01-17-voxxed-tichino-devops-developers/)
 - [Naboo.ai: IT-oriented context saving AI](https://www.naboo.ai/)
 
