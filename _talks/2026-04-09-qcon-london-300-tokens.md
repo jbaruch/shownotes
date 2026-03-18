@@ -9,6 +9,7 @@ layout: talk
 **Date:** 2026-04-09
 **Co-speaker:** Patrick Debois
 **Slides:** [View Slides](https://drive.google.com/file/d/11VJn1tbxFZmGN82Tlk8xUgGx_mg-onpy/preview)
+**Video:** [Watch Video](https://youtu.be/3l8q2aeQJCE?si=rqvNnbUcYSJZRtb1)
 
 A presentation at QCon London in
                     April 2026 in
