@@ -38,8 +38,10 @@ We use a coding agent to explain these patterns so you learn how they work under
 
 ### Talk Materials
 - [Slides + Speaker Notes](https://drive.google.com/file/d/11VJn1tbxFZmGN82Tlk8xUgGx_mg-onpy/preview)
-- Demo Recordings -- coming soon
-- Demo Source Code -- coming soon
+- [Demo Recordings (asciinema)](https://github.com/jbaruch/qcon-london-2026-300-tokens/tree/main/demo)
+- [Order Service Skill (.claude)](https://github.com/jbaruch/qcon-london-2026-300-tokens/blob/main/.claude/skills/order-service/SKILL.md)
+- [Pidge Tile (docs + rules + skill)](https://github.com/jbaruch/qcon-london-2026-300-tokens/tree/main/pidge-tile)
+- [Pidge Tile on Tessl Registry](https://tessl.io/registry/jbaruch/pidge)
 - [Four-Antipattern Cheat Sheet](#cheat-sheet)
 
 ### Context Engineering
@@ -49,7 +51,7 @@ We use a coding agent to explain these patterns so you learn how they work under
 
 ### Tools Used in Demos
 - [Claude Code](https://claude.ai/claude-code) -- The coding agent used in all demos
-- [Pidge](https://github.com/jbaruch/qcon-london-2026-300-tokens/tree/main/demo/pidge-lib) -- Custom notification library (v2 sync, v3 async) built for the demo
+- [Pidge Tile](https://tessl.io/registry/jbaruch/pidge) -- Context tile for the pidge notification library used in demos
 - [presenterm](https://github.com/mfontanini/presenterm) -- Terminal-based presentation tool
 
 ### Related Talks
