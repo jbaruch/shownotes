@@ -9,7 +9,6 @@ layout: talk
 **Date:** 2026-04-09
 **Co-speaker:** Patrick Debois
 **Slides:** [View Slides](https://drive.google.com/file/d/11VJn1tbxFZmGN82Tlk8xUgGx_mg-onpy/preview)
-**Video:** Coming soon
 
 A presentation at QCon London in
                     April 2026 in
@@ -45,17 +44,14 @@ We use a coding agent to explain these patterns so you learn how they work under
 - [Four-Antipattern Cheat Sheet](#cheat-sheet)
 
 ### Context Engineering
-- [Context Engineering -- Tobi Lutke](https://x.com/toaborowi/status/context-engineering)
-- [Agent Skills Standard](https://agentskills.org)
+- [Context Engineering -- Tobi Lutke](https://x.com/tobi/status/1935533422589399127)
+- [Agent Skills Standard](https://agentskills.io/home)
 - [Tessl -- Context Artifact Registry](https://tessl.io)
 
 ### Tools Used in Demos
-- [Claude Code](https://claude.ai/claude-code) -- The coding agent used in all demos
+- [Claude Code](https://www.anthropic.com/claude-code) -- The coding agent used in all demos
 - [Pidge Tile](https://tessl.io/registry/jbaruch/pidge) -- Context tile for the pidge notification library used in demos
 - [presenterm](https://github.com/mfontanini/presenterm) -- Terminal-based presentation tool
-
-### Related Talks
-- [Patrick Debois -- DevOpsDays Ghent 2009 (The Origin of DevOps)](https://www.devopsdays.org/events/2009-ghent/)
 
 ## Cheat Sheet
 
