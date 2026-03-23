@@ -6,13 +6,13 @@ layout: talk
 
 **Subtitle:** The Architecture of Context Engineering
 **Conference:** QCon London 2026
-**Date:** 2026-04-09
+**Date:** 2026-03-18
 **Co-speaker:** Patrick Debois
 **Slides:** [View Slides](https://drive.google.com/file/d/11VJn1tbxFZmGN82Tlk8xUgGx_mg-onpy/preview)
 **Video:** [Watch Video](https://youtu.be/3l8q2aeQJCE?si=rqvNnbUcYSJZRtb1)
 
 A presentation at QCon London in
-                    April 2026 in
+                    March 2026 in
                     London, UK by
                     {{ site.speaker.display_name | default: site.speaker.name }} and Patrick Debois
 
