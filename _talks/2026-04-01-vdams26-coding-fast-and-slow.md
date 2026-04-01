@@ -39,3 +39,4 @@ The solution is Context Engineering across four dimensions: Personal (manage you
 - [Tessl good-oss-citizen skill](https://tessl.io/registry/tessl-labs/good-oss-citizen) — 0%→100% eval scenario
 - [Tessl.io — Make agents work in real codebases](https://tessl.io)
 - [Claw Market Map Q1 2026](https://manifest.build/blog/claw-market-map-q1-2026/) — AI agent landscape
+- [AI Native Dev Con](https://ainativedevcon.io) — use code **VOXXEDAMS30** for 30% off

@@ -34,3 +34,4 @@ Trust your context. Trust your guardrails. Never trust a monkey.
 - [Tessl.io — Make agents work in real codebases](https://tessl.io)
 - [Liquid Software by Baruch Sadogursky](https://amzn.to/47AoDug)
 - [DevOps Tools for Java Developers by Baruch Sadogursky](https://amzn.to/3OWsgTP)
+- [AI Native Dev Con](https://ainativedevcon.io) — use code **VOXXEDAMS30** for 30% off
