@@ -7,6 +7,7 @@ layout: talk
 **Conference:** Voxxed Days Amsterdam 2026
 **Date:** 2026-04-01
 **Slides:** [View Slides](https://drive.google.com/file/d/1kdQXJ3qe2p982yzP2bA0Bp_cufT3y_2v/preview)
+**Video:** [Watch Video](https://youtu.be/YicnrjV2WME?si=YMxs8-O0RiulVOdn)
 
 ## Abstract
 
