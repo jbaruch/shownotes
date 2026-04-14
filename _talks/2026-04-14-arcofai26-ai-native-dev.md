@@ -1,5 +1,6 @@
 ---
 layout: talk
+thumbnail_url: /assets/images/thumbnails/2026-04-14-arcofai26-ai-native-dev-thumbnail.png
 ---
 
 # The AI-Native Developer: From Tools to Teammates
