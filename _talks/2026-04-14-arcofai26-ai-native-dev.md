@@ -8,6 +8,7 @@ thumbnail_url: /assets/images/thumbnails/2026-04-14-arcofai26-ai-native-dev-thum
 **Conference:** Arc of AI 2026
 **Date:** 2026-04-14
 **Speakers:** Simon Maple & Baruch Sadogursky
+**Slides:** [View Slides](https://drive.google.com/file/d/1sRoSrOn4YH5bwDATlow9UR4JlOuLJCED/preview)
 
 ## Abstract
 
