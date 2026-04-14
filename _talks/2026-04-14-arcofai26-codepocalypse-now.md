@@ -1,5 +1,6 @@
 ---
 layout: talk
+thumbnail_url: /assets/images/thumbnails/2026-04-14-arcofai26-codepocalypse-now-thumbnail.png
 ---
 
 # Codepocalypse Now: LangChain4j vs Spring AI
