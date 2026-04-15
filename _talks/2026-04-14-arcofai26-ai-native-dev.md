@@ -9,6 +9,7 @@ thumbnail_url: /assets/images/thumbnails/2026-04-14-arcofai26-ai-native-dev-thum
 **Date:** 2026-04-14
 **Speakers:** Simon Maple & Baruch Sadogursky
 **Slides:** [View Slides](https://drive.google.com/file/d/1sRoSrOn4YH5bwDATlow9UR4JlOuLJCED/preview)
+**Video:** [Watch Video](https://youtu.be/M5AXc8iNY9Y)
 
 ## Abstract
 

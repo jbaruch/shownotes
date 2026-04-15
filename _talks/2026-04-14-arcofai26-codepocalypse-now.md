@@ -10,6 +10,7 @@ thumbnail_url: /assets/images/thumbnails/2026-04-14-arcofai26-codepocalypse-now-
 **Date:** 2026-04-14
 **Co-speaker:** Viktor Gamov
 **Slides:** [View Slides](https://drive.google.com/file/d/1gQ98-dgxuiiP347z5xb8oGrsK8r-AYfh/preview)
+**Video:** [Watch Video](https://youtu.be/1x2agiUhi5A?si=FIxlXCiFwl-9t_JE)
 
 A presentation at Arc of AI 2026 in
                     April 2026 in
