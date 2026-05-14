@@ -1,6 +1,5 @@
 ---
 layout: talk
-thumbnail_url: /assets/images/thumbnails/2026-05-14-geecon-2026-absolutely-right-thumbnail.png
 ---
 
 # You're Absolutely Right (and Other Lies My AI Told Me)
