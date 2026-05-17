@@ -8,6 +8,7 @@ layout: talk
 **Conference:** GeeCON 2026
 **Date:** 2026-05-14
 **Slides:** [View Slides](https://drive.google.com/file/d/10ZbYU0r9w0kJ75QHIOmZRBRR8KdXcS_g/preview)
+**Video:** [View Video](https://youtu.be/Kv366QAZM1o)
 
 A presentation at GeeCON in
                     May 2026 in
