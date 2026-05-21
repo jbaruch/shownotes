@@ -8,7 +8,7 @@ layout: talk
 **Conference:** KotlinConf 2026
 **Date:** 2026-05-22
 **Co-speaker:** Viktor Gamov
-**Slides:** [View Slides](#) <!-- TODO -->
+**Slides:** [View Slides](https://drive.google.com/file/d/19CZmxze_UsVL7M-db5e5RF9xwp6ZIq3Z/preview)
 
 A presentation at KotlinConf 2026 in
                     May 2026 in
