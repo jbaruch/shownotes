@@ -13,7 +13,7 @@ thumbnail_url: /assets/images/thumbnails/2026-05-22-kotlinconf-26-robocoders-jud
 
 A presentation at KotlinConf 2026 in
                     May 2026 in
-                    Copenhagen, Denmark by
+                    Munich, Germany by
                     {{ site.speaker.display_name | default: site.speaker.name }} and Viktor Gamov
 
 ## Abstract
