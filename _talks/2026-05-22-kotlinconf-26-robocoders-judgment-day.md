@@ -1,6 +1,5 @@
 ---
 layout: talk
-thumbnail_url: /assets/images/thumbnails/2026-05-22-kotlinconf-26-robocoders-judgment-day-thumbnail.png
 ---
 
 <!-- TODO: confirm exact KotlinConf 2026 talk date + slide/video URLs + generate thumbnail PNG before publish -->
