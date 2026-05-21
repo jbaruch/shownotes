@@ -10,7 +10,6 @@ thumbnail_url: /assets/images/thumbnails/2026-05-22-kotlinconf-26-robocoders-jud
 **Date:** 2026-05-22
 **Co-speaker:** Viktor Gamov
 **Slides:** [View Slides](#) <!-- TODO -->
-**Video:** [Watch Video](#) <!-- TODO -->
 
 A presentation at KotlinConf 2026 in
                     May 2026 in
