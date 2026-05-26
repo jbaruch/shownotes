@@ -7,6 +7,7 @@ layout: talk
 **Conference:** JNation 2026
 **Date:** 2026-05-26
 **Slides:** [View Slides](https://drive.google.com/file/d/1GVlLDVGR6MTlOD5h0mUZEXxNyVLG5i8B/preview)
+**Video:** [View Video](https://www.youtube.com/watch?v=T3I15mNEwUQ)
 
 A presentation at JNation 2026 in
                     May 2026 in
