@@ -39,6 +39,7 @@ Agentic Java is real, today. In this co-presented session we build the same agen
 
 - [Tessl — reusable AI coding tiles](https://tessl.io)
 - [jbaruch/koog (Tessl Registry)](https://tessl.io/registry/jbaruch/koog)
+- [gamussa/langchain4j-agentic (Tessl Registry)](https://tessl.io/registry/gamussa/langchain4j-agentic)
 - [jbaruch/tamboui (Tessl Registry)](https://tessl.io/registry/jbaruch/tamboui)
 
 ### Pipeline visualization
