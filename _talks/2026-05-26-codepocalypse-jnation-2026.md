@@ -23,6 +23,7 @@ Agentic Java is real, today. In this co-presented session we build the same agen
 ### Demo code
 
 - [j-claw demo — Koog side](https://github.com/jbaruch/jclaw-demo)
+- [j-claw demo — LangChain4j Agentic side (Viktor Gamov)](https://github.com/gAmUssA/codepocalypse-langchain4j-agentic)
 
 ### Frameworks
 
