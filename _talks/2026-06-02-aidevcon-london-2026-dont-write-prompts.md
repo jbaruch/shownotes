@@ -1,5 +1,6 @@
 ---
 layout: talk
+permalink: /aidevcon-london-2026-dont-write-prompts/
 ---
 
 # Don't Write Prompts, Write Software
