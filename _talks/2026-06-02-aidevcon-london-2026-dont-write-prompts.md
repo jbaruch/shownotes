@@ -20,6 +20,13 @@ Skills are more than reusable prompts — they are composable units of behaviour
 
 ## Resources
 
-- [Workshop repository](https://github.com/jbaruch/context-workshop-aidevcon-london-2026)
-- [Claude Code](https://www.claude.com/product/claude-code)
-- [Tessl](https://tessl.io)
+- [Workshop repository](https://github.com/jbaruch/context-workshop-aidevcon-london-2026) — the live build from the session
+- [Stop Prompt Hacking](https://tessl.io/blog/stop-prompt-hacking/) — Macey's research: threatening the model, persona cosplay, and tip bribes don't actually help
+- [Claude Code](https://docs.claude.com/en/docs/claude-code) — skills, plugins, hooks, and the agentic CLI
+- [Model Context Protocol (MCP)](https://modelcontextprotocol.io) — the open standard for tool/context integration
+- [Tessl](https://tessl.io) — author, review, and eval context artifacts
+- [Tessl registry](https://tessl.io/registry) — publish and install plugins across teams
+- [jbaruch/coding-policy](https://tessl.io/registry/jbaruch/coding-policy) — the meta-policy plugin the agentic reviewer enforces
+- [GitHub Agentic Workflows (gh-aw)](https://github.github.com/gh-aw/) — agentic reviewers that run in GitHub Actions
+- [GitHub Copilot code review](https://docs.github.com/en/copilot/concepts/agents/code-review) — the bot reviewer summoned in the demo
+- [More talks by Baruch](https://speaking.jbaru.ch) — slides, videos, and shownotes
