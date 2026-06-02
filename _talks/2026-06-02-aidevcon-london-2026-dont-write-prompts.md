@@ -29,4 +29,6 @@ Skills are more than reusable prompts — they are composable units of behaviour
 - [jbaruch/coding-policy](https://tessl.io/registry/jbaruch/coding-policy) — the meta-policy plugin the agentic reviewer enforces
 - [GitHub Agentic Workflows (gh-aw)](https://github.github.com/gh-aw/) — agentic reviewers that run in GitHub Actions
 - [GitHub Copilot code review](https://docs.github.com/en/copilot/concepts/agents/code-review) — the bot reviewer summoned in the demo
+- [OpenRouter](https://openrouter.ai) — one API across many models; send cheap tasks to cheap models
+- [LiteLLM](https://github.com/BerriAI/litellm) — unified LLM gateway with routing, fallbacks, and cost control
 - [More talks by Baruch](https://speaking.jbaru.ch) — slides, videos, and shownotes
