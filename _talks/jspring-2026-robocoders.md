@@ -21,8 +21,8 @@ Two AI coding agents, same prompts, same hardware, no rehearsal — Baruch on Cl
 
 ### Demo Code
 
-- [Baruch's demo — ready version](https://github.com/jbaruch/robocoders-kagematch) — Claude Code build, Kotlin/JVM.
-- [Viktor's demo — ready version](https://github.com/gAmUssA/robocoders-kagematch-2026) — Junie build, Kotlin/JVM.
+- [Baruch's demo — robocoders-jspring](https://github.com/jbaruch/robocoders-jspring) — Claude Code build, Kotlin/JVM.
+- [Viktor's demo — robocoders-jspring](https://github.com/gamussa/robocoders-jspring) — Junie build, Kotlin/JVM.
 
 ### Context Engineering
 
