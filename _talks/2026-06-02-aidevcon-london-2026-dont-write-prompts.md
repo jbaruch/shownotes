@@ -8,6 +8,7 @@ permalink: /aidevcon-london-2026-dont-write-prompts/
 **Conference:** AI Native DevCon 2026, London  
 **Date:** 2026-06-02  
 **Slides:** [View Slides](https://drive.google.com/file/d/1lRNiK6PKoZacB6rJoWmEhtsb4INeEelu/preview)  
+**Video:** [View Video](https://www.youtube.com/watch?v=yNiyMkjXT9g)  
 
 A presentation at AI Native DevCon 2026, London in
                     June 2026 in
