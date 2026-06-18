@@ -7,6 +7,7 @@ layout: talk
 **Conference:** Voxxed Days Luxembourg 2026
 **Date:** 2026-06-18
 **Slides:** [View Slides](https://drive.google.com/file/d/11mGbaAvS_HWAWuUBFXUeYJxNWJOdqBx8/preview)
+**Video:** [View Video](https://www.youtube.com/watch?v=siomFk8BRHE)
 
 A presentation at Voxxed Days Luxembourg 2026 in
                     June 2026 in
