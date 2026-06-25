@@ -19,6 +19,9 @@ A skill is software — so write it like software. You already wrote skills; the
 
 ## Resources
 
+### Workshop — Follow Along
+- [jbaruch/skill-issue-brickbox-start](https://github.com/jbaruch/skill-issue-brickbox-start) — **clone this and follow along.** The starting point: the brick-inventory API plus a skill that *kind of* works. The README walks you through the tasks to ask your agent — extract a tested script, add guardrail rules, package a plugin, write evals. `git clone https://github.com/jbaruch/skill-issue-brickbox-start`
+
 ### The Repos & Plugins
 - [jbaruch/skill-issue-brickbox](https://github.com/jbaruch/skill-issue-brickbox) — the live demo project (a tiny Lego brick-inventory FastAPI). The "tickets" are issues against this repo; DEMO 01–03 run here.
 - [jbaruch/skill-issue-policy](https://github.com/jbaruch/skill-issue-policy) — the `fix-the-ticket` plugin (skill + script + rule) authored, packaged, and published **live on stage** across the five practices.
