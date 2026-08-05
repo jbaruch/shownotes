@@ -8,7 +8,7 @@ layout: talk
 **Conference:** The Developer Facing Startup Founders Academy - DevRel Session  
 **Date:** 2024-12-18  
 **Slides:** [View Slides](https://drive.google.com/file/d/1rX6_0XTCYEd5_MupbxACc4dGxWpRJL1J/view)  
-**Video:** [Watch Video](https://youtu.be/H8sIuzWfZ4I?si=B7EyFrcijb-7im3G)  
+**Video:** [Watch Video](https://www.youtube.com/watch?v=Dcmlrb8GXjw)
 
 A presentation at The Developer Facing Startup Founders Academy - DevRel Session by 
                     {{ site.speaker.display_name | default: site.speaker.name }}

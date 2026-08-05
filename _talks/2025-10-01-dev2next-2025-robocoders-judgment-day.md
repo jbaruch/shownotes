@@ -6,11 +6,10 @@ layout: talk
 
 **Conference:** Dev2Next 2025  
 **Date:** 2025-10-02  
-**Slides:** [View Slides](https://drive.google.com/file/d/1_yzFXBra52xTXCdfMcGbbNbJDfi6aMOi/view)  
-**Video:** [Watch Video](https://www.youtube.com/watch?v=u6dWLYQHpkg)  
+**Video:** [Watch Video](https://www.youtube.com/watch?v=IcWW5Ln5CYQ)
 
 A presentation at Dev2Next 2025 in
-                    Octover 2025 in
+                    October 2025 in
                     Colorado Springs, Colorado by 
                     {{ site.speaker.display_name | default: site.speaker.name }}
 

@@ -8,7 +8,7 @@ layout: talk
 **Conference:** IJ Conference 2025  
 **Date:** 2025-03-20  
 **Slides:** [View Slides](https://drive.google.com/file/d/1fW0sliGC-a7sSADKK9LI7QICEhIkqQ9W/view)  
-**Video:** [Watch Video](https://youtu.be/_k0FW9hEn9I)  
+**Video:** [Watch Video](https://www.youtube.com/watch?v=7yM_0RuCgkI)
 
 A presentation at IJ Conference 2025 in
                     March 2025 in

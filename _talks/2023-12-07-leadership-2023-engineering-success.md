@@ -8,7 +8,7 @@ layout: talk
 **Conference:** Tech Leadership Summit 2023  
 **Date:** 2023-12-07  
 **Slides:** [View Slides](https://drive.google.com/file/d/1cAT91Gaxo-8eqcZmZgI0ytyuPCkZdHqD/view)  
-**Video:** [Watch Video](https://www.youtube.com/watch?v=H7BkzVr2G_U)  
+**Video:** [Watch Video](https://www.youtube.com/watch?v=ZhdCYMvEuKg)
 
 A presentation at Tech Leadership Summit 2023 in
                     December 2023 in

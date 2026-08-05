@@ -8,7 +8,6 @@ layout: talk
 **Conference:** Spring I/O 2025  
 **Date:** 2025-05-23  
 **Slides:** [View Slides](https://drive.google.com/file/d/18Q1VECgCdsXZp6Tax-8ZW1n84UmXEKMW/view)  
-**Video:** [Watch Video](https://youtu.be/wb2C2ju_xRg)  
 
 A presentation at Spring I/O 2025 in
                     May 2025 in

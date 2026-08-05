@@ -7,7 +7,7 @@ layout: talk
 **Conference:** Open-Conf 2025
 **Date:** 2025-11-21
 **Slides:** [View Slides](https://drive.google.com/file/d/16WNiSsSi4AbqFD1hLloP9O0yCJT0V9ne/preview)
-**Video:** [Watch Video](https://youtu.be/TYLVt9ZAI2M?si=mfslAj4oMLYTNH1A)
+**Video:** [Watch Video](https://www.youtube.com/watch?v=blLFf6iY2IA)
 
 ## Abstract
 
@@ -36,4 +36,3 @@ Translating ideas into code has always been messy. Specs, user stories, and endl
 - [Amazon’s Kiro – Spec-Driven AI IDE](https://kiro.dev/)
 - [Tessl.io – AI-Native Spec-Driven Development](https://tessl.io/)
 - [Andrej Karpathy](https://karpathy.ai/)
-
