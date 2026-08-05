@@ -8,7 +8,6 @@ layout: talk
 **Conference:** KCDC 2024  
 **Date:** 2024-06-26  
 **Slides:** [View Slides](https://drive.google.com/file/d/1CqnedD808_f_292ZGV0RZLQUqvC4yv1k/view)  
-**Video:** [Watch Video](https://www.youtube.com/watch?v=ZxJuJOombHg)  
 
 A presentation at KCDC 2024 in
                     June 2024 in

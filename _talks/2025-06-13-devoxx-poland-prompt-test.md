@@ -8,7 +8,6 @@ layout: talk
 **Conference:** Devoxx Poland 2025  
 **Date:** 2025-06-13  
 **Slides:** [View Slides](https://drive.google.com/file/d/1p_URO_XiVGx-34ftIrmz8i9kriRcIJG7/view)  
-**Video:** [Watch Video](https://youtu.be/wb2C2ju_xRg)  
 
 A presentation at Devoxx Poland 2025 in
                     June 2025 in

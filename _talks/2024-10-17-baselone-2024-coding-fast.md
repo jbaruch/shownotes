@@ -8,7 +8,6 @@ layout: talk
 **Conference:** BaselOne 2024  
 **Date:** 2024-10-17  
 **Slides:** [View Slides](https://drive.google.com/file/d/1JDsqDwJYBAZLJj0F_NES3NfeGdvUMgJc/view)  
-**Video:** [Watch Video](https://www.youtube.com/watch?v=OeTtYIjcxpc)  
 
 A presentation at BaselOne 2024 in
                     October 2024 in
