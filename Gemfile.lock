@@ -152,7 +152,7 @@ GEM
     rexml (3.4.2)
     rouge (4.6.0)
     ruby-progressbar (1.13.0)
-    rubyzip (3.0.2)
+    rubyzip (3.6.0)
     safe_yaml (1.0.5)
     sass-embedded (1.92.0)
       google-protobuf (~> 4.31)
