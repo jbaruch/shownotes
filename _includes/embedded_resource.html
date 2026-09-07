@@ -31,6 +31,12 @@ Usage: {% include embedded_resource.html url=page.slides type="slides" %}
   {% assign is_youtube = true %}
 {% endif %}
 
+{% comment %} Check if URL is Vimeo {% endcomment %}
+{% assign is_vimeo = false %}
+{% if url contains "vimeo.com/" %}
+  {% assign is_vimeo = true %}
+{% endif %}
+
 {% if is_google_slides %}
   {% comment %} Extract presentation ID from Google Slides URL {% endcomment %}
   {% assign url_parts = url | split: "/d/" %}
@@ -152,6 +158,70 @@ Usage: {% include embedded_resource.html url=page.slides type="slides" %}
           {% else %}
           <div class="video-thumbnail-preview thumbnail-container">
                           <img src="https://img.youtube.com/vi/{{ video_id }}/maxresdefault.jpg" alt="{{ title | escape }}" class="thumbnail-image preview-image" loading="lazy" data-fallback="{{ placeholder_url }}" onerror="this.onerror=null;this.src=this.dataset.fallback;">
+            <div class="play-overlay"><svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    {% else %}
+      <div class="embed-container video-embed"><iframe src="{{ embed_url }}" frameborder="0" allowfullscreen loading="lazy" title="{{ title | escape }}" class="responsive-iframe" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" sandbox="allow-scripts allow-same-origin allow-presentation allow-popups allow-popups-to-escape-sandbox"></iframe></div>
+    {% endif %}
+  {% else %}
+    {% if not preview_mode %}<div class="resource-fallback"><a href="{{ url }}" target="_blank" rel="noopener noreferrer" class="resource-link">{{ title }}</a></div>{% endif %}
+  {% endif %}
+
+{% elsif is_vimeo %}
+  {% comment %}
+  Vimeo URLs come in three shapes: vimeo.com/ID, vimeo.com/ID/HASH (unlisted
+  videos carry a privacy hash the player requires), and player.vimeo.com/video/ID.
+  Strip query/fragment, then walk the path segments: the first numeric one is the
+  video ID and the one after it, if any, is the privacy hash.
+  {% endcomment %}
+  {% assign vimeo_path = url | split: "?" | first | split: "#" | first %}
+  {% assign vimeo_tail = "" %}
+  {% if vimeo_path contains "player.vimeo.com/video/" %}
+    {% assign vimeo_tail = vimeo_path | split: "player.vimeo.com/video/" | last %}
+  {% else %}
+    {% assign vimeo_tail = vimeo_path | split: "vimeo.com/" | last %}
+  {% endif %}
+
+  {% assign video_id = "" %}
+  {% assign vimeo_hash = "" %}
+  {% assign vimeo_segments = vimeo_tail | split: "/" %}
+  {% for segment in vimeo_segments %}
+    {% assign segment_number = segment | plus: 0 %}
+    {% if video_id == "" %}
+      {% if segment_number > 0 %}
+        {% assign video_id = segment %}
+      {% endif %}
+    {% elsif vimeo_hash == "" %}
+      {% assign vimeo_hash = segment %}
+    {% endif %}
+  {% endfor %}
+
+  {% if video_id != "" %}
+    {% assign embed_url = "https://player.vimeo.com/video/" | append: video_id %}
+    {% if vimeo_hash != "" %}
+      {% assign embed_url = embed_url | append: "?h=" | append: vimeo_hash %}
+    {% endif %}
+    {% if preview_mode %}
+      {% comment %}
+      Vimeo has no public static thumbnail URL the way YouTube does
+      (img.youtube.com/vi/ID), so previews use the site placeholder.
+      {% endcomment %}
+      {% assign placeholder_url = "/assets/images/placeholder-thumbnail.svg" | relative_url %}
+      <div class="preview-thumbnail-wrapper">
+        <div class="talk-preview-{{ size }}">
+          {% if include.talk_url %}
+          <a href="{{ include.talk_url }}" class="preview-link">
+            <div class="video-thumbnail-preview thumbnail-container">
+              <img src="{{ placeholder_url }}" alt="{{ title | escape }}" class="thumbnail-image preview-image" loading="lazy">
+              <div class="play-overlay"><svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+            </div>
+          </a>
+          {% else %}
+          <div class="video-thumbnail-preview thumbnail-container">
+            <img src="{{ placeholder_url }}" alt="{{ title | escape }}" class="thumbnail-image preview-image" loading="lazy">
             <div class="play-overlay"><svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
           </div>
           {% endif %}
