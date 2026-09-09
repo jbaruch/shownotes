@@ -9,6 +9,7 @@ require_relative '../../../_plugins/resource_embed_filters'
 # video embeds come from this file, so URL-shape handling has to be asserted against it.
 class EmbeddedResourceIncludeTest < Minitest::Test
   INCLUDE_PATH = File.expand_path('../../../_includes/embedded_resource.html', __dir__)
+  LAYOUT_PATH = File.expand_path('../../../_layouts/default.html', __dir__)
 
   # relative_url is a Jekyll filter, unavailable outside a Jekyll build.
   module JekyllFilterStubs
@@ -140,6 +141,33 @@ class EmbeddedResourceIncludeTest < Minitest::Test
     html = render('https://noti.st/vikgamov/sUTmZl/codepocalypse-now?share=true#slide-3', type: 'slides')
 
     assert_includes html, 'src="https://noti.st/vikgamov/sUTmZl/embed"'
+  end
+
+  def test_notist_embeds_are_allowed_by_the_rendered_page_frame_policy
+    urls = [
+      'https://speaking.gamov.io/sUTmZl/codepocalypse-now-langchain4j-vs-koog',
+      'https://noti.st/vikgamov/sUTmZl/codepocalypse-now'
+    ]
+    head = File.read(LAYOUT_PATH).split('</head>', 2).first
+
+    %w[development production].each do |environment|
+      template = Liquid::Template.parse(head)
+      html = template.render('jekyll' => { 'environment' => environment })
+      assert_empty template.errors
+      policy = html.match(/http-equiv="Content-Security-Policy" content="([^"]+)"/)[1]
+      directives = policy.split(';').map(&:split).reject(&:empty?).to_h { |name, *sources| [name, sources] }
+
+      urls.each do |url|
+        embed = render(url, type: 'slides')
+        source = URI(embed.match(/<iframe src="([^"]+)"/)[1])
+        origin = "#{source.scheme}://#{source.host}"
+        assert_includes directives.fetch('frame-src'), origin, "#{environment}: #{url}"
+        directives.reject { |name, _| name == 'frame-src' }.each do |name, sources|
+          refute_includes sources, origin, "Notist must not expand #{name}"
+        end
+      end
+      refute_includes directives.fetch('frame-src'), '*'
+    end
   end
 
   def test_notist_preview_uses_the_local_talk_thumbnail
