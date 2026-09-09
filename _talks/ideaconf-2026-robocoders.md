@@ -7,6 +7,7 @@ layout: talk
 **Conference:** IntelliJ IDEA Conf 2026
 **Date:** 2026-09-09
 **Slides:** [View Slides](https://drive.google.com/file/d/1LjV6IcEJi1u_h-6HDTSM-e8NndftREjH/preview)
+**Video:** [Watch from 5:00:39](https://www.youtube.com/watch?v=sTcx0EvILr4&t=18039s)
 
 A presentation at IntelliJ IDEA Conf 2026, streamed online in September 2026, by
 {{ site.speaker.display_name | default: site.speaker.name }} and Viktor Gamov.
