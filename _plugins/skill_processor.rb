@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative '../lib/utils/html_sanitizer'
+require 'sanitize'
 
 module Jekyll
   # Serves a talk's SKILL.md byte-for-byte at /skills/{stem}/SKILL.md.
@@ -29,8 +29,6 @@ module Jekyll
   # file, so a broken skill file fails the build instead of shipping a
   # broken page. Orphan skill files (no talk with that stem) are skipped.
   class SkillProcessor < Generator
-    include HtmlSanitizer
-
     safe true
     priority :high
 
@@ -48,14 +46,13 @@ module Jekyll
       skill_paths(site).each do |path|
         relative = path.delete_prefix("#{site.source}/")
         stem = File.basename(File.dirname(path))
-        skill = parse_skill(File.read(path, encoding: 'utf-8'), relative)
-
         doc = docs_by_stem[stem]
         unless doc
           Jekyll.logger.info 'SkillProcessor:', "orphan skill #{relative} has no talk '#{stem}'; skipped"
           next
         end
 
+        skill = parse_skill(File.read(path, encoding: 'utf-8'), relative)
         doc.data['skill'] = build_skill_data(site, skill, stem, relative)
         site.static_files << SkillRawFile.new(site, stem, relative)
         Jekyll.logger.info 'SkillProcessor:', "attached skill '#{skill['name']}' to talk '#{stem}'"
@@ -124,13 +121,13 @@ module Jekyll
     end
 
     # Markdown -> HTML through the site's own converter (same settings as the
-    # `markdownify` filter), then the shared sanitizer, then heading demotion
+    # `markdownify` filter), then allowlist sanitization, then heading demotion
     # so the body sits below the section's own <h2> in the page outline.
     def render_body(site, body)
       return '' if body.nil? || body.strip.empty?
 
       converter = site.find_converter_instance(Jekyll::Converters::Markdown)
-      demote_headings(sanitize_html(converter.convert(body)))
+      demote_headings(Sanitize.fragment(converter.convert(body), Sanitize::Config::RELAXED))
     end
 
     def demote_headings(html)

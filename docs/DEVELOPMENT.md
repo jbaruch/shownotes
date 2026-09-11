@@ -54,7 +54,7 @@ Jekyll Static Site Generator
 
 1. Globs `_skills/*/SKILL.md` (an underscore directory, so Jekyll's reader never sees the files)
 2. Validates the front matter fail-loud: missing header, invalid YAML, missing `name`/`description`, `name` not a slug, `description` over 1024 characters all raise `Jekyll::Errors::FatalException` naming the file
-3. Renders the body through the site's markdown converter, then `HtmlSanitizer#sanitize_html`, then demotes headings by two levels
+3. Renders the body through the site's markdown converter, then Sanitize's allowlist-based `RELAXED` configuration, then demotes headings by two levels
 4. Attaches `doc.data['skill']` (`name`, `description`, `html`, `url`, `source_path`, `install_dir`) to the talk whose filename stem matches the folder name
 5. Registers a `StaticFile` subclass so the source file is copied byte-for-byte to `/skills/{stem}/SKILL.md`
 

@@ -137,8 +137,39 @@ class SkillProcessorTest < Minitest::Test
     html = @processor.send(:render_body, site, "Text\n\n<script>alert(1)</script>\n\nMore\n")
 
     refute_match(/<script/i, html, 'no executable script may survive rendering')
-    assert_includes html, '[removed]'
+    refute_includes html, 'alert(1)'
     assert_includes html, '<p>More</p>'
+  end
+
+  def test_render_body_removes_executable_attributes_and_unsafe_urls
+    body = <<~MD
+      <img src="https://example.com/image.png" onerror="alert(1)">
+      <a href="jav&#x61;script:alert(1)" onclick="alert(1)">Unsafe HTML link</a>
+      <iframe srcdoc="<script>alert(1)</script>"></iframe>
+      <svg onload="alert(1)"></svg>
+
+      [Unsafe Markdown link](javascript:alert%281%29)
+
+      [Safe link](https://example.com/docs)
+    MD
+    html = @processor.send(:render_body, site, body)
+    fragment = Nokogiri::HTML5.fragment(html)
+
+    assert_empty fragment.css('script, iframe, svg, [onerror], [onclick], [onload], [srcdoc]')
+    fragment.css('a').select { |link| link.text.start_with?('Unsafe') }.each do |link|
+      assert_nil link['href'], 'unsafe link protocols must be removed'
+    end
+    assert_equal 2, fragment.css('a').count { |link| link.text.start_with?('Unsafe') }
+    assert_equal 'https://example.com/docs', fragment.css('a').find { |link| link.text == 'Safe link' }['href']
+    assert_equal 'https://example.com/image.png', fragment.at_css('img')['src']
+  end
+
+  def test_render_body_preserves_tables_and_fenced_code
+    body = "| Name | Value |\n| --- | --- |\n| Demo | Yes |\n\n```ruby\nputs '<hello>'\n```\n"
+    fragment = Nokogiri::HTML5.fragment(@processor.send(:render_body, site, body))
+
+    assert_equal %w[Demo Yes], fragment.css('td').map(&:text)
+    assert_includes fragment.at_css('pre code').text, "puts '<hello>'"
   end
 
   def test_render_body_demotes_headings_by_two_levels_and_clamps_at_h6

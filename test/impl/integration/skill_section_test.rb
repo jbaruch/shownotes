@@ -338,6 +338,25 @@ class TempSiteSkillSectionTest < Minitest::Test
     refute File.exist?(File.join(@dir, '_site', 'skills')), 'orphan skills are not served (FR-012)'
   end
 
+  {
+    missing_front_matter: "# Just markdown\n",
+    invalid_yaml: "---\nname: [unclosed\n---\n",
+    missing_name: "---\ndescription: Orphan\n---\n"
+  }.each do |kind, raw|
+    define_method("test_orphan_with_#{kind}_is_ignored_and_not_served") do
+      write_talk('real-talk')
+      write_skill('real-talk')
+      write_skill('ghost-talk')
+      File.write(File.join(@dir, '_skills', 'ghost-talk', 'SKILL.md'), raw)
+
+      site = build
+
+      assert_equal 1, talk_html(site, 'real-talk').css('.talk-skill').size
+      assert File.exist?(File.join(site.dest, 'skills', 'real-talk', 'SKILL.md'))
+      refute File.exist?(File.join(site.dest, 'skills', 'ghost-talk'))
+    end
+  end
+
   def test_site_without_skills_directory_builds_cleanly
     write_talk('lonely-talk')
 
