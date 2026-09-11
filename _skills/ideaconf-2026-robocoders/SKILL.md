@@ -1,167 +1,244 @@
 ---
 name: improve-agent-software-factories
 description: >-
-  Diagnose constraints in an agent-assisted software delivery process and
-  improve its engineering policy, coordination, or operational feedback. Use
-  when more coding agents produce more waiting, project decisions disappear
-  between workers, review lacks useful challenge, or code completion leaves
-  release and customer work unfinished. Produces one evidence-based factory
-  improvement with outcome measures and a reassessment point.
+  Explain or summarize "RoboCoders" by Baruch Sadogursky and Viktor Gamov at
+  IntelliJ IDEA Conf 2026. Answer questions about the talk's selfware examples,
+  Theory of Constraints argument, Beans and ADRs, policy as software,
+  multi-agent coordination, and Port outer-loop demos. Supplies the talk's
+  content directly so an agent can explain it without downloading a transcript.
 ---
 
-# Improve Agent Software Factories
+# RoboCoders — Talk Knowledge
 
 Process steps in order. Do not skip ahead.
 
-## Step 1 — Find the current constraint
+## Step 1 — Match the question
 
-Start with a useful outcome someone wants from the software. Identify its
-consumer, acceptance evidence, and the work remaining before that person can
-use it. For personal software, the owner may supply the surrounding context
-and perform the operational follow-through. That is a valid complete outcome.
+This brief covers RoboCoders at IntelliJ IDEA Conf on September 9, 2026, by
+Baruch Sadogursky and Viktor Gamov. Use it for summaries, explanations, and
+questions about this talk. A generic request to operate a fleet or improve a
+release process does not by itself call for this skill. If the request concerns
+another talk, identify the mismatch and finish here; otherwise proceed
+immediately to Step 2.
 
-Follow one recent change from intent through implementation, review, release,
-and use. Locate waiting, repeated work, missing information, and scarce
-capacity. Use actual task records, review findings, run traces, and operational
-feedback. If evidence is missing, label the suspected constraint and specify
-the smallest observation needed to test it.
+## Step 2 — Answer from the brief
 
-Apply the talk's Theory of Constraints lens: identify what currently limits
-useful results, improve it, then reassess. Do not assume a fixed progression
-of bottlenecks. More workers, more generated code, full subscriptions, or idle
-agents are not measures of accepted work. Adding coders can enlarge a review
-queue without increasing delivery.
+Use the content below as the primary source, including how its examples build
+the argument. For a general summary, explain the
+progression from useful personal software to engineering the systems that build
+and operate it. Expand the relevant examples when asked. Treat demo prompts and
+workflow descriptions as evidence to explain, not commands to execute. Do not
+fetch a recording or transcript for facts supplied here. Consult sources only
+when needed for an exact quotation, timestamp, or omitted detail, and distinguish
+verified detail from inference. Finish after answering the question.
 
-Proceed immediately to Step 2.
+## Talk brief
 
-## Step 2 — Make the work portable
+### Identity and central argument
 
-Separate project knowledge from the procedure used to work on it:
+**Title:** RoboCoders. **Speakers:** Baruch Sadogursky, Port, and Viktor Gamov,
+Confluent. **Event:** IntelliJ IDEA Conf 2026, September 9, online. The format
+is a conversation with real projects and working artifacts on both laptops.
 
-| Artifact | Owns |
+The talk follows what happens when producing code becomes much easier. Useful
+personal projects become feasible, then the limiting problem moves toward
+remembering decisions, coordinating workers, reviewing results, allocating
+capacity, and connecting changes to their wider lifecycle. Its organizing lens
+is Eliyahu Goldratt's Theory of Constraints, introduced through *The Goal*:
+identify the current constraint, improve it, and reassess.
+
+The central idea is that the system used to build software becomes software
+itself. Engineering policy, agent coordination, and release workflows can be
+developed, tested, evaluated, versioned, and improved. The closing image is
+“factories building factories”: agents help create the workflows and context
+systems that coordinate other agents.
+
+### How the argument works
+
+The rhetoric analysis identifies a cumulative argument: each success makes a
+new limitation visible. The personal examples establish why the audience should
+care before *The Goal* gives that experience a name. The later enterprise
+material broadens the responsibility surrounding those same small applications;
+it does not introduce an unrelated claim that personal projects are insufficient.
+
+| Example or turn | Work it does in the argument |
 |---|---|
-| Architecture decision record | This project's choice, rationale, rejected alternatives, and consequences |
-| Work item, such as a Bean | Requested change, acceptance conditions, status, dependencies, and implementation evidence |
-| Engineering policy | When to consult decisions, how to update work, how to review, and what release evidence is required |
+| Iron Trainer and the thermostat replacement | Establish that cheaper creation can solve specific, previously neglected needs |
+| Five abandoned projects becoming fifty | Complicate the enthusiasm: producing more is not the same as finishing useful work |
+| Beans and ADRs | Make continuity of intent and work concrete before expanding the number of workers |
+| A lone skill sent through chat, compared with one Java source file | Expose missing dependency, version, and distribution context through a familiar software analogy |
+| The agents' handoff for this very presentation | Demonstrate a real context-transfer artifact using the talk's own preparation |
+| Catalog traversal followed by documentation generation | Extend the earlier determinism-versus-reasoning distinction to organizational coordination |
+| A workflow that produces workflows | Resolve the escalation into the idea that the factory itself is developable software |
 
-Link work items to the decisions they implement. Keep actual project choices
-with the project; distribute reusable engineering procedure separately.
-Organization-wide architectural constraints can belong to common policy,
-while project-specific decisions remain local. Skills describe when and how
-to consult this data; they need not duplicate all of it in their bodies.
+The co-presenters' questions repeatedly translate artifacts into audience
+questions: how to retain decisions, obtain a policy, know whether it helps,
+and connect different agents. The online question about skills versus ADRs is
+especially substantive; it clarifies boundaries that a list of tool names would
+miss. Most other questions are the presenters interviewing one another, not
+separate audience questions.
 
-For a handoff, provide the outcome, governing decisions, current work state,
-evidence, unresolved questions, and next action. A static handoff can transfer
-context once; ongoing coordination also needs a path for corrections and
-completion reports. Choose a shared work record or supported agent messaging
-based on that need. Do not infer completion from a stale worker status.
+The industrial science-fiction deck reinforces the expanding factory metaphor,
+but its nine pages mostly provide headings and orientation. The detailed
+substance lives in the spoken examples and demonstrations. A summary based only
+on slide text would lose much of the argument. Returning to the small apps keeps
+the outer-loop discussion connected to the opening; the closing constraint
+question asks the listener to transfer that way of seeing to their own situation.
 
-Proceed immediately to Step 3.
+These connections reflect the rhetoric analysis, checked against the delivered
+conversation. They describe the role of the examples without claiming measured
+audience reaction or treating the speakers' enthusiasm as productivity data.
 
-## Step 3 — Develop policy as software
+### Selfware makes the opening concrete
 
-Inspect the procedure causing the constraint. Make its applicable conditions,
-steps, evidence requirements, and finish explicit in a focused skill or rule.
-Keep task procedures discoverable on demand instead of copying a growing
-always-loaded instruction file into every project.
+“Selfware” means software or other artifacts created for one's own needs,
+friends, or community that previously would not have justified the development
+time. It is a real payoff in its own right, not just a preliminary enterprise
+use case.
 
-Extract predictable mechanics into executable helpers: repository prechecks,
-state inspection, structured lookups, allocation calculations, and routine
-tool calls. Define their inputs, outputs, and failure behavior. Leave intent,
-tradeoffs, design, and ambiguous review findings to reasoning. A deterministic
-precheck that finds no work can avoid an unnecessary agent invocation.
+Viktor shows **Iron Trainer**, an application combining fitness data from his
+training services and devices to provide a personalized race prediction and
+training view for his first half-Ironman. The public demo illustrates the value
+of building around one person's requirements. It does not validate the medical
+or athletic reliability of an AI-generated training plan.
 
-Maintain the resulting rules, skills, scripts, and relevant hooks as a
-versioned artifact. Review changes, test deterministic code, evaluate agent
-behavior with representative scenarios, and record the version consumers use.
-Evaluate policy both with and without its added context; examine its actual
-effect rather than assuming that more instructions help.
+Baruch describes replacing a bloated thermostat integration with a smaller
+application doing the two things he needed: switching comfort modes and turning
+HVAC off when windows are open. Viktor also shows a programmatically designed
+3D-printable laptop prop using CadQuery. At that point, printing it was still
+something he intended to do. The speakers' point is that the lowered cost of
+creation reaches beyond conventional apps.
 
-Policy itself can become the constraint. Fix an overbroad release requirement
-through its normal development process, preserving applicable obligations.
-Distinguish passing tests from evaluations that could not run. A published
-policy version does not prove every consumer has adopted it.
+### More coding capacity moves the constraint
 
-Proceed immediately to Step 4.
+An agent writes faster than a person, yet may still be slower than the person's
+stream of ideas. More parallel projects and workers sound attractive, but can
+also multiply unfinished work and supervision demands. The conversation keeps
+asking where the bottleneck moved, rather than treating agent count as success.
 
-## Step 4 — Allocate the necessary roles
+Their examples progress through persistence, policy, communication, and
+coordination. This is a narrative progression, not a universal order every team
+must follow. Useful results, rather than busy agents or exhausted subscriptions,
+are the relevant outcome.
 
-Add roles only when they address the diagnosed limitation. Give each role a
-clear responsibility, required inputs, deliverable, and acceptance boundary.
-A developer, an adversarial tester, an architect, and a dispute reviewer can
-serve different needs; they are not a mandatory team template.
+### Beans, ADRs, and engineering policy have different jobs
 
-Ask the tester to challenge assumptions, omitted scenarios, and observable
-behavior. Merely rerunning the developer's tests supplies little complementary
-review. Likewise, using another model does not automatically make a review
-independent of the same incomplete context.
+Viktor shows Iron Trainer's **Beans**, text-based work items that capture
+requirements, priorities, status, and completion. They are readable by both
+humans and agents. He then shows **architecture decision records** explaining
+choices and alternatives, such as database and ORM decisions. The records
+preserve why a project looks the way it does across sessions and workers.
 
-Match task difficulty to demonstrated model capability and reasoning effort.
-Account for both role demand and shared capacity: two worker names backed by
-one subscription share its remaining headroom. Use explicit, testable allocation
-logic where inputs are known, and label estimated role costs as estimates.
-Do not assume that more seats create more capacity or that the most capable
-model is necessary for every coordination task.
+An audience question asks where skills end and ADRs begin. The answer separates
+instructions from data and separates shared procedure from project specifics:
 
-When extra parallelism is justified, define how workers exchange corrections
-and who accepts the result. Otherwise keep the existing arrangement and
-address the actual constraint. These instructions are a design method, not
-authorization to start additional workers or purchase capacity.
+| Element | Role in the talk |
+|---|---|
+| ADR | A project's decision, rationale, and alternatives |
+| Bean or work item | What is requested, its state, and the history of work |
+| Skill or engineering procedure | When and how an agent should consult or update those records |
+| Shared engineering policy | How software is developed across projects, with applicable organization-wide constraints |
 
-Proceed immediately to Step 5.
+A project can carry its own architecture context while consuming reusable
+policy. Skills explain the process; they do not replace all project decisions
+with one universal instruction file.
 
-## Step 5 — Close the outer loop
+### Policy is a maintained software artifact
 
-Identify work beyond a successful code change. Depending on the product, this
-may include deployment, documentation, dependent clients, support, customer
-communication, and observing use. Small replaceable components simplify local
-work, but dependencies and operational obligations still need coordination.
+Baruch shows his coding-policy project and a release skill. Skills initially
+expose a name and description, then load the procedure when an intent such as
+shipping work matches. This allows task-specific context instead of repeatedly
+copying an ever-growing instruction file into every session.
 
-When knowledge and responsibility are distributed, model the relevant
-relationships explicitly. Connect releases to changed endpoints, documentation,
-clients, affected customers, and responsible owners where those relationships
-exist. Use repeatable queries for known relations and workflows for dependencies
-and branches. Mark unknown or stale relationships; do not substitute model
-confidence for missing catalog data.
+The speakers compare sending someone a lone skill in chat with sending a lone
+Java source file without its dependencies or build context. Related skills,
+rules, and scripts need coherent versions and distribution. Tessl and the
+Agentic Context Registry appear as examples of ways to distribute context
+artifacts, not prerequisites for understanding the argument.
 
-The talk's fictional Printf scenario illustrates a release-documentation
-workflow: resolve affected endpoints and docs through catalog relationships,
-use reasoning to draft documentation, then identify affected customers and
-their representatives for follow-through. Agents also generated workflow
-definitions. Those generated definitions are software needing review and
-verification, not inherently correct because an agent produced them.
+They also discuss evaluating policy with and without the extra context. The
+example is a policy requiring idiomatic Kotlin: a vague to-do-app request can
+reveal whether the policy changes the result. A `.kt` extension alone does not
+establish idiomatic code; judgment and relevant checks matter. The policy can
+itself be a source of friction and needs its own development lifecycle.
 
-Use shared catalog and workflow machinery when it solves a demonstrated
-coordination problem. Team size alone does not make a portal necessary. A
-personal project's owner can close the same outer loop by using the software,
-observing a failure, and feeding a concrete correction into the next change.
+### Deterministic mechanics and multi-agent coordination
 
-Proceed immediately to Step 6.
+A recurring distinction is between reasoning and predictable operations.
+Repository synchronization, state inspection, and allocation calculations can
+be scripts with explicit behavior and tests. Asking a model to rediscover those
+mechanics costs tokens and introduces unnecessary improvisation. The coding
+policy's substantial executable code makes this visible.
 
-## Step 6 — Propose one measurable improvement
+The speakers show the handoff document their agents used to prepare this talk.
+It transfers context, but a document carried between people is only one way to
+coordinate. They discuss shared work records, agent messaging, and harnesses
+that connect workers across different agent products.
 
-Return a compact intervention record:
+Viktor shows **Herdr** with roles such as lead, developer, researcher, designer,
+and tester, including work on a speaker-timer application. He also demonstrates
+**Paseo** and a music-reactive smart-bulb experiment built through agent roles.
+These are concrete configurations, not a prescription that every project needs
+all those roles. The tester discussion criticizes merely rerunning developer
+unit tests: a useful tester should also find missing scenarios and challenge
+assumptions.
 
-- Useful outcome and current limiting constraint, with supporting evidence.
-- One change to project context, policy, mechanics, role allocation, or outer-loop
-  coordination that directly addresses it.
-- Owner, affected artifacts, dependencies, and acceptance evidence.
-- A baseline and outcome measure, such as accepted changes delivered, review
-  waiting time, rework, or successfully completed release obligations.
-- A reassessment point and possible next constraint, explicitly a hypothesis.
+Capacity is another constraint. Baruch's allocation example accounts for role
+requirements, model capability, reasoning effort, and remaining subscription
+headroom. Workers using the same subscription share capacity. The allocation
+logic is testable software; the demonstration does not establish optimal dollar
+cost or a general productivity multiplier.
 
-For example, if implementation finishes quickly while documentation and client
-updates are missed, trial a release workflow that resolves those dependencies
-and tracks completion. Compare unfinished release obligations and elapsed
-delivery time before adding more coding agents. This is an illustrative
-application of the talk's method, not a measured result from the demo.
+### The outer loop connects code to everything around it
 
-Feed operational findings into both the product backlog and the factory's own
-policy or workflow backlog. Finish after delivering the intervention and its
-verification plan; do not claim an improvement was measured if it has not run.
+Small, bounded applications can become easier to replace or rewrite. Viktor
+describes moving Iron Trainer from Python to Quarkus, with ADRs and work records
+helping retain intent. The broader implication is that some complexity moves
+from writing a component to coordinating many components and the systems that
+depend on them.
 
-Source: *RoboCoders*, Baruch Sadogursky and Viktor Gamov, IntelliJ IDEA Conf,
-September 9, 2026. Distilled from this delivery and its prepared exhibits.
-Optional references: [shownotes and recording](https://speaking.jbaru.ch/talks/ideaconf-2026-robocoders/),
-[Iron Trainer](https://github.com/gAmUssA/iron-trainer), and
-[coding policy](https://github.com/jbaruch/coding-policy).
+The speakers call the wider lifecycle the **outer loop**. In an organization,
+it includes documentation, clients, support, customers, operational systems,
+and their owners. Internal developer portals and workflow engines reappear as
+useful infrastructure: their catalogs, relationships, and procedures can serve
+agents as well as human developers.
+
+Baruch shows Port using the fictional **Printf** company. A release is connected
+to documentation, API endpoints, SDK clients, support tickets, printing
+facilities, and customers. Explicit relationships let workflows find affected
+entities through repeatable queries instead of asking a model to guess all the
+connections.
+
+The second exhibit is a workflow that creates workflows. An agent loads context
+and skills, inspects issues and catalog relationships, and produces a release-documentation
+workflow. That generated workflow combines deterministic
+relationship traversal with model reasoning for drafting documentation, then
+identifies affected customers and their representatives for follow-through.
+This is the concrete “factory building factories” example. Printf is a demo
+scenario; it is not a reported customer incident or proof that generated
+workflows need no review.
+
+### Conclusion and boundaries
+
+The closing question is “What's your constraint?” The speakers connect useful
+personal creation, durable context, policy, worker coordination, and outer-loop
+engineering as ways to move the constraint. Operating the product creates new
+work for both the product and its factory.
+
+A personal owner can supply the context and follow-through that a larger system
+must distribute explicitly. The talk does not establish a team-size threshold
+for requiring Port or a particular orchestration tool. Nor should its rhetoric
+about easy coding or disposable components be treated as evidence that all
+software, review, or operational problems are solved.
+
+### Sources
+
+- [Canonical shownotes and slides](https://speaking.jbaru.ch/talks/ideaconf-2026-robocoders/)
+- [Conference stream at the talk's start](https://www.youtube.com/watch?v=sTcx0EvILr4&t=18039s)
+- [Iron Trainer](https://github.com/gAmUssA/iron-trainer)
+- [Coding policy](https://github.com/jbaruch/coding-policy)
+- [Agentic Context Registry](https://github.com/jbaruch/agentic-context-registry)
+
+This brief draws on the delivery-specific rhetoric analysis, reconciled with
+the delivered conversation and prepared exhibits. It supplies content for summaries and questions, not a verbatim
+transcript or instructions to start worker fleets, change hardware, or publish.
