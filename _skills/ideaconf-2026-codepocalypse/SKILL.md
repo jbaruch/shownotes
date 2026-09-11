@@ -29,7 +29,8 @@ it. Human confirmation cannot override an unapproved candidate. Establish
 those semantics in application control flow, not merely in a prompt asking
 the agent to be careful.
 
-Proceed immediately to Step 2.
+For an acting agent requiring this workflow, proceed immediately to Step 2.
+For the simpler text-transformation case, finish here.
 
 ## Step 2 — Separate the sources of context
 
@@ -92,7 +93,8 @@ Express the allowed transitions in application logic:
 | Rejection after budget exhaustion | Finish blocked; no external action |
 | Timeout, provider failure, invalid response, or missing review | Finish blocked with a diagnostic |
 | Human confirms approved candidate | Execute that exact action through the application |
-| Human declines or requests an alternative | Hold; route a new candidate through review again |
+| Human declines | Finish held; no external action or unsolicited alternative |
+| Human explicitly requests an alternative | Hold the current candidate; route a new candidate through review again |
 
 Choose a finite refinement budget. The Koog demo allowed two refinements; use
 a limit justified by the application's latency and cost constraints. Keep the

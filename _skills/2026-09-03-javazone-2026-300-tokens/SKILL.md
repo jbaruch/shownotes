@@ -32,7 +32,8 @@ finding and finish this diagnostic workflow.
 | Goldfish Agent | An accepted decision disappears after a new session or compaction | Persist decisions in inspectable external memory |
 | Vibes Eval | A context change is called successful after a pleasing example | Compare against a baseline with reviewed criteria |
 
-Proceed immediately to Step 2.
+If the diagnosis remains a context failure, proceed immediately to Step 2.
+Otherwise finish here.
 
 ## Step 2 — Match context to the task
 
