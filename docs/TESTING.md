@@ -126,6 +126,19 @@ bundle exec ruby test/impl/unit/thumbnail_test.rb
 bundle exec ruby test/impl/integration/thumbnail_integration_test.rb
 ```
 
+### Testing Skills
+
+```bash
+# Plugin validation, sanitizing, heading demotion (fast, no site build)
+bundle exec ruby -Itest test/impl/unit/skill_processor_test.rb
+
+# Fixture-site render with the real layouts, badges, raw file byte identity,
+# plus temp-site builds for sub-path hosting, malformed files, and orphans
+bundle exec ruby -Itest test/impl/integration/skill_section_test.rb
+```
+
+Both files run as part of `rake test:unit` and `rake test:integration`. The integration file builds isolated temporary sites with the repository layouts, homepage, assets, and test fixtures. Demo talks and skills stay under `test/fixtures/talk_skills/` and are never published.
+
 ## Troubleshooting Tests
 
 ### Test Failures
