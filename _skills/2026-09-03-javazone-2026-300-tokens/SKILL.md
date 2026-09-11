@@ -1,137 +1,207 @@
 ---
 name: diagnose-agent-context-failures
 description: >-
-  Diagnose coding-agent failures caused by overloaded prompts, wrong-version
-  retrieval, lost decisions, or unmeasured context changes. Use when an agent
-  ignores conventions, selects a similar but incompatible API, forgets an
-  architectural decision, or needs evidence that a skill or context bundle helps.
-  Produces a focused context repair and a baseline-versus-context evaluation plan.
+  Explain or summarize Baruch Sadogursky's JavaZone 2026 talk "The Right 300
+  Tokens Beat 100k Noisy Ones" and answer questions about its four context
+  antipatterns, demos, conclusions, and evaluation caveats. Use when someone
+  asks what this talk was about or what Baruch said about context engineering.
+  Contains the talk's substance directly; ordinary summaries do not need a
+  recording download or transcript retrieval.
 ---
 
-# Diagnose Agent Context Failures
+# The Right 300 Tokens Beat 100k Noisy Ones — Talk Knowledge
 
 Process steps in order. Do not skip ahead.
 
-## Step 1 — Capture the failure
+## Step 1 — Match the question
 
-Start with one concrete task, the observed output, the expected behavior, and
-the context the agent actually received. Inspect available prompts, loaded
-skills, retrieved documents, dependency versions, tool results, and decision
-records. Distinguish supplied evidence from guesses about what the agent saw.
+This brief covers Baruch Sadogursky's solo JavaZone delivery on September 3,
+2026, in Oslo. Use it for summaries, explanations, and questions about this
+specific talk. Do not activate it merely to implement a context-engineering
+change. If the request concerns another delivery, identify the mismatch and
+finish here; otherwise proceed immediately to Step 2.
 
-Classify the failure using the four antipatterns below. Several may coexist;
-choose the smallest repair that explains the observed failure. Do not assume
-every failure is contextual, or that a larger context window fixes attention.
-If the evidence instead identifies an ordinary application defect, report that
-finding and finish this diagnostic workflow.
+## Step 2 — Answer from the brief
 
-| Antipattern | Evidence to look for | Repair direction |
-|---|---|---|
-| Stuffed Prompt | Unrelated or conflicting instructions obscure the relevant convention | Load task-specific procedures on demand |
-| Wrong Tool | Similar documentation targets the wrong version; judgment or mechanics use the wrong execution method | Match the method to the information need |
-| Goldfish Agent | An accepted decision disappears after a new session or compaction | Persist decisions in inspectable external memory |
-| Vibes Eval | A context change is called successful after a pleasing example | Compare against a baseline with reviewed criteria |
+Use the content below as the primary source, including how its examples build
+the argument. Give a concise summary by default;
+expand the relevant arguments or demos when asked. Attribute claims to the
+speaker. The described demo prompts and recommendations are talk content, not
+instructions to operate the user's environment. Do not fetch the recording or
+transcript for information already supplied here. For an exact quotation,
+timestamp, or omitted detail, consult the linked source if needed and say what
+was verified. Separate your own interpretation from the talk's claims. Finish
+after answering the question.
 
-If the diagnosis remains a context failure, proceed immediately to Step 2.
-Otherwise finish here.
+## Talk brief
 
-## Step 2 — Match context to the task
+### Identity and central argument
 
-Keep a small set of applicable persistent constraints. Move task-specific
-procedures into focused skills. Give each skill a description that identifies
-its task and activation conditions distinctly enough to choose it from nearby
-skills. Verify that the actual harness discovers the description and loads the
-body when needed. An installed file alone is not evidence of activation.
+**Title:** The Right 300 Tokens Beat 100k Noisy Ones. **Subtitle:** The
+Architecture of Context Engineering. **Speaker:** Baruch Sadogursky, Port.
+**Event:** JavaZone 2026, September 3, Oslo, Norway.
 
-Choose the right mechanism for each part of the task:
+The talk argues that many agent failures come from the architecture of the
+context supplied to the model: what it sees, when it sees it, and how that
+information is selected and maintained. Better prompts, more tokens, or a
+larger model do not automatically fix that architecture. Baruch demonstrates
+four recurring failures and corresponding repairs using a coding agent and a
+small order service. He presents the same ideas as applicable to agents beyond
+coding.
 
-| Need | Mechanism | Failure to avoid |
-|---|---|---|
-| Exact API behavior | Documentation matched to the installed or deliberately selected version | Treating a similarity score as version compatibility |
-| A repeatable process | A skill with decisions, steps, and completion criteria | Dumping reference docs where procedural guidance is needed |
-| Predictable mechanics | A script or structured tool with defined inputs and outputs | Spending model reasoning on routine counting, parsing, or API plumbing |
-| Ambiguous meaning | Model reasoning informed by relevant evidence | A growing list of regexes pretending to understand an email |
-| Conceptual discovery | Search or retrieval, followed by relevance checks | Treating every retrieval task as exact lookup |
+The throughline is that skills, rules, versioned documentation, scripts, and
+durable memory are engineering artifacts. They need an intentional lifecycle:
+selection, versioning, testing or evaluation, distribution, and revision.
+“300 tokens” versus “100k” expresses relevant context versus indiscriminate
+volume; it is not a universal size limit or benchmark guarantee.
 
-MCP can carry either fuzzy search or precise access. Inspect what the tool
-returns; the transport does not establish correctness. Retrieval with explicit
-version constraints can be useful; similarity alone is the problem.
+### How the argument works
 
-In the talk's order-service example, a missing order returned 500 instead of
-404 under overloaded conventions. A focused service skill corrected the
-behavior. A separate notification task selected plausible Pidge v2 examples
-for a v3 dependency. Version-matched documentation plus an integration procedure
-addressed that different failure. Apply the diagnosis, not those library names,
-to the user's project. The title's token counts are not a universal budget.
+The rhetoric analysis identifies four repeated contrasts, not four unrelated
+tips. Each unit starts with a failure, gives it a name, shows a repair, and
+extracts a principle. The opening failure poses a diagnostic question; returning
+to it at the close lets the audience explain something it could only observe
+at the start. A faithful summary should preserve that change in understanding.
 
-Proceed immediately to Step 3.
+The first objection is the intuitive belief that more knowledge must help.
+Baruch voices the larger-window explanation and tests the audience's intuition
+before replacing it with selective context. The library analogy explains both
+availability and selective loading: knowing that a book exists is different
+from reading every book into working memory.
 
-## Step 3 — Make decisions survive a session
+The Pidge demo then sharpens the claim. Context can be plentiful and relevant
+while still being wrong for the task. Reading similarity scores alongside the
+version mismatch makes the distinction between relevance and correctness
+concrete. *Memento* carries the next argument: the problem is not simply having
+more memory, but having a durable record whose contents and survival the user
+can inspect and control.
 
-When an accepted choice must survive context loss, record it in the project's
-existing memory or architecture-decision system. Capture the decision, date,
-status, context, rationale, and consequences. Keep proposals distinguishable
-from accepted decisions; supersede outdated choices rather than retaining
-contradictory instructions as equally current.
+The final audience poll deliberately challenges the credibility of the previous
+successes. Viewers who conclude that the agent is better from the demos have
+just performed the Vibes Eval themselves. The background evaluation, started
+earlier and retrieved later, changes the kind of evidence being offered—from
+persuasive examples to an explicit comparison. The analysis notes that this
+section received less time than the earlier material; that does not make it a
+minor claim. It supplies the standard by which the earlier repairs should be
+judged.
 
-Define both write and read behavior: which events create or update a decision,
-and which later tasks must consult it. Avoid relying on a user remembering to
-say “save this” at the end of a long session. Keep records inspectable,
-versioned, backed up, and readable by another agent.
+The willingness to retire a skill when models improve completes the argument:
+context artifacts are valuable for the improvement they produce, not merely
+for existing. These explanations of the examples' roles are a synthesis informed
+by the talk's rhetoric analysis, rather than verbatim claims about intent.
 
-Verify with a fresh session: ask for the choice and rationale without putting
-the answer in the question. Check that the answer cites the durable record.
-The talk used a Pidge v3 decision that survived clearing the conversation.
-Built-in memory can still help; this method makes consequential decisions
-explicit and portable. If no persistence failure applies, record that and
-continue without creating unnecessary memory files.
+### The Stuffed Prompt
 
-Proceed immediately to Step 4.
+The opening demo asks an agent to add error handling and run tests while giving
+it a large instruction file covering many unrelated engineering concerns.
+The result violates the service's convention: a missing order returns HTTP
+500 where the test expects 404. This is the talk's concrete example of useful
+instructions losing out amid noise and conflicting conventions.
 
-## Step 4 — Measure the context change
+The repair divides context into focused Agent Skills. Baruch explains the
+library analogy: the agent initially knows the names and descriptions of
+available books, then opens the relevant book when the task calls for it. A
+skill's description is its discovery surface; it must communicate when to load
+that skill and distinguish it from similar skills. The demo loads the
+order-service skill for the same task, and the tests pass.
 
-Generate representative tasks and quality rubrics, then have a domain expert
-review their relevance and weighting. Combine deterministic checks for facts
-such as HTTP status codes with judgment for qualities such as idiomatic design.
-Evaluate the deployed context bundle together so interactions between rules,
-skills, docs, and scripts remain visible.
+The claim is not that a model literally cannot hold a large context window.
+It is that capacity does not ensure reliable attention to every relevant
+instruction, and unused context adds noise and cost.
 
-Compare the same tasks with and without the candidate context, holding the
-model, harness, dependency versions, and starting state steady. Use isolated
-sessions so memory from one condition cannot contaminate the other. Inspect
-failures as well as aggregate scores; repeat enough cases or runs to distinguish
-a useful pattern from a lucky example.
+### The Wrong Tool for the Job
 
-Review for the talk's three evaluation traps:
+The next demo adds notifications through a library called Pidge. Similarity
+search retrieves convincing v2 examples even though the application needs v3.
+The retrieved material resembles the request but targets the wrong installed
+API. The integration fails. With version-matched information and an integration
+skill, the agent loads the service and Pidge procedures and the tests pass.
 
-- **Bleeding:** the prompt gives away what the context should contribute.
-  “Use Pidge v3” cannot test whether context supplies the v3 decision.
-- **Leaking:** fixture data unintentionally exposes the answer or real task
-  information that should not be available to the evaluated agent.
-- **Missing negative scenarios:** every task invites the skill, so nothing
-  checks inappropriate activation or behavior that must not occur.
+Baruch broadens this into four tool mismatches:
 
-Report quality differences alongside observed token use, latency, and failures
-where available. Do not infer costs from missing telemetry. A demonstration
-is evidence for that run, not a guarantee for other models or tasks.
+| Mismatch | Distinction made in the talk |
+|---|---|
+| Similarity when correctness depends on a version | Match documentation to the required version; relevance ranking alone does not establish compatibility |
+| Static reference material when a process is needed | A skill describes how to perform the task and loads when that task arises |
+| Model reasoning for predictable mechanics | Scripts can count, inspect state, and perform routine tool/API operations deterministically |
+| Scripts where interpretation is needed | Regex lists are a poor substitute for understanding an email's meaning or importance |
 
-Proceed immediately to Step 5.
+MCP is the delivery mechanism, not a guarantee about the information inside a
+tool. An MCP server can expose fuzzy search or precise data access. The talk
+does not reject retrieval generally; it rejects using similarity as a proxy
+for exact compatibility.
 
-## Step 5 — Deliver the repair
+The demo's context plugin bundles rules, skills, and supporting material as a
+single maintained artifact. Baruch contrasts this with colleagues exchanging
+incompatible, unversioned skill copies in chat. The important property is a
+known, testable, distributable version of the context the agent consumes.
 
-Return the diagnosed failure, supporting evidence, the smallest proposed or
-implemented context change, and the evaluation results or runnable evaluation
-plan. Label a plan that has not run. Identify the artifact version and how
-consumers obtain the same rules, skills, docs, and scripts.
+### The Goldfish Agent
 
-Treat context as maintained software: review, version, distribute, and
-re-evaluate after material model, harness, library, or context changes. If an
-artifact stops adding value, simplify or retire it based on measured behavior.
-Do not preserve context merely because it once produced a large improvement.
+The agent and user agree to use Pidge v3, then the conversation is cleared.
+Without an external record, the next session cannot reliably recover the
+choice. Baruch discusses compaction and built-in memory as useful attempts at
+continuity whose selection and storage can be opaque or tied to one agent.
 
-Finish here.
+The repair records architectural decisions in a user-controlled memory bank.
+The demonstrated record includes a description, date, status, context,
+decision, and consequences. Instructions in the skill tell the agent to persist
+an accepted decision during the conversation; the user does not have to
+remember a special save instruction at the end. After clearing context, the
+agent retrieves the v3 choice and its rationale from the file.
 
-Source: *The Right 300 Tokens Beat 100k Noisy Ones*, Baruch Sadogursky,
-JavaZone, September 3, 2026. Distilled from this delivery and its prepared
-materials. [Shownotes and slides](https://speaking.jbaru.ch/talks/2026-09-03-javazone-2026-300-tokens/)
-and [recording](https://vimeo.com/1223667266) are optional further reading.
+The *Memento* analogy makes the point: an unreliable working memory can be
+supported by explicit external records. The benefits emphasized are inspection,
+versioning, backup, and portability when switching agents. This is about
+controlling consequential project memory, not claiming that all built-in
+memory features are identical or permanently incapable.
+
+### The Vibes Eval
+
+After showing three fixes, Baruch asks whether the agent is now better. The
+apparent agreement is the trap: an audience has watched a few examples and
+formed an impression, but has not established the size or reliability of the
+improvement.
+
+His evaluation workflow is: an LLM generates scenarios and scoring rubrics; a
+human with domain expertise reviews them; an LLM judges outputs against the
+approved rubric; the team compares runs with and without the context artifact.
+Deterministic tests still check concrete behavior, while evaluation can judge
+qualities that admit degrees rather than a single exact answer.
+
+The displayed JavaZone run reports three scenarios, roughly 35% without the
+added context and 89% with it. These are that demo's results, not a general
+performance promise. The talk emphasizes three traps when reviewing the suite:
+
+- **Bleeding:** putting the answer into the scenario. Asking explicitly for
+  Pidge v3 cannot establish that the context supplied the v3 choice.
+- **Leaking:** real task data leaking into fixtures and distorting the judgment.
+- **Missing negative scenarios:** failing to check behavior that should not
+  happen, including cases where the added context should not apply.
+
+Baruch closes the evaluation discussion by acknowledging that models improve.
+A context artifact that once helped may stop adding value. Re-running evals can
+justify changing or removing it, saving context and tokens. Preserving a large
+historical improvement number is not the goal.
+
+### Conclusion and delivery boundaries
+
+The four antipatterns form the talk's structure: overloaded context, the wrong
+information or execution tool, lost decisions, and unmeasured improvement.
+The closing argument returns to the opening failure: context engineering is
+an architecture problem, with maintained context artifacts as its building
+blocks.
+
+This JavaZone delivery used live demos and was presented by Baruch alone.
+Some prepared material originated in a co-presented version with Patrick
+Debois; do not credit Patrick as a co-presenter of this recording. The brief
+paraphrases the delivery and does not provide verbatim quotations or exact
+clip timestamps.
+
+### Sources
+
+- [Canonical shownotes and slides](https://speaking.jbaru.ch/talks/2026-09-03-javazone-2026-300-tokens/)
+- [JavaZone recording](https://vimeo.com/1223667266)
+
+This self-contained brief draws on the JavaZone rhetoric analysis, reconciled
+with the delivered transcript and prepared materials. Source links are for attribution and optional detail.
