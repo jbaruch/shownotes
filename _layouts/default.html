@@ -44,6 +44,7 @@
     {% endif %}
 
     <!-- SEO -->
+    <link rel="describedby" href="{{ '/llms.txt' | relative_url }}" type="text/plain" title="Guide for AI agents">
     <title>{% if page.title %}{{ page.title | escape }} - {% endif %}{% if site.speaker.display_name and site.speaker.display_name != "" %}Presentations by {{ site.speaker.display_name }}{% elsif site.speaker.name and site.speaker.name != "" %}Presentations by {{ site.speaker.name }}{% else %}Presentations{% endif %}</title>
     <meta name="description" content="{% if page.description %}{{ page.description | escape }}{% else %}{{ site.speaker.bio }}{% endif %}">
     
