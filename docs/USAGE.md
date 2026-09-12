@@ -325,6 +325,14 @@ open http://localhost:4000/talks/{talk-stem}/
 
 Edits under `_skills/` trigger a rebuild like any other content. Copy-to-clipboard needs a secure context; `localhost` counts, so the Copy button works locally.
 
+## Guide for AI agents
+
+The site publishes `/llms.txt`, generated from `llms.txt` during each Jekyll build. Every page links to it through a `rel="describedby"` discovery link. It lists all talks, their available skills, recordings, and slides; adding or updating talk metadata or a skill updates the index automatically.
+
+The guide tells agents to read a matching `SKILL.md` first for ordinary summaries and questions. When no suitable skill covers the question, agents should retrieve the linked YouTube transcript. Exact quotations and timestamps require checking the recording or transcript. Livestream links retain their start times so agents can isolate the correct talk. When transcripts are unavailable, agents must identify which available sources support their answer.
+
+Edit the guidance in `llms.txt` to change this behavior. The file is guidance for agents, not a transcript service; it does not fetch or host YouTube captions. Changes to it trigger CI and deployment.
+
 ## Testing Your Talks
 
 ### Single Talk Testing
