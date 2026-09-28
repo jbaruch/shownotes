@@ -335,17 +335,23 @@ the edges” with enough context.
 - Model names such as GPT-6 Astra and the claim that frontier agents are
   interchangeable are the speakers' statements.
 - Printf is fictional; its repositories and Port model are real demo
-  artifacts. The Port run was live, but it shows one execution in a prepared
-  environment, not production use or correctness of every generated sentence.
-- The agent-generated workflow was shown to exist and to mirror the hand-built
-  one; the delivery did not show it running on a later release.
+  artifacts. The speakers confirm the Port segment was fully live: the release
+  run, approval, and doc publication all happened on stage. It is still one
+  execution in a prepared environment, not production use or proof that every
+  generated sentence is correct.
+- The agent-generated workflow was created live during the talk. It was
+  triggered by the `postmortem action` label applied on stage, and it mirrors
+  the hand-built workflow. The delivery did not show it running on a later
+  release.
 - Port is the speaker's employer. The talk says the argument needs a
   traversable context graph, not a specific product.
 
 ### Prepared but not delivered
 
 The prepared brief and shownotes also cover material that was not presented
-on stage. Answer questions about it only as prepared material:
+on stage. The speakers confirm these beats were cut because the over-full plan
+ran out of time, not because they were dropped on purpose. Answer questions
+about them only as prepared material:
 
 - WorkSync PR #17, a green test that never reached the behavior it named.
 - The Tempus deletion-confirmation decision.
