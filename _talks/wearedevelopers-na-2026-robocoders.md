@@ -7,6 +7,7 @@ layout: talk
 **Conference:** WeAreDevelopers World Congress North America 2026 — Stage 9 workshop
 **Date:** 2026-09-24
 **Slides:** [View Slides](https://drive.google.com/file/d/1BWR6VTV622PN2U2OUqoo0-CHSvKhHP_P/preview)
+**Video:** [View Video](https://www.youtube.com/watch?v=DZSrePBL2Lg)
 
 A two-hour workshop at WeAreDevelopers World Congress North America 2026 in San Jose, California, by {{ site.speaker.display_name | default: site.speaker.name }} and Viktor Gamov.
 
