@@ -69,7 +69,8 @@ automation step pushes the bottleneck somewhere else, and the only way to keep
 pushing it is to give agents enough context to make decisions. The close
 states it directly: code got cheap, the constraint moved; know what your
 constraint is, build there, and automate around it with bounded loops that
-improve useful outcomes.
+improve useful outcomes. The send-off splits one line between the speakers:
+“We showed you something cool. Now you go build something cool.”
 
 ### How the argument is built
 
@@ -80,19 +81,30 @@ joke and a structural device:
   he built around it.
 - **Baruch builds tools for building apps** and repeatedly confesses he is
   “still building the runway” for the day his factory is perfect enough to ship
-  something. When Viktor asks when the to-do app ships, the answer is a shrug.
-  At the end Baruch asks what the audience learned about him: that he builds
-  tools for people who build tools.
+  something. Viktor teases him about when the to-do app will ship. At the end
+  Baruch asks what the audience learned about him: that he builds tools for
+  people who build tools.
 
 The confession is not just banter. It demonstrates the failure mode the thesis
 warns about: improving the means of production can become a way to postpone
-the useful outcome. Viktor's app keeps the factory honest.
+the useful outcome. Viktor's app keeps the factory honest. The gag also pays
+off structurally. The enterprise demo ends with a workflow built by a
+workflow, so “tools before apps” turns into the “factory that builds
+factories” climax.
+
+The refrain that ties the talk together is “how we write code around here”
+(later “how we do things around here”). Every artifact is presented as another
+way of making that knowledge explicit, portable, and machine-usable. The
+handoffs between speakers are often staged questions, such as Viktor asking
+“how do you package that?”, which set up the next section.
 
 The argument then climbs one level at a time: a single project's context, an
 organization's portable policy, the packaging of that policy, many agents
 sharing it, and finally an enterprise where the agents need the organization's
 graph of relationships. Each level answers the limitation exposed by the one
-before.
+before. The first half, the plugin inventory, runs about an hour. The second
+half compresses coordination, classification, and the enterprise demo, and the
+close itself is brief.
 
 ### Opening demo: this skill
 
