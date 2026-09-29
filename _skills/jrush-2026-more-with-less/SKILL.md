@@ -77,15 +77,13 @@ This is not a hierarchy. The goal is to choose the smallest mechanism that can o
 
 Insufficient evidence is a valid classifier result. It routes the question back to reasoning, a human, or another evidence-gathering step.
 
-### The coding-policy classifier change
+### Two coding-policy examples
 
-[coding-policy PR #484](https://github.com/jbaruch/coding-policy/pull/484) adds bounded classification as the third destination beside skills and scripts. The policy reviewer initially caught a contradiction: adding a third route conflicted with the existing two-route rule. That block is the talk's recursive example of coding-policy reviewing a change to coding-policy.
+The [Script Delegation rule](https://github.com/jbaruch/coding-policy/blob/main/rules/script-delegation.md) defines three destinations. Deterministic operations belong in scripts. A fixed answer set that requires reading meaning belongs in a bounded classifier. Open-ended judgment, synthesis, and context-dependent decisions stay with a skill or LLM. The classifier must admit insufficient evidence, and its label may add a reversible gate but never approve work, remove a gate, or skip a check.
 
-[coding-policy PR #617](https://github.com/jbaruch/coding-policy/pull/617) supplies a concrete Jev-based classifier for Herdr reports. Instead of requesting one free-form verdict, it asks atomic fixed-answer questions and receives probabilities. Deterministic code composes those answers and maps them to conservative bands.
+[coding-policy issue #632](https://github.com/jbaruch/coding-policy/issues/632) addresses the other boundary: when another technically real corner case is no longer worth another fix loop. The foreman may nominate a marginal finding but does not decide it. The judge weighs reachability and impact against added code, prose, future context load, and the new surface created for more findings, then rules `fix`, `defer`, or `decline`. Required checks and serious reachable security or data-loss failures remain floors the judge cannot waive.
 
-The gate is one-directional. A confident label may add reversible friction by requiring a reread or blocking closure until evidence resolves the item. It may not approve work, remove an existing block, or substitute for the reviewer. Errors, fallback labels, unpinned models, and insufficient evidence have no authority to approve.
-
-The distinction is important: typed output prevents an invalid answer shape, not a wrong judgment. Probabilities and calibration still matter.
+Together, the examples separate classification from judgment. The classifier answers a bounded semantic question inside fixed authority. The judge handles a consequential trade-off whose answer depends on broader evidence and cost.
 
 ### Done is a policy decision
 
@@ -136,8 +134,8 @@ The claim is narrower: explicit policy, independent gates, bounded responsibilit
 
 - [JRush Episode 8](https://jrush.bell-sw.com/episode8)
 - [coding-policy repository](https://github.com/jbaruch/coding-policy)
-- [PR #484: bounded classification as a third destination](https://github.com/jbaruch/coding-policy/pull/484)
-- [PR #617: Jev report classifier and one-way gate](https://github.com/jbaruch/coding-policy/pull/617)
+- [Script Delegation: scripts, bounded classifiers, and LLM reasoning](https://github.com/jbaruch/coding-policy/blob/main/rules/script-delegation.md)
+- [Issue #632: send diminishing-returns findings to the judge](https://github.com/jbaruch/coding-policy/issues/632)
 - [Herdr repository](https://github.com/herdrdev/herdr)
 - [TypeSafe AI: Introducing System One Models and Jev](https://typesafe.ai/blog/introducing-system-one-models-and-jev)
 

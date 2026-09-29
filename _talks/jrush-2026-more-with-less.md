@@ -19,7 +19,7 @@ Coding agents can produce more code than one person can responsibly supervise, s
 
 - [JRush Episode 8 — Java in the Age of AI](https://jrush.bell-sw.com/episode8) — The event page for the online presentation.
 - [coding-policy](https://github.com/jbaruch/coding-policy) — The versioned engineering policy used throughout the talk.
-- [coding-policy PR #484](https://github.com/jbaruch/coding-policy/pull/484) — The addition of bounded classification beside skills and scripts, reviewed by the policy it changes.
-- [coding-policy PR #617](https://github.com/jbaruch/coding-policy/pull/617) — The Jev-based Herdr report classifier, atomic questions, probabilities, and one-way gate.
+- [Script Delegation](https://github.com/jbaruch/coding-policy/blob/main/rules/script-delegation.md) — The coding-policy rule that sends deterministic work to scripts, fixed-answer semantic questions to bounded classifiers, and open-ended reasoning to skills and LLMs.
+- [coding-policy issue #632](https://github.com/jbaruch/coding-policy/issues/632) — The diminishing-returns escape hatch: nominate marginal findings to a judge, who rules `fix`, `defer`, or `decline` instead of letting the loop run forever.
 - [Herdr](https://github.com/herdrdev/herdr) — The coordination layer for bounded developer, tester, reviewer, and foreman roles.
 - [Introducing System One Models and Jev](https://typesafe.ai/blog/introducing-system-one-models-and-jev) — TypeSafe AI's introduction to the classifier used in the policy example.
