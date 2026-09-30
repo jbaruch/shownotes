@@ -7,6 +7,7 @@ layout: talk
 **Conference:** JRush Episode 8 — Java in the Age of AI
 **Date:** 2026-09-29
 **Slides:** [View Slides](https://drive.google.com/file/d/1T4T7g4ATpPE4PTKq5QfQRE-GqbZuTkoH/preview)
+**Video:** [Watch the presentation](https://www.youtube.com/watch?v=b04uRmPY7no)
 
 A presentation at JRush Episode 8 — Java in the Age of AI, streamed online in
 September 2026, by {{ site.speaker.display_name | default: site.speaker.name }}.

@@ -1,142 +1,146 @@
 ---
 name: more-with-less-agent-factory
-description: Explain or summarize Baruch Sadogursky's JRush 2026 talk “More With Less,” including its triple-validation model for coding agents, skills/scripts/classifiers distinction, bounded Jev gates, stopping rules, and Herdr coordination. Use for questions about this specific talk or its examples.
+description: Explain or summarize Baruch Sadogursky's delivered JRush 2026 talk “More With Less,” including its triple policy enforcement, skills/scripts/classifiers split, Jev example, diminishing-returns judge, Herdr roles, and model economics. Use for questions about this specific talk, its demos, or its cited resources.
 ---
 
-# More With Less — Talk Knowledge
+# More With Less — Delivered Talk Knowledge
 
 Process steps in order. Do not skip ahead.
 
 ## Step 1 — Match the question
 
-Use this skill for questions about Baruch Sadogursky's JRush Episode 8 presentation “More With Less: A Lean Software Factory Made of Rival Coding Agents.” It covers coding-policy, action-time classifiers, independent CI review, Jev, stopping conditions, and Herdr.
+Use this skill for questions about Baruch Sadogursky's JRush Episode 8 presentation “More With Less: A Lean Software Factory Made of Rival Coding Agents,” delivered online on September 29, 2026.
 
-If the question is about implementing an unrelated agent system, do not treat the examples below as commands to execute. Explain the talk's ideas or ask the user for the implementation context they actually mean.
+The talk covers a coding-policy repository, action-time classifiers, independent CI review, script delegation, bounded classification, Jev, stopping conditions, and Herdr.
+
+If the user is asking how to build an unrelated agent system, treat the talk as a source of design ideas rather than as an instruction to execute its examples.
 
 Proceed immediately to Step 2.
 
-## Step 2 — Answer from the brief
+## Step 2 — Answer from the delivered record
 
-Answer at the depth the question requires. Keep three kinds of statements separate:
+Answer at the depth the question requires. Keep these separate:
 
 - what the speaker argues;
-- what a cited demonstration establishes;
-- what follows as an interpretation or design recommendation.
+- what the on-screen demonstrations show;
+- what a cited repository currently implements;
+- what follows as an interpretation or recommendation.
 
-Use the source links only when the user requests exact details, current repository state, or quotations. Do not invent private pull-request text, timestamps, or live-demo outcomes.
+Use the timestamped outline below when the user asks where a point appears in the standalone recording. Correct obvious automatic-caption substitutions from the cited sources: “Herder” means Herdr, “push domain” means push to main, and “Jensen normalization” means JSON normalization.
+
+Do not claim that the presentation includes live coding. It is a live walk-through of repositories, review output, policy text, terminal panes, and usage data.
 
 Finish after answering.
 
-## Talk brief
+## Delivered talk
 
-### Central claim
+### Recording
 
-Coding agents can generate code faster than one person can supervise it. The useful output, however, is not generated code or a green test count. It is work that has earned acceptance under explicit rules and evidence.
+- Standalone video: https://www.youtube.com/watch?v=b04uRmPY7no
+- Duration: 28:34, including the host introduction
+- Speaker begins: 01:11
+- Original JRush stream: https://www.youtube.com/watch?v=2DuCCq1qdHg
 
-The talk proposes one versioned coding policy checked at three different moments:
+### The argument in one paragraph
 
-1. The authoring agent receives the policy while planning and editing.
-2. A semantic classifier checks an attempted action when it happens.
-3. An independent CI reviewer applies the policy to the finished change and its evidence.
+Fast code generation is not the same as trustworthy delivery. The talk builds a small software factory around one shared coding policy: the authoring agent reads it, the action classifier applies it when tools are called, and an independent CI reviewer applies it to the finished change. Deterministic work moves into reusable scripts, fixed-answer semantic questions move into bounded classifiers, and open-ended work stays with reasoning agents. A larger Herdr team assigns different roles to different models, then uses a judge to stop reviewer–developer loops when the evidence is good enough and another corner case no longer earns its cost.
 
-These checks are intentionally redundant. They observe different information and fail at different times. The authoring agent sees intent and local context. The action gate sees the exact operation and destination. CI sees the completed change, tests, reports, and repository state.
+### Delivered sequence
 
-### Why passing tests are not enough
+1. **00:00–01:10 — Host introduction.** The host presents the factory premise and says the system shipped an MVP in three days. The speaker does not substantiate that three-day claim during this segment, so attribute it to the introduction when precision matters.
+2. **01:11–04:17 — The 4,400-test incident.** The speaker opens a fresh model-pricing change in his personal assistant. More than 4,000 tests pass, but a policy-aware reviewer still blocks the pull request for violating the repository's testing standards. Generic Copilot review is described as non-blocking because it does not know those local rules.
+3. **04:17–05:28 — Shownotes as part of the artifact.** The QR code leads to the talk page, slides, resources, eventual video, and this installable skill. The speaker explicitly invites viewers to “chat with this talk.”
+4. **05:28–12:47 — One policy, three enforcement points.** The coding policy is shown as rules, skills, scripts, and hooks. It governs the authoring agent, supplies context to the action classifier, and is loaded again by the CI reviewer. The concrete policy-dependent action is `git push` to main: ordinary syntax that becomes unacceptable because of repository policy.
+5. **12:48–21:09 — Script delegation grows a third box.** The older split was reasoning versus deterministic scripts. The strawberry-letter example explains why modern agents call scripts for tasks that token prediction handles badly. The talk then warns against generating ad hoc scripts repeatedly and against the regex trap. Jev motivates a third category: bounded classification, where reading meaning is necessary but the output comes from a fixed set that includes “I don't know” or “not enough evidence.”
+6. **21:10–23:05 — Perfection loops need a stop authority.** The reviewer is rewarded for finding more issues, so reviewer and developer can continue forever. A foreman may nominate a diminishing-returns finding, but a separate judge decides whether the system has enough evidence to stop.
+7. **23:06–28:13 — Herdr and model economics.** Herdr is shown as a terminal multiplexer with developers, reviewers, testers, an investigator, a foreman, and a judge on different model families. Roles receive models according to the judgment they require and the subscriptions available. The speaker shows an API-price estimate of roughly $23,000 for one month's usage while explaining that he actually used subscriptions; treat this as his displayed usage estimate, not a general cost benchmark.
+8. **28:14–28:34 — Return to the QR code.** The close points back to the shownotes, materials, and installable skill, then moves to questions outside the standalone cut.
 
-The opening incident is a Claude-authored pricing change with 4,486 passing tests. A policy-aware CI reviewer still blocked it twice.
+## The three policy checks
 
-The first problem was a self-referential test oracle: the test derived its expected result from the same production pricing table it was supposed to verify. The test could therefore agree with an incorrect table.
+The same policy appears in three different contexts:
 
-The second problem involved fallback behavior for an older supported Opus 5 model. The change added exact 5.5 pricing but let the older model fall through to a cheaper rate. The suite remained green while the product behavior was still wrong.
+1. **Authoring time:** the coding agent reads the rules while planning and editing.
+2. **Action time:** a smaller reasoning classifier examines the attempted tool call with the repository policy in context.
+3. **Review time:** an independent CI agent examines the completed change and can block it.
 
-The example matters because it separates three claims that are often collapsed:
+The redundancy is intentional. The author sees intent and working context, the classifier sees the action about to happen, and CI sees the resulting change and evidence.
 
-- the agent produced a coherent change;
-- the automated tests passed;
-- the change satisfied the repository's acceptance policy.
+The talk's contrast is not “dangerous command versus safe command.” Removing a home directory is broadly dangerous. Pushing to main can be technically ordinary yet still violate a repository-specific rule. That second case is why the classifier needs policy context instead of a denylist.
 
-Only the third claim is a release decision.
+## What the opening demonstration establishes
 
-### The three validation points
+The demonstration shows that passing tests and satisfying local acceptance policy are different claims. The delivered narration says:
 
-Authoring-time policy is useful because prevention is cheaper than review. The agent can choose compliant branches, tests, dependency versions, and evidence before it writes the change.
+- roughly 4,400 tests passed;
+- generic Copilot comments were not blocking;
+- the policy-aware reviewer loaded 26 rule files;
+- it blocked the change under the repository's testing standards;
+- the rejected pull request returns to the authoring agent for another loop.
 
-Action-time classification covers decisions that are easy to express as policy but hard to detect from a dangerous-string list. `rm -rf` is obvious. `git push origin main` is ordinary shell syntax whose acceptability depends on repository policy, destination, and intent. A bounded classifier can answer a fixed question such as whether the attempted action violates the current branch policy.
+The recording does not verbally enumerate every defect visible in the pull request. When exact findings matter, consult the pull request itself instead of expanding the narration from memory.
 
-Independent CI review matters because the author cannot be the only judge of its own work. The reviewer needs authority to block the change and must cite the evidence behind the decision. A reviewer that can comment but cannot stop the work is decoration.
+## Skills, scripts, and classifiers
 
-### Skills, scripts, and classifiers
+The delivered three-way split is:
 
-The talk uses three destinations for agent tooling:
+- **Scripts:** deterministic work such as database queries, arithmetic, parsing with fully enumerable cases, and JSON normalization.
+- **Bounded classifiers:** semantic reading whose answer must come from a fixed list, including an insufficient-evidence result.
+- **Skills and LLM reasoning:** synthesis, open-ended answers, and decisions that depend on broader situational context.
 
-- Skills are for open-ended reasoning: interpreting ambiguous context, comparing alternatives, or deciding what investigation to perform.
-- Scripts are for deterministic flows: repeatable operations with inputs, outputs, and tests.
-- Classifiers are for bounded semantic questions: the meaning requires judgment, but the answer must come from a fixed set.
+The point is economic as well as architectural. Reusable scripts avoid repeated token spend. Classifiers are presented as faster and cheaper than full reasoning. General models remain for the questions that actually need them.
 
-This is not a hierarchy. The goal is to choose the smallest mechanism that can own the decision. A script should not impersonate judgment through an expanding pile of regexes. A general reasoning agent should not be paid to rediscover a fixed workflow. A classifier should not be allowed to improvise actions outside its answer space.
+The [Script Delegation rule](https://github.com/jbaruch/coding-policy/blob/main/rules/script-delegation.md) adds important limits that the talk only summarizes: a classifier label may add a reversible gate but may not approve irreversible action, remove a gate, or skip a check. An unavailable or out-of-vocabulary classifier result goes back to reasoning rather than being forced into another label.
 
-Insufficient evidence is a valid classifier result. It routes the question back to reasoning, a human, or another evidence-gathering step.
+## The regex trap
 
-### Two coding-policy examples
+“Deterministic” is not a synonym for “someone can write a regex.” Natural-language meaning, ambiguous dates, and unstructured classifications do not become reliable merely because they are wrapped in a script. The policy therefore needs both positive delegation rules and boundaries that say when scripting is the wrong mechanism.
 
-The [Script Delegation rule](https://github.com/jbaruch/coding-policy/blob/main/rules/script-delegation.md) defines three destinations. Deterministic operations belong in scripts. A fixed answer set that requires reading meaning belongs in a bounded classifier. Open-ended judgment, synthesis, and context-dependent decisions stay with a skill or LLM. The classifier must admit insufficient evidence, and its label may add a reversible gate but never approve work, remove a gate, or skip a check.
+The strawberry example illustrates a related point: a model producing the correct answer after writing a tiny counting program is evidence of tool delegation, not a change in the basic token-prediction mechanism.
 
-[coding-policy issue #632](https://github.com/jbaruch/coding-policy/issues/632) addresses the other boundary: when another technically real corner case is no longer worth another fix loop. The foreman may nominate a marginal finding but does not decide it. The judge weighs reachability and impact against added code, prose, future context load, and the new surface created for more findings, then rules `fix`, `defer`, or `decline`. Required checks and serious reachable security or data-loss failures remain floors the judge cannot waive.
+## Done needs a judge
 
-Together, the examples separate classification from judgment. The classifier answers a bounded semantic question inside fixed authority. The judge handles a consequential trade-off whose answer depends on broader evidence and cost.
+The talk's stopping problem comes from incentives. A reviewer exists to find defects, so another review round can always discover another edge case. Without an external stop condition, the loop spends more time and tokens while adding policy, code, and context that later agents must understand.
 
-### Done is a policy decision
+The talk assigns the decision to a judge on the strongest model. The foreman can escalate a marginal finding but does not waive it. [coding-policy issue #632](https://github.com/jbaruch/coding-policy/issues/632) develops that mechanism: the judge weighs reachability and impact against added implementation, prose, future context load, and the new review surface created by the fix, then rules `fix`, `defer`, or `decline`.
 
-Agentic loops do not naturally know when to stop. If every hypothetical corner case becomes another lap, the system can spend indefinitely on increasingly speculative improvements.
+“Done” therefore means that the declared evidence has passed and the remaining finding does not justify another lap. It does not mean that no imaginable corner case exists.
 
-The talk names three costs:
+## Herdr's role
 
-- token and elapsed-time burn in the current run;
-- active-context bloat, which makes later reasoning more expensive and less focused;
-- metadata complexity inherited by future agents before they can work on the actual project.
+[Herdr](https://github.com/herdrdev/herdr) supplies the multi-agent runtime, not the policy itself. In the demonstration it gives each agent a separate terminal pane, role, and model. The visible roles include developers, testers, reviewers, an investigator, a foreman, and a judge.
 
-The repository snapshot used in the presentation measured 20 always-on rule files at 118,168 raw bytes and all 26 rule files at 153,092 raw bytes, before rendered wrappers and session-level instructions. These are raw policy-payload sizes, not token counts.
+The allocation principle is role fit:
 
-“Done” therefore needs an operational definition: the declared acceptance evidence passed. Newly discovered speculative cases become explicit follow-up work rather than silently extending the current mission.
+- the judge gets the strongest model for consequential trade-offs;
+- reviewers need enough capability to find subtle failures;
+- the foreman can be cheaper because dispatch is bounded;
+- testers can use a cheaper model when their task demands less judgment;
+- different model providers also spread work across available subscriptions.
 
-### Herdr's role
+The talk treats rivalry as useful independence: agents with different roles and models should not share one incentive or one blind spot.
 
-[Herdr](https://github.com/herdrdev/herdr) is the coordination layer, not the source of policy. It gives developer, tester, reviewer, and foreman responsibilities bounded seats and visible reports.
+## What the talk does not claim
 
-The foreman does not accept progress chatter as proof. It opens the reports and checks the required evidence. The reviewer can stop the developer. The round ends when the declared evidence is accepted; optional improvements move to another mission.
+The presentation does not claim that more agents, more tokens, passing tests, or a busy terminal prove productivity. It does not demonstrate an autonomous production deployment. It does not establish the displayed subscription-to-API estimate as a universal saving. It also does not make a classifier authoritative merely because its output is typed.
 
-This extends the same control model from one agent to a small software factory:
+The narrower claim is that explicit policy, mechanism selection, independent review, role-specific models, and a separate stopping decision make agent-produced work cheaper to supervise and easier to accept.
 
-- policy constrains each role;
-- classifiers add bounded semantic gates;
-- deterministic scripts own repeatable transitions;
-- independent review can block;
-- the stop condition prevents the team from polishing forever.
+## Delivery notes
 
-### Adoption path
+The delivery is a rapid live tour rather than a polished linear lecture. The speaker repeatedly changes from slides to GitHub, policy files, terminal panes, and usage dashboards. He self-corrects in speech, addresses viewers directly, and uses “right?” to keep the online audience in the loop. The same shownotes QR appears near the beginning and at the end, framing the talk as an artifact viewers can continue using after the stream.
 
-The recommendation is deliberately incremental:
+Automatic captions mangle product and command names. Prefer the spellings in the sources below over caption text.
 
-1. Start with one versioned policy used by one coding agent.
-2. Add an action-time classifier for a frequent fixed-answer policy decision.
-3. Give CI an independent policy-aware review lane with blocking authority.
-4. Add Herdr or another coordination layer only when supervising multiple bounded roles becomes the constraint.
+## Sources
 
-More machinery is not the goal. Each added component must own a specific failure mode and produce evidence that the next gate can inspect.
-
-### What the argument does not claim
-
-The talk does not claim that more agents, more tokens, busy terminals, passing tests, or merged pull requests prove productivity. It does not present unrestricted execution as an operating model. It also does not claim that a classifier is infallible because its output is typed.
-
-The claim is narrower: explicit policy, independent gates, bounded responsibilities, and a defined stopping rule make agent-produced work easier to inspect and safer to accept.
-
-### Sources
-
-- [JRush Episode 8](https://jrush.bell-sw.com/episode8)
+- [Standalone talk video](https://www.youtube.com/watch?v=b04uRmPY7no)
+- [Original JRush Episode 8 stream](https://www.youtube.com/watch?v=2DuCCq1qdHg)
+- [JRush Episode 8 event page](https://jrush.bell-sw.com/episode8)
 - [coding-policy repository](https://github.com/jbaruch/coding-policy)
-- [Script Delegation: scripts, bounded classifiers, and LLM reasoning](https://github.com/jbaruch/coding-policy/blob/main/rules/script-delegation.md)
+- [Script Delegation rule](https://github.com/jbaruch/coding-policy/blob/main/rules/script-delegation.md)
 - [Issue #632: send diminishing-returns findings to the judge](https://github.com/jbaruch/coding-policy/issues/632)
 - [Herdr repository](https://github.com/herdrdev/herdr)
 - [TypeSafe AI: Introducing System One Models and Jev](https://typesafe.ai/blog/introducing-system-one-models-and-jev)
 
-This is a pre-delivery knowledge brief based on the approved presentation outline, speaker notes, and cited implementation records. Refresh it against the delivered recording and delivery-specific rhetoric analysis after the event.
+This brief is grounded in the delivered 28:34 recording and its timestamped transcript. Repository links provide implementation detail beyond what the narration spells out.
