@@ -126,9 +126,19 @@ The presentation does not claim that more agents, more tokens, passing tests, or
 
 The narrower claim is that explicit policy, mechanism selection, independent review, role-specific models, and a separate stopping decision make agent-produced work cheaper to supervise and easier to accept.
 
+## Confirmed delivery clarifications
+
+The speaker clarified these points after reviewing the delivered recording:
+
+- The host introduction is deliberately retained in the standalone cut. Do not describe it as unwanted pre-roll.
+- The repeated movement through policy files is intentional reinforcement. The distinctions among authoring policy, action-time classification, CI review, scripts, skills, and classifiers are not trivial enough to teach once and move on.
+- The three-layer validation and skills/scripts/classifier visuals were progressively revealed during the presentation. The static PDF collapses those builds into final-state pages.
+- The close accidentally omitted a concrete call to action. “Build or adapt your own coding policy” is the intended durable action for a future delivery; for an Americas audience, the speaker would pair it with a PortCon invitation. Do not report that either CTA was delivered in this recording.
+- Humor effectiveness is unknown. This was an online conference and the speaker had no reliable audience-reaction channel, so silence in the transcript is not evidence that the strawberry example, absurd placards, civilian inspector, triple-review bureaucracy, or endless-perfection-loop joke fell flat.
+
 ## Delivery notes
 
-The delivery is a rapid live tour rather than a polished linear lecture. The speaker repeatedly changes from slides to GitHub, policy files, terminal panes, and usage dashboards. He self-corrects in speech, addresses viewers directly, and uses “right?” to keep the online audience in the loop. The same shownotes QR appears near the beginning and at the end, framing the talk as an artifact viewers can continue using after the stream.
+The delivery is a rapid live tour rather than a polished linear lecture. The speaker repeatedly changes from slides to GitHub, policy files, terminal panes, and usage dashboards. He self-corrects in speech, addresses viewers directly, and uses “right?” to keep the online audience in the loop. The same shownotes QR appears near the beginning and at the end, framing the talk as an artifact viewers can continue using after the stream. Progressive builds help pace the two dense framework visuals even though the downloadable static deck shows only their completed states.
 
 Automatic captions mangle product and command names. Prefer the spellings in the sources below over caption text.
 
