@@ -17,7 +17,7 @@ Process steps in order. Do not skip ahead.
 
 Use this brief for summaries, explanations and questions about the October 5,
 2026 Devoxx Belgium session. It describes the prepared three-hour version and
-local build evidence recorded October 1–2. It is not a transcript or record of
+local build evidence recorded October 1–4. It is not a transcript or record of
 what the Devoxx audience saw. For a different delivery, identify the mismatch
 and finish; otherwise continue to Step 2.
 
@@ -190,10 +190,13 @@ accounting. In this build, human confirmation is a native graph span; applicatio
 delivery and post-send ingestion remain outside native agent spans. The TamboUI evidence
 panel makes those statuses visible; it does not make absent spans appear.
 
-The dashboard pins the current candidate, critic feedback and recipient beside
-the conversation, timed trace and receipt/memory evidence. Full-screen views
-support inspecting long messages and traces. Its provider-free fixture preview
-is explicitly simulated and proves layout only, not agent execution.
+J-Claw remains a general-purpose assistant. Its dashboard has Conversation,
+Workspace, Activity and Evidence panes. Workspace displays the current task's
+answer or rewrite; candidate, critic and receipt details appear when that task
+uses the reviewed workflow. The activity ribbon records actual stage visits,
+including retries, with no fixed calendar or drafting topology. Full-screen
+views support long outputs and traces. Its provider-free fixture preview is
+explicitly simulated and proves layout only, not agent execution.
 
 ### What was observed locally before the event
 
@@ -287,7 +290,7 @@ refresh the brief against the recording and delivered analysis afterward.
 - [Devoxx session](https://m.devoxx.com/events/dvbe26/talks/25027/codepocalypse-now-langchain4j-vs-jetbrains-koog)
 - [Devoxx Koog demo and run instructions](https://github.com/jbaruch/jclaw-devoxx)
 - [Local build evidence](https://github.com/jbaruch/jclaw-devoxx/blob/main/BUILD-NOTES.md)
-- [Download Viktor’s demo handoff](https://github.com/jbaruch/jclaw-devoxx/releases/download/devoxx-be-2026-demo/viktor-demo-handoff.zip)
+- [Download Viktor’s demo handoff](https://github.com/jbaruch/jclaw-devoxx/releases/latest/download/viktor-demo-handoff.zip)
 - [Shared implementation and comparison contract](https://github.com/jbaruch/jclaw-devoxx/blob/main/HANDOFF-LC4J.md)
 - [Earlier LangChain4j IdeaConf implementation](https://github.com/gAmUssA/jclaw-ideaconf-2026)
 - [Koog documentation](https://docs.koog.ai/)
@@ -325,6 +328,14 @@ authorize a send; no hidden reasoning or equivalent CLI price is claimed.
 
 That recorded run used the earlier two-refinement limit and blocked without sending.
 The current shared policy is six refinements for Judge and Human together, with
-seven candidate versions. All 66 app tests pass, including two model rejections
+seven candidate versions. All 69 app tests pass, including two model rejections
 plus four human rejections followed by approval of candidate seven. Keep the
 historical receipt distinct from the new policy.
+
+The October 4 dashboard update adds rendered tests for generic startup, arbitrary
+repeated stages and ordinary answers after candidate review. A rebuild during a
+live session exposed a missing lazily loaded JVM class; each launch now runs
+private copies of app and mock JARs. An overlapping-run check verifies that a
+later build cannot replace a running session's files. This UI/launcher validation
+does not replace the earlier complete provider-run evidence or the speaker's
+review of the current demo. Step branches still wait for that review.

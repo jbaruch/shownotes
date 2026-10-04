@@ -35,7 +35,7 @@ in progress.
 
 - [J-Claw — complete Devoxx Koog implementation](https://github.com/jbaruch/jclaw-devoxx)
 - [Koog runbook — setup, prompts, workflow, human decisions and traces](https://github.com/jbaruch/jclaw-devoxx/blob/main/RUNBOOK.md)
-- [Download Viktor’s demo handoff — shared source, fixtures and built MCP jars](https://github.com/jbaruch/jclaw-devoxx/releases/download/devoxx-be-2026-demo/viktor-demo-handoff.zip)
+- [Download Viktor’s demo handoff — shared source, fixtures and built MCP jars](https://github.com/jbaruch/jclaw-devoxx/releases/latest/download/viktor-demo-handoff.zip)
 - [Shared LangChain4j handoff — task, mock fixtures and acceptance contracts](https://github.com/jbaruch/jclaw-devoxx/blob/main/HANDOFF-LC4J.md)
 - [J-Claw — Viktor's earlier LangChain4j Agentic implementation (IdeaConf)](https://github.com/gAmUssA/jclaw-ideaconf-2026)
 - [Build evidence — reviewed Koog guidance, tests and local live runs](https://github.com/jbaruch/jclaw-devoxx/blob/main/BUILD-NOTES.md)
@@ -63,7 +63,7 @@ in progress.
 - [Model Context Protocol (MCP)](https://modelcontextprotocol.io/)
 - [Quarkus MCP Server](https://github.com/quarkiverse/quarkus-mcp-server)
 - [TamboUI](https://tamboui.dev/)
-- [Stage dashboard controls — live, candidate, trace and evidence views](https://github.com/jbaruch/jclaw-devoxx/blob/main/tui/README.md)
+- [Assistant dashboard controls — workspace, activity and evidence](https://github.com/jbaruch/jclaw-devoxx/blob/main/tui/README.md)
 - [Langfuse documentation](https://langfuse.com/docs)
 - [LangChain4j Agentic monitoring — topology and execution reports](https://docs.langchain4j.dev/tutorials/agents/#monitoring)
 
