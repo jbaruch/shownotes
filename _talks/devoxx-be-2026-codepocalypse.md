@@ -18,8 +18,10 @@ Both ecosystems can build a real JVM agent. Reliable behavior comes from explici
 ## Resources
 
 These are the prepared resources for the October 5 session. The complete Koog app
-is in the linked reference repository; the latest updates are staged locally,
-and step branches follow demo review. Viktor's linked repository is the earlier
+and its current Jev/refinement updates are published in the linked reference
+repository. A public handoff ZIP supplies Viktor’s agent with the shared fixtures,
+built mocks and comparison contract. Step branches wait until Baruch reviews
+the complete demo on main. Viktor's linked repository is the earlier
 IdeaConf implementation. The native Port workflow completed a browser-operated
 mock rehearsal on candidate seven using all six shared refinements, with one
 matching receipt and one sent-history write. It uses API-based model roles.
@@ -33,6 +35,7 @@ in progress.
 
 - [J-Claw — complete Devoxx Koog implementation](https://github.com/jbaruch/jclaw-devoxx)
 - [Koog runbook — setup, prompts, workflow, human decisions and traces](https://github.com/jbaruch/jclaw-devoxx/blob/main/RUNBOOK.md)
+- [Download Viktor’s demo handoff — shared source, fixtures and built MCP jars](https://github.com/jbaruch/jclaw-devoxx/releases/download/devoxx-be-2026-demo/viktor-demo-handoff.zip)
 - [Shared LangChain4j handoff — task, mock fixtures and acceptance contracts](https://github.com/jbaruch/jclaw-devoxx/blob/main/HANDOFF-LC4J.md)
 - [J-Claw — Viktor's earlier LangChain4j Agentic implementation (IdeaConf)](https://github.com/gAmUssA/jclaw-ideaconf-2026)
 - [Build evidence — reviewed Koog guidance, tests and local live runs](https://github.com/jbaruch/jclaw-devoxx/blob/main/BUILD-NOTES.md)
@@ -71,6 +74,9 @@ in progress.
 - [Jev Choice — options, probabilities and confidence](https://docs.typesafe.ai/primitives/choice)
 - [Jev 1.13 — documented model limits](https://docs.typesafe.ai/model-jaggedness/jev-1.13)
 - [Merged LangChain4j DecisionModel / TypeSafe integration](https://github.com/langchain4j/langchain4j/pull/6469)
+
+- [J-Claw Jev validation — cases, raw responses and trace receipt](https://github.com/jbaruch/jclaw-devoxx/tree/main/validation/jev)
+- [Released native LangChain4j Jev adapter validation](https://github.com/jbaruch/jclaw-devoxx/tree/main/validation/langchain4j)
 
 ### A factory for factories with Port
 
