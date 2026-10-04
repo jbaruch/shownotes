@@ -20,7 +20,8 @@ Both ecosystems can build a real JVM agent. Reliable behavior comes from explici
 These are the prepared resources for the October 5 session. The complete Koog app
 and its current Jev/refinement updates are published in the linked reference
 repository. A public handoff ZIP supplies Viktor’s agent with the shared fixtures,
-built mocks and comparison contract. Step branches are being prepared. Viktor's linked repository is the earlier
+built mocks and comparison contract. Step branches wait until Baruch reviews
+the complete demo on main. Viktor's linked repository is the earlier
 IdeaConf implementation. The native Port workflow completed a browser-operated
 mock rehearsal on candidate seven using all six shared refinements, with one
 matching receipt and one sent-history write. It uses API-based model roles.
