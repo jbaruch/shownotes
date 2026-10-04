@@ -280,7 +280,7 @@ it adds no framework vote or paired performance measurement.
 ### Source scope and further reading
 
 This pre-talk brief follows the approved narrative architecture and its
-structural rhetorical review, reconciled with demo code and October 1–2 build
+structural rhetorical review, reconciled with demo code and October 1–4 build
 evidence. The current source and Viktor’s downloadable handoff are published
 on GitHub. The constant task, successive evidence gaps, automatic versus
 human boundary, skipped-critic counterexample and closing callback shape its
