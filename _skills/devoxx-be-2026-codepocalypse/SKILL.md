@@ -278,7 +278,8 @@ it adds no framework vote or paired performance measurement.
 
 This pre-talk brief follows the approved narrative architecture and its
 structural rhetorical review, reconciled with demo code and October 1–2 build
-evidence. Current source updates are staged locally; publication is pending. The constant task, successive evidence gaps, automatic versus
+evidence. The current source and Viktor’s downloadable handoff are published
+on GitHub. The constant task, successive evidence gaps, automatic versus
 human boundary, skipped-critic counterexample and closing callback shape its
 explanation. No delivery-specific Devoxx analysis exists before the event;
 refresh the brief against the recording and delivered analysis afterward.
@@ -286,6 +287,7 @@ refresh the brief against the recording and delivered analysis afterward.
 - [Devoxx session](https://m.devoxx.com/events/dvbe26/talks/25027/codepocalypse-now-langchain4j-vs-jetbrains-koog)
 - [Devoxx Koog demo and run instructions](https://github.com/jbaruch/jclaw-devoxx)
 - [Local build evidence](https://github.com/jbaruch/jclaw-devoxx/blob/main/BUILD-NOTES.md)
+- [Download Viktor’s demo handoff](https://github.com/jbaruch/jclaw-devoxx/releases/download/devoxx-be-2026-demo/viktor-demo-handoff.zip)
 - [Shared implementation and comparison contract](https://github.com/jbaruch/jclaw-devoxx/blob/main/HANDOFF-LC4J.md)
 - [Earlier LangChain4j IdeaConf implementation](https://github.com/gAmUssA/jclaw-ideaconf-2026)
 - [Koog documentation](https://docs.koog.ai/)
