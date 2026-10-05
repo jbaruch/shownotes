@@ -20,9 +20,13 @@ Both ecosystems can build a real JVM agent. Reliable behavior comes from explici
 These are the prepared resources for the October 5 session. The complete Koog app
 and its current Jev/refinement updates are published in the linked reference
 repository. A public handoff ZIP supplies Viktor’s agent with the shared fixtures,
-built mocks and comparison contract. Step branches wait until Baruch reviews
-the complete demo on main. Viktor's linked repository is the earlier
-IdeaConf implementation. The native Port workflow completed a browser-operated
+built mocks and comparison contract. Koog step branches wait until Baruch reviews
+the complete demo on main. Viktor's Java LangChain4j implementation has its own
+Devoxx repository, seven chapter checkpoints and a companion workshop manual.
+The earlier IdeaConf implementation is linked separately for reference.
+The Java demo uses Jev for typed decisions, Gemini for chat and skills, Claude
+via the Anthropic API for Draft/Refine, and OpenAI via its API for Judge.
+The native Port workflow completed a browser-operated
 mock rehearsal on candidate seven using all six shared refinements, with one
 matching receipt and one sent-history write. It uses API-based model roles.
 Human caught semantic excuse reuse and supplied a separate fictional deadline;
@@ -33,6 +37,10 @@ in progress.
 
 ### Demo code and run instructions
 
+- [Java LangChain4j workshop — seven chapters, setup, sample prompts and interaction diagrams](https://gamov.io/workshops/codepocalypse-langchain4j/)
+- [J-Claw — Viktor's Java LangChain4j Devoxx implementation and chapter checkpoints](https://github.com/gAmUssA/jclaw-devoxx-be-2026)
+- [Java runbook — setup, prompts, approval, mock delivery and HTML reports](https://github.com/gAmUssA/jclaw-devoxx-be-2026/blob/main/RUNBOOK.md)
+- [Java model roles — Jev decisions, Gemini chat, Claude drafts and OpenAI Judge](https://github.com/gAmUssA/jclaw-devoxx-be-2026/blob/main/docs/adr/0004-native-claude-and-openai-api-roles.md)
 - [J-Claw — complete Devoxx Koog implementation](https://github.com/jbaruch/jclaw-devoxx)
 - [Koog runbook — setup, prompts, workflow, human decisions and traces](https://github.com/jbaruch/jclaw-devoxx/blob/main/RUNBOOK.md)
 - [Download Viktor’s demo handoff — shared source, fixtures and built MCP jars](https://github.com/jbaruch/jclaw-devoxx/releases/latest/download/viktor-demo-handoff.zip)
@@ -46,6 +54,18 @@ in progress.
 - [Full multi-model strategy with subscription CLI stages](https://github.com/jbaruch/jclaw-devoxx/blob/main/app/src/main/kotlin/jclaw/Strategy.kt)
 - [Typed request, candidate, critic and receipt contracts](https://github.com/jbaruch/jclaw-devoxx/tree/main/domain/src/main/kotlin/jclaw/domain)
 - [Delivery implementation — exact candidate and validated mock receipt](https://github.com/jbaruch/jclaw-devoxx/blob/main/app/src/main/kotlin/jclaw/Delivery.kt)
+- [Java Agentic workflow — typed agents, bounded refinement and human approval](https://github.com/gAmUssA/jclaw-devoxx-be-2026/blob/main/app/src/main/java/dev/gamov/jclaw/agent/Workflow.java)
+- [Java delivery boundary — approved candidate and receipt validation](https://github.com/gAmUssA/jclaw-devoxx-be-2026/blob/main/app/src/main/java/dev/gamov/jclaw/domain/Delivery.java)
+
+### LangChain4j workshop documentation
+
+- [AI Services — Java interfaces backed by chat models](https://docs.langchain4j.dev/tutorials/ai-services/)
+- [MCP — connecting model tools to servers](https://docs.langchain4j.dev/tutorials/mcp/)
+- [Chat memory — conversation context, persistence and the distinction from history](https://docs.langchain4j.dev/tutorials/chat-memory/)
+- [Skills — reusable instructions loaded on demand](https://docs.langchain4j.dev/tutorials/skills/)
+- [Structured outputs — typed results and JSON schemas](https://docs.langchain4j.dev/tutorials/structured-outputs/)
+- [Agentic human-in-the-loop — approval as a non-AI agent](https://docs.langchain4j.dev/tutorials/agents/#human-in-the-loop)
+- [Observability — model, retrieval and tool listeners](https://docs.langchain4j.dev/tutorials/observability/)
 
 ### Frameworks and reusable skills
 
@@ -74,6 +94,7 @@ in progress.
 - [Jev Choice — options, probabilities and confidence](https://docs.typesafe.ai/primitives/choice)
 - [Jev 1.13 — documented model limits](https://docs.typesafe.ai/model-jaggedness/jev-1.13)
 - [Merged LangChain4j DecisionModel / TypeSafe integration](https://github.com/langchain4j/langchain4j/pull/6469)
+- [LangChain4j Decision Models — bounded choices and typed decision contracts](https://docs.langchain4j.dev/tutorials/decision-models/)
 
 - [J-Claw Jev validation — cases, raw responses and trace receipt](https://github.com/jbaruch/jclaw-devoxx/tree/main/validation/jev)
 - [Released native LangChain4j Jev adapter validation](https://github.com/jbaruch/jclaw-devoxx/tree/main/validation/langchain4j)
