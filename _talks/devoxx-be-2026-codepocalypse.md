@@ -56,6 +56,7 @@ in progress.
 - [Delivery implementation — exact candidate and validated mock receipt](https://github.com/jbaruch/jclaw-devoxx/blob/main/app/src/main/kotlin/jclaw/Delivery.kt)
 - [Java Agentic workflow — typed agents, bounded refinement and human approval](https://github.com/gAmUssA/jclaw-devoxx-be-2026/blob/main/app/src/main/java/dev/gamov/jclaw/agent/Workflow.java)
 - [Java delivery boundary — approved candidate and receipt validation](https://github.com/gAmUssA/jclaw-devoxx-be-2026/blob/main/app/src/main/java/dev/gamov/jclaw/domain/Delivery.java)
+- [Java organizer evidence — typed MCP context shared by Draft and Judge](https://github.com/gAmUssA/jclaw-devoxx-be-2026/blob/main/docs/adr/0006-typed-organizer-planning-context.md)
 
 ### LangChain4j workshop documentation
 
