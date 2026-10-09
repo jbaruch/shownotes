@@ -7,6 +7,7 @@ layout: talk
 **Conference:** Devoxx Belgium 2026, Deep Dive
 **Date:** 2026-10-05
 **Slides:** [View Slides](https://drive.google.com/file/d/1jpwSxTC2LbaF2zVeYSHXfLgtMB6afoSq/preview)
+**Video:** [View Video](https://www.youtube.com/watch?v=bFeRhxfqBeU)
 
 A presentation at Devoxx Belgium 2026 in October 2026 by
 {{ site.speaker.display_name | default: site.speaker.name }} and Viktor Gamov.
