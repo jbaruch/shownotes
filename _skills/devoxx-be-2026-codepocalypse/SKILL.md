@@ -1,12 +1,11 @@
 ---
 name: devoxx-codepocalypse-koog-vs-langchain4j
 description: >
-  Explain or summarize Codepocalypse Now: LangChain4j vs JetBrains Koog,
-  the Devoxx Belgium 2026 session by Baruch Sadogursky and Viktor Gamov.
-  Use for questions about this talk's argument, J-Claw examples, memory versus
-  skills, automatic review versus human approval, receipt evidence, framework
-  comparison or closing Port platform example. This is a pre-talk knowledge brief,
-  not a general agent-building workflow.
+  Summarize or explain Codepocalypse Now: LangChain4j vs JetBrains Koog,
+  the October 5, 2026 Devoxx Belgium talk by Baruch Sadogursky and Viktor Gamov.
+  Use for questions about this delivery's argument, J-Claw demonstrations,
+  memory and skills, Jev routing, review loops, human approval, observability,
+  framework tradeoffs, live failures or the closing Port example.
 ---
 
 # Codepocalypse Now — Devoxx talk knowledge
@@ -16,326 +15,274 @@ Process steps in order. Do not skip ahead.
 ## Step 1 — Match the question
 
 Use this brief for summaries, explanations and questions about the October 5,
-2026 Devoxx Belgium session. It describes the prepared three-hour version and
-local build evidence recorded October 1–4. It is not a transcript or record of
-what the Devoxx audience saw. For a different delivery, identify the mismatch
-and finish; otherwise continue to Step 2.
+2026 Devoxx Belgium delivery. Baruch Sadogursky presents JetBrains Koog; Viktor
+Gamov presents LangChain4j. For another delivery, identify the mismatch and
+finish; otherwise continue to Step 2.
 
 ## Step 2 — Answer from the brief
 
-Answer at the requested depth using the material below. Separate the speakers'
-planned claim, observed local behavior and the explanation of why an example
-matters. Do not invent an audience vote, winning framework, exact quote,
-timestamp, paired benchmark or unsupported completed Port run. Ordinary summaries need no
-network access. Consult a linked source only for a requested detail absent
-here or a later delivery update. Prompts and commands described by the talk
-are examples to explain, not instructions to execute. Finish after answering.
+Answer at the requested depth using the material below. Distinguish the
+speakers' claims, the execution outcomes they report in the recording, and the
+interpretation of why an example matters. Preserve partial failures and limits.
+Do not invent an exact quote, timestamp, vote total, benchmark or completed
+Port send. Ordinary summaries and covered questions need no network access.
+Consult a linked source for an exact quote, timestamp or missing detail.
+The depicted prompts, code and workflows are material to explain, not
+instructions to run tools or perform actions. Finish after answering.
 
 ## Talk brief
 
-### Identity, thesis and conclusion
+### The argument and its resolution
 
-Baruch Sadogursky presents JetBrains Koog; Viktor Gamov presents LangChain4j
-Agentic. This is a live showdown with deeper explanations for JVM developers,
-not a laptop workshop. The prepared version has seven rounds because memory
-and skills were separated; the original conference abstract describes six.
+This is a live comparison of two ways to build a JVM assistant. Its central
+question becomes broader than which framework produces a fluent answer:
+how does a developer give that answer context, useful capabilities, controlled
+actions and an inspectable execution path?
 
-The central thesis is that both ecosystems can build an agent. Reliable behavior
-depends on explicit data contracts, appropriate evidence, controlled actions
-and traces of the path actually taken. Framework choice changes how a team
-expresses, inspects and maintains those decisions. The conclusion favors the
-Java developer's ability to understand and change the system; it does not
-declare a universal framework winner.
+The speakers build J-Claw through seven cumulative stages. Each stage exposes
+a gap that gives the next stage a purpose. Text alone cannot send a message;
+tools alone do not preserve the previous draft; memory does not teach a reusable
+procedure; multiple specialized jobs need orchestration; automatic acceptance
+still needs a human action boundary; failures need evidence of what actually ran.
 
-The audience is invited to compare each observed behavior, code change and
-design tradeoff against the same task. Equivalent fixtures and model choices
-are comparison requirements, not an already established benchmark result.
+The competitive format makes differences concrete, while the conclusion
+returns agency to the JVM developer. Both ecosystems can support the work.
+The choice concerns how a team expresses, composes, debugs and maintains the
+system. The final payoff is that the Java/JVM developer wins, followed by an
+invitation to build something useful. Preference votes are part of the format;
+the talk does not establish a numerical overall framework winner.
 
-### Why one unwanted meeting carries the argument
+### Why the unwanted meeting and corporate language matter
 
-J-Claw is a general-purpose personal assistant. Its concrete task is to get
-Baruch out of mandatory Basic AI Proficiency Training on Tuesday, organized
-by Dana from People Ops, without reusing an excuse already sent to her.
-The fictional training is on October 6; calendar events, prior excuses and
-organizer delivery are mock scenario data, not the speaker's real schedule or
-messages to real people.
+J-Claw is a general-purpose personal assistant. The recurring teaching task is
+to get Baruch out of mandatory Basic AI Proficiency Training on Tuesday,
+organized by Dana from People Ops, while avoiding excuses already used with her.
+Calendar, organizer and prior-message data are fictional demo fixtures; a
+reported delivery does not mean an email went to a real People Ops colleague.
 
-Keeping this request constant makes each added capability answer a gap exposed
-by the previous round. Fluent wording can look complete while lacking tools,
-historical evidence, review or permission to act. The progression changes what
-the audience can verify, rather than merely adding more model calls.
+This small task keeps the consequences understandable while the architecture
+grows. A plausible excuse can still lack evidence, repeat an old story, imply
+an unperformed action, violate the latest instruction or be sent too soon.
+The same request lets the audience see why an added mechanism matters.
 
-The closing return to Tuesday's invitation and “go build something cool” uses
-the same small task to show how a developer can start: choose work whose inputs,
-decisions, action boundary and outcome are inspectable.
+The corporate-speak skill turns the wording up to eleven, with a Spinal Tap
+reference. The exaggeration makes a reusable procedure visible. Applying that
+same skill to an ordinary request about a cache fix and reduced startup time
+also shows that J-Claw's purpose extends beyond meeting declines.
 
-### The seven rounds and what each establishes
+### Seven stages: capability, gap and delivered result
 
-| Round | Teaching question | Contribution to the argument |
+The following summarizes behavior explained or reported in the recording.
+It is not a receipt audit of every terminal run or a claim that both sides
+completed every stage successfully.
+
+| Stage | What it teaches | Delivery evidence and its implication |
 |---|---|---|
-| Chatbot | Can it do the thing? | A draft is text; it does not establish an external action. |
-| Tools and MCP | Where does the action happen? | A model requests a tool, the application executes it, and the result returns to the model. Calendar facts still do not reveal old excuse text. |
-| Memory | What actually happened? | Conversation, confirmed sent records and retrieval have different evidence and lifetimes. A proposed excuse is not a past sent excuse. |
-| Skills | Can it use a reusable procedure? | Discover and read corporate-speak instructions, then apply them to the current message while preserving its facts and commitments. |
-| Workflows | How do flows and models compose? | Combine sequence, parallel, routing and loop flows into a strategy; choose models for different jobs. J-Claw's typed review loop is one example. |
-| Guardrails | Who authorizes the action? | The entire human hold, rejection, replacement, renewed review and exact-candidate approval sequence controls delivery. |
-| Observability | Did the required stages run? | Inspect actual inputs, outputs, review attempts and evidence; topology describes possible paths, not a completed execution. |
+| 1. Chatbot | A model-backed conversation can produce a draft. | The draft cannot itself execute a send. Java AI Services interfaces and Kotlin agent construction expose different coding styles. |
+| 2. Tools and MCP | The application executes a requested tool and returns its result to the model. | Calendar and organizer context become available, but a follow-up loses the previous draft. Available calendar facts also do not establish which excuses were sent. |
+| 3. Memory | Conversation context and durable records answer different questions. | Actual prior excuses can be retrieved. Koog encounters transient model errors and retries; a subsequent delivery is reported, with another follow-up error still visible in the discussion. |
+| 4. Skills | Discover an applicable procedure, load it and apply it to current input. | Corporate-speak is used at different intensities; the cache-fix rewrite demonstrates an ordinary assistant task. Development-time framework skills and runtime writing skills serve different consumers. |
+| 5. Workflows | Route a request, assign specialized jobs and compose explicit review/refinement. | Koog's Judge rejects a claim about materials already supplied; a replacement passes and is automatically delivered without human review. Later LangChain4j attempts encounter strict rejection/exhaustion or upstream errors. |
+| 6. Guardrails | A human becomes a second critic before action. | In the narrated Koog run, the human rejects an automatically accepted draft, requests a dentist explanation with corporate language, and sees Refine → Judge → Human again. Final approval leads to reported delivery. |
+| 7. Observability | Inspect the path that ran, its data and its instrumentation coverage. | Koog's Langfuse walkthrough includes Jev and review iterations. LangChain4j shows monitoring/reporting, including a hold and error investigation. The earlier failure gives tracing an immediate purpose. |
 
-The workflow round stops at a reviewed proposal or a blocked result. Human
-rejection is taught in guardrails, after automatic loops. Port is a five-minute
-closing implementation outside the competitive scoring.
+### Tools, conversation, evidence and procedure
 
-### Memory supplies evidence; skills supply procedure
+The model requests an action; client application code calls the tool or MCP
+server. The model then receives the tool result. This distinction explains why
+a fluent promise in stage one is insufficient to establish that anything happened.
 
-Calendar events describe past commitments, not past excuses. Without memory,
-the agent clings to available calendar facts and misuses them as evidence of
-previous excuses. Sent history supplies the literal prior message and recipient. Retrieval selects
-relevant records for the current request; the conversation keeps the current
-session. Restarting can clear conversation while durable sent evidence remains.
-The demo writes new sent history only after validating a successful receipt.
+Conversation memory retains the exchange needed for follow-ups such as sending
+the previous draft. Long-term memory supplies earlier information across sessions.
+For the recurring task, the relevant historical evidence is the actual sent
+excuse and recipient. A calendar commitment is a different fact: having a meeting
+does not prove that a particular excuse was communicated to Dana.
 
-Corporate-speak is a separate runtime skill. Its intensity ranges from one to
-eleven and defaults to eleven. It changes the wording while preserving facts,
-intent and commitments. A rewrite is ordinary chat and does not send a message
-or silently replace an approved candidate.
+The presenters discuss file-backed memory, retrieval and embedding/vector
+mechanisms. Audience questions add summarization and compaction to the explanation.
+These are design distinctions, rather than a demonstrated complete production
+memory architecture. Successful send records and proposals must remain distinct.
 
-The “skills at two levels” meta-moment distinguishes consumers. The coding
-agent used reviewed Koog authoring guidance to build J-Claw. Running J-Claw
-discovers and reads corporate-speak to perform its task. These procedures help
-different agents at different times; the framework skill is not injected into
-the assistant's runtime conversation.
+A skill supplies a reusable procedure. A catalog initially describes available
+skills; the running agent selects relevant guidance and requests its full contents
+through file tools. Corporate-speak changes style while preserving the supplied
+facts and intent. Its intensity ranges from one to eleven.
 
-Koog guidance was checked against tagged source and executed tests. Initial
-stale examples were reported and repaired in the reviewed plugin update. The
-lesson is to verify a skill's advice against the actual library and behavior,
-not to treat installed instructions as proof of correctness.
+The meta-moment has two consumers: a coding agent uses framework-authoring skills
+to help build the demo, and running J-Claw uses corporate-speak to answer its user.
+Installing guidance is not itself proof that the resulting code is correct.
 
-### Typed automatic review
+The recording uses broad language about built-in skills. The linked pre-delivery
+Koog 1.3 code gives the precise boundary: native `discoverSkills` and
+`generateSkillsPrompt` helpers support the catalog, while the application
+assembles the prompt, registers scoped file tools and asks the agent to load a
+selected skill progressively. It is native support plus application integration.
 
-Agentic flows can be combined into different strategies, with different models
-assigned to decisions, drafting and review. J-Claw's loop demonstrates one such
-strategy; the sequence, parallel and routing examples show other compositions.
+### Jev routes; specialized models do the later work
 
-The full Koog demo uses Jev 1.13.0 for intent/event decisions, application code
-for canonical identity and confirmed history, Gemini for chat, Claude's subscription
-CLI to draft/refine, and Codex's subscription CLI to judge. This is one
-integration choice. A separate native task/verification helper example shows
-Koog's API-model approach; it is not evidence that subscription CLI adapters
-are required by either framework.
+Jev is a bounded decision model. It selects from supplied choices for intent
+and target event. It does not generate the excuse, judge a draft, invoke an
+organizer or authorize delivery.
 
-`DeclineRequest` includes the selected event, canonical organizer, prior sent
-flavors, latest user instruction and relevant alternatives. `DeclineReview`
-combines that request with the exact `DeclineDeployment`. The typed critic
-returns approval and feedback. Every review sees the current constraints;
-passing only a draft risks losing what the user just changed.
+An ordinary cache-fix rewrite first takes the CHAT route and uses the chat model
+and relevant skill. A decline request takes the excuse workflow. This separates
+a cheap, constrained routing decision from open-ended drafting and review.
 
-An acceptable first draft may pass immediately. Otherwise feedback returns to
-Claude for up to six shared refinements (seven candidates total), with each
-replacement reviewed by Judge and Human again. Rejection at the shared limit,
-an invalid verdict or an unavailable critic blocks. The retry allowance is
-per request. Drafting and refinement cannot create events or send messages.
+The Koog demonstration uses an application adapter for the public Jev protocol,
+then Gemini for chat, Claude through its subscription CLI for Draft/Refine,
+and Codex through its subscription CLI for Judge. The LangChain4j demonstration
+uses the newly integrated DecisionModel/TypeSafe adapter, Gemini for chat,
+Claude through the Anthropic API and OpenAI through its API for review.
+These model and transport differences matter when interpreting behavior or cost.
 
-The “loops, loops, loops” callback makes the repeated feedback path memorable.
-Its substance is the controlled transition: refine the candidate, preserve the
-request and review again, with a stopping condition.
+Application code supplies context, resolves the chosen event and organizer and
+owns action boundaries. A classifier's answer or confidence is not evidence
+that a draft is true or permission to send it.
 
-### Critic judgment, enforced boundaries and human approval
+### Explicit workflows and the objection to orchestration
 
-A model critic assesses content quality; its verdict is not an enforcement
-mechanism by itself. The application determines which actions are reachable,
-validates data and requires approval of the exact candidate. The human cannot
-override a blocked critic result.
+The speakers compare sequence, routing, parallel work and feedback loops.
+Koog expresses typed nodes and edges in a graph; LangChain4j offers composable
+Agentic patterns and builders. Viktor challenges an overly restrictive account
+of LangChain4j and explains that its components can be composed. The talk does
+not establish that arbitrary workflows belong exclusively to one framework.
 
-Judge and Human are two approvers with the same approve/reject semantics.
-Holding a reviewed proposal sends nothing. Either rejection carries feedback
-into the same Refine node, then Judge, then Human. Preserve the same request,
-canonical event/organizer and shared six-refinement count; never restart Identify
-or Jev. The replacement requires fresh approval by both approvers.
-Earlier approval does not authorize a changed message or recipient.
+A co-presenter voices the strongest alternative: as models improve, why not
+let the LLM figure out the whole job? The response is to keep known business
+steps deterministic and observable, while using AI for fuzzy tasks such as
+classification, summarization, drafting and interpretation. A known conditional
+does not gain value merely from being delegated to a stochastic model.
 
-The organizer's identity comes from the selected calendar event. An abbreviated
-model echo must not change the delivery target. Candidate identity binds the
-event, organizer and message using length-delimited hashing; call identity is
-unique to the send attempt. Hashing is not authentication and does not alone
-make delivery idempotent.
+The meeting workflow makes that position tangible: identify the request and
+context, draft, evaluate, refine when needed, and cross an explicit action boundary.
+Specialized roles can use different models and contracts. An iteration should
+carry the current request and feedback forward rather than lose the constraint
+that caused rejection.
 
-The application sends to the mock organizer and validates the raw MCP result:
-tool error status, delivered flag, matching call/candidate/event/organizer,
-message identity and a valid timestamp. Missing, malformed, refused or
-mismatched receipts do not establish success. An uncertain result requires
-inspection before retrying. Only confirmed delivery creates a sent fact.
+### Judge and Human share one refinement path
 
-A related boundary is filesystem scope. A directory used for skill discovery
-does not restrict what an unconstrained read tool can access. This app wraps
-read tools with real-path checks, including parent traversal and symlinks. That
-is an application-level restriction, not an operating-system sandbox.
+Automatic review evaluates the candidate against context and instructions.
+The narrated workflow example rejects wording that implies Dana already provided
+materials when that action has not happened. A revised draft passes and is sent
+automatically in stage five. This is the delivered behavior; the earlier
+preparation snapshot's proposal-only description does not describe that run.
 
-### Execution evidence and fair comparison
+Stage six adds a human as a second approver. Judge approval brings the current
+candidate to the human. Either critic's rejection returns to Refine, after which
+Judge and Human examine the replacement again. The human does not start a new
+request or skip the automated critic.
 
-Koog provides graph strategies and native task/verification components.
-LangChain4j Agentic offers annotated agent services, shared workflow scope and
-composition builders. Those abstractions help express the work; the comparison
-asks whether the resulting data, control flow and evidence are understandable.
-The prepared talk uses each framework's idiomatic constructs rather than
-requiring identical code shapes.
+The displayed policy and strategy diagram allow six refinements shared by both
+critics: the initial draft plus six replacements gives seven candidates.
+Rejection at the bound blocks the workflow. A replacement needs fresh review;
+approval of an earlier candidate does not approve a changed message.
 
-A previous IdeaConf implementation unexpectedly skipped the critic. The
-speaker identified an implementation/specification mismatch, not an inherent
-LangChain4j limitation. This motivates inspecting the actual execution before
-attributing a success or failure to a framework.
+The human's dentist/corporate-speak revision in the Koog run makes this
+continuation concrete. Final approval authorizes the current message.
+The design separates acceptable generated text from authority to perform an
+external action. Controlled action also requires checking the delivery result
+before treating the proposal as a confirmed historical fact.
 
-Agent/API traces and CLI node inputs, outputs and durations have different
-coverage. Subscription CLI stages do not provide equivalent API token/cost
-accounting. In this build, human confirmation is a native graph span; application-owned
-delivery and post-send ingestion remain outside native agent spans. The TamboUI evidence
-panel makes those statuses visible; it does not make absent spans appear.
+### Observability explains execution and its limits
 
-J-Claw remains a general-purpose assistant. Its dashboard has Conversation,
-Workspace, Activity and Evidence panes. Workspace displays the current task's
-answer or rewrite; candidate, critic and receipt details appear when that task
-uses the reviewed workflow. The activity ribbon records actual stage visits,
-including retries, with no fixed calendar or drafting topology. Full-screen
-views support long outputs and traces. Its provider-free fixture preview is
-explicitly simulated and proves layout only, not agent execution.
+A static graph describes possible routes. A trace reveals the route taken,
+including repeated reviews, feedback, inputs, outputs and duration.
+The workflow failure becomes the reason to inspect evidence rather than guess.
 
-### What was observed locally before the event
+Koog installs OpenTelemetry instrumentation and configures a Langfuse exporter.
+The walkthrough includes custom Jev model/provider/decision metadata because an
+application-owned decision adapter needs explicit instrumentation. Generic chat
+telemetry alone does not describe that decision service.
 
-The October 1 build record reports 58 passing tests on Koog 1.3.0, covering
-native graph execution, typed review, human retry constraints, CLI parsing,
-mock MCP receipts, canonical targets, durable memory, scoped skill files,
-terminal behavior and the Port boundary.
+LangChain4j uses agent/decision listeners and monitoring/report generation to
+expose execution. Later errors illustrate that a report must make provider
+failures understandable; a graph alone cannot diagnose them.
 
-Separate real-model runs established a first-pass reviewed proposal without
-delivery; a human retry rejected through the refinement limit and held blocked;
-and approved mock delivery with one exact-message sent fact. Live terminal runs
-also retrieved a prior fact after restart and blocked, confirmed one approved
-send, and read corporate-speak for a rewrite with no delivery or new history.
-Langfuse observations arrived with current critic request constraints.
+Token and cost coverage depends on the transport and instrumentation. The
+subscription CLI stages do not supply accounting equivalent to the model APIs.
+A displayed token figure or API-equivalent spending estimate is not a paired
+end-to-end cost benchmark. The useful demonstrated question is which steps
+ran and what they received or returned.
 
-The current six-refinement Jev build also completed real-provider stdout and
-TamboUI runs on isolated copies of the three seed facts. Stdout delivered candidate
-four after three human rejections. TamboUI delivered candidate three after one
-Judge rejection and one Human rejection in the same loop. Each decline ran Jev
-once, preserved identity and feedback, and wrote one exact confirmed outbound
-message. A skill rewrite sent nothing; a restarted TamboUI process recalled the
-saved literal message. Backend traces include Jev and Human observations. Human
-inputs were agent-operated mock rehearsal feedback/approval, not audience decisions.
+### Live deviations qualify the comparison
 
-These are local preparation results, not Devoxx delivery results or paired
-performance measurements. Step branches, exact model agreement with Viktor,
-physical projector rehearsal and full-show timing remained pending at this
-snapshot. The linked LangChain4j repository is the earlier IdeaConf version;
-it is not a claim that seven Devoxx checkpoints have already been verified.
+The constant task supports explanation, but the recording is not a controlled
+paired experiment. Model/provider transports differ, some attempts use modified
+prompts, and several live requests fail.
 
-### A factory for factories: the Port example and its limits
+Later LangChain4j runs show rejection/exhaustion and upstream request errors.
+An early budget/capacity explanation is subsequently corrected; the source does
+not establish that a spending limit caused those errors. These failures support
+the tracing discussion without proving a general framework reliability ranking.
 
-The closing claim is that we built a software factory by hand, but a platform
-can supply a factory for factories out of the box. Port illustrates that
-platform approach while the developer still configures the task, contracts
-and action boundary.
+The recording contains preference votes, skipped voting beats and presenter
+comments about room reactions. It supplies no verified hand totals or measurement
+of audience response strength. The shared developer-win ending is the argument's
+resolution, not a quantitative contest result.
 
-The prepared Port package includes native workflow JSON, four calendar fixtures,
-three prior sent facts, user context, corporate-speak and review skills, catalog
-blueprints and a read-only MCP connector. A local JVM bridge reuses the app's
-actual mock calendar/organizer processes and delivery validator.
+### Port: a factory for factories, with a partial live proof
 
-The native graph unrolls the same request-scoped six-refinement budget into a
-finite DAG: seven candidates including the initial draft. Judge and Human are
-two approvers; either rejection enters the same Refine → Judge → Human path.
-Identify runs once and every replacement needs fresh approval from both. Hold
-ends without action; rejection at the bound blocks. Port keeps Sonnet Identify
-in place of the JVM's Jev plus code, uses configured model APIs rather than the
-Claude/Codex subscription CLI transports, and queries the catalog for sent history
-in place of the JVM's embedded retrieval.
+The closing Port example changes the level of the question. After manually
+assembling an assistant as a software factory, could a platform supply the
+orchestration and organizational context needed to assemble such factories?
 
-Identify can use only the two read MCP tools. Draft/refine have no tool access;
-Judge can load its review skill. Native Input provides approve, hold and
-replacement decisions without sending notifications. Delivery requires the
-action credential and a signed candidate bound to the request, verdict, run
-and call. The model has no action credential; the bridge trusts the native
-Input event's approval attestation.
+The presenters show configured agents, skills, context and a native workflow
+for the same task. A newly triggered run stalls around identification; they
+inspect a previous example and discuss debugging. A successful send from that
+new live run is not established in the recording. Prepared runs are separate
+evidence and must not be substituted for its outcome.
 
-An SQLite attempt ledger claims a send before calling the mock, returns the
-original receipt for a confirmed replay and refuses to resend an uncertain
-attempt automatically. Sent facts are written only after a matching receipt.
-If the later catalog write fails, delivery may still have succeeded; inspect
-the receipt and ledger rather than treating the failure as permission to resend.
+The platform example still carries the conceptual conclusion: context and
+relationships can be shared beyond one application. Its new live execution
+does not prove the complete end-to-end platform workflow succeeded on stage.
 
-Native Port runs verified MCP reads, model rejection/refinement, Hold with no
-action, and human rejection through shared Refine → Judge → fresh Human approval
-followed by exact-candidate mock delivery and a durable sent fact. Those records
-used the earlier two-refinement bound. The current six-refinement graph also
-completed a native browser rehearsal: two Judge and four Human rejections spent
-all six refinements, Identify ran once, and candidate seven received fresh approval
-before one exact mock receipt and one catalog write. Four prior records were
-retained. Human caught Judge accepting a renamed calendar conflict, then explicitly
-supplied a separate fictional preparation deadline; the accepted result depends
-on that added rehearsal fact. Codex operated these human inputs with authorization.
-The full exercise took about nineteen minutes including browser/review waits,
-so use the completed run as a labelled prepared example for the five-minute
-closing. Current-bound Hold, exhaustion selection, failed receipt and stage timing
-remain separate checks. The closing example carries the same contracts into another implementation;
-it adds no framework vote or paired performance measurement.
+### Audience questions extend the thesis
 
-### Source scope and further reading
+Compaction and prompt-caching questions expose resource limits and persistence
+tradeoffs behind the apparent simplicity of a conversation.
 
-This pre-talk brief follows the approved narrative architecture and its
-structural rhetorical review, reconciled with demo code and October 1–4 build
-evidence. The current source and Viktor’s downloadable handoff are published
-on GitHub. The constant task, successive evidence gaps, automatic versus
-human boundary, skipped-critic counterexample and closing callback shape its
-explanation. No delivery-specific Devoxx analysis exists before the event;
-refresh the brief against the recording and delivered analysis afterward.
+Questions about restricted or local models return to the harness: tools,
+context, procedures and model routing can make a system more useful even when
+its available model is weaker. Local deployment is discussed as an option;
+the talk does not demonstrate universal parity with hosted frontier models.
 
-- [Devoxx session](https://m.devoxx.com/events/dvbe26/talks/25027/codepocalypse-now-langchain4j-vs-jetbrains-koog)
-- [Devoxx Koog demo and run instructions](https://github.com/jbaruch/jclaw-devoxx)
-- [Local build evidence](https://github.com/jbaruch/jclaw-devoxx/blob/main/BUILD-NOTES.md)
-- [Download Viktor’s demo handoff](https://github.com/jbaruch/jclaw-devoxx/releases/latest/download/viktor-demo-handoff.zip)
-- [Shared implementation and comparison contract](https://github.com/jbaruch/jclaw-devoxx/blob/main/HANDOFF-LC4J.md)
-- [Earlier LangChain4j IdeaConf implementation](https://github.com/gAmUssA/jclaw-ideaconf-2026)
-- [Koog documentation](https://docs.koog.ai/)
-- [LangChain4j Agentic documentation](https://docs.langchain4j.dev/tutorials/agents/)
-- [Runtime corporate-speak skill](https://github.com/jbaruch/jclaw-devoxx/blob/main/skills/corporate-speak/SKILL.md)
-- [Prepared Port package](https://github.com/jbaruch/jclaw-devoxx/tree/main/port)
+The audience explicitly broadens that discussion from cost to security and
+privacy. Hosted prompts can contain organizational knowledge. The speakers
+discuss contracts, local/open-weight models and hardware economics, while
+offering broad opinions about institutional motives and future costs.
+Those opinions are not privacy guarantees or a substitute for organizational
+security decisions.
 
-### Jev and its evidence
+Debugging questions connect agent work to familiar JVM investigation.
+Request/response inspection, ordinary debugging, traces and agent tooling can
+work together. A Kafka/consumer-lag-to-GC example illustrates an investigation
+procedure; it is not a live experiment performed in this talk.
 
-Jev is a bounded decision model, not a text generator. One call asks two independent
-Choice questions about intent and target event, against the current input, prior
-conversation and actual calendar records. Code computes date labels, assembles
-canonical identity/history and owns all actions. Confidence below the validated
-0.60 floors, no match, ambiguity or multiple requested events asks for clarification
-before drafting. CHAT ignores its speculative event answer. A service/contract
-error stops the workflow; Gemini is available only as an explicit comparison mode.
+Organizational context exceeds skills: logs, traces, tickets, postmortems,
+customer complaints and human know-how can all matter, together with their
+relationships. The return to Port's context lake expands the assistant example
+into a broader argument about supplying the right context and mechanisms.
 
-October 2 live checks: final development 16/16, untouched holdout 32/32 over two
-passes with 187ms median. The initial development pass was 14/16; explicit organizer/
-day matching was tightened before the holdout. These fictional cases do not prove
-general accuracy or calibrated probabilities. The separately checked native
-LangChain4j TypeSafeDecisionModel beta31 adapter passed the 16 holdout scenarios;
-it serializes structured descriptions as JSON strings because that release accepts
-string question/option descriptions. The complete LangChain4j app remains Viktor's
-deliverable. Use the final DecisionModel API, not the earlier StructuredDecisionModel
-proposal.
+### Sources and scope
 
-A real Langfuse trace received Jev under routeAndIdentify with model jev-1.13.0,
-exact structured input/output, choices, probabilities, confidence, margins, latency
-and 1,913 input/144 output tokens. Calendar reads and request assembly are application
-steps. LC4J exposes DecisionModelListener request/response/error hooks; generic
-ChatModel telemetry does not automatically instrument them. TamboUI exposes actual
-decision evidence and timed stages. Confidence does not certify correctness or
-authorize a send; no hidden reasoning or equivalent CLI price is claimed.
+This brief draws on delivery-specific rhetoric analysis reconciled with the
+complete recording transcript, all 26 published authored PDF pages and
+pre-delivery code. The analysis shapes the capability-gap progression,
+deterministic-workflow objection and response, failure-to-observability transition,
+developer-win resolution and Q&A extension. Execution outcomes above are
+presenter-reported delivery evidence, not independent backend receipt audits.
 
-That recorded run used the earlier two-refinement limit and blocked without sending.
-The current shared policy is six refinements for Judge and Human together, with
-seven candidate versions. All 69 app tests pass, including two model rejections
-plus four human rejections followed by approval of candidate seven. Keep the
-historical receipt distinct from the new policy.
+The Koog source link below is a verified October 4 preparation snapshot.
+It establishes implementation details such as native skills helpers, but is
+not a downloadable set of the stage checkpoints or proof that every prepared
+behavior matches the later recording. The recording governs delivered outcomes.
 
-The October 4 dashboard update adds rendered tests for generic startup, arbitrary
-repeated stages and ordinary answers after candidate review. A rebuild during a
-live session exposed a missing lazily loaded JVM class; each launch now runs
-private copies of app and mock JARs. An overlapping-run check verifies that a
-later build cannot replace a running session's files. This UI/launcher validation
-does not replace the earlier complete provider-run evidence or the speaker's
-review of the current demo. Step branches still wait for that review.
+- [Recording](https://www.youtube.com/watch?v=bFeRhxfqBeU)
+- [Published slides](https://drive.google.com/file/d/1jpwSxTC2LbaF2zVeYSHXfLgtMB6afoSq/view)
+- [Shownotes and resources](https://speaking.jbaru.ch/talks/devoxx-be-2026-codepocalypse/)
+- [Koog pre-delivery source snapshot](https://github.com/jbaruch/jclaw-devoxx/tree/ef537316b8be644bd1fae890860ad633882a0541)
+- [Koog skills integration in that snapshot](https://github.com/jbaruch/jclaw-devoxx/blob/ef537316b8be644bd1fae890860ad633882a0541/app/src/main/kotlin/jclaw/AgentSkills.kt)
+- [Koog observability integration in that snapshot](https://github.com/jbaruch/jclaw-devoxx/blob/ef537316b8be644bd1fae890860ad633882a0541/app/src/main/kotlin/jclaw/Observability.kt)
+- [Viktor's Java LangChain4j Devoxx companion](https://github.com/gAmUssA/jclaw-devoxx-be-2026)
+- [Java companion workshop](https://gamov.io/workshops/codepocalypse-langchain4j/)
+- [Merged LangChain4j DecisionModel and TypeSafe integration](https://github.com/langchain4j/langchain4j/pull/6469)
