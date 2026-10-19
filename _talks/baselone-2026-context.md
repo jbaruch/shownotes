@@ -7,6 +7,7 @@ layout: talk
 **Conference:** BaselOne 2026
 **Date:** 2026-10-15
 **Slides:** [View Slides](https://drive.google.com/file/d/1uwSElspATMPy6cIdQ7bmA8JxDZAKkuoO/preview)
+**Video:** [View Video](https://www.youtube.com/watch?v=c-NNUqZLbAo)
 
 A presentation at BaselOne 2026 in October 2026 in Basel, Switzerland by {{ site.speaker.display_name | default: site.speaker.name }}
 
