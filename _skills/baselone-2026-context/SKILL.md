@@ -187,8 +187,9 @@ thousand PRs cost "less than a dollar." The slide's arithmetic behind that is
 input cost only, at the published Jev 1.13 price of $0.042 per million input
 tokens and a hypothetical 20,000 input tokens per PR: 20 million tokens, about
 $0.84. Retries, extra chunks, review models, and operations are excluded, and
-it is not an accuracy benchmark. The speaker also called Jev the fastest-growing
-project in history; treat that as an unsourced aside, not a measured fact.
+it is not an accuracy benchmark. The speaker also stated, as a claim he stands
+behind, that Jev is the fastest-growing project in history; the talk gave no
+source for it, so present it as his claim rather than an established fact.
 
 A category is not proof a change is safe. In the close he says to test the
 escalation criteria. He also mentions that some model vendors ship or are
@@ -214,7 +215,9 @@ rollback exists, so did anyone check? The example shows a shared unverified
 assumption, not a measured failure.
 
 In the delivery, this accountability block came before the three-kinds-of-context
-section, the reverse of the slide order in the published PDF.
+section, the reverse of the slide order in the published PDF. The speaker
+confirmed this was a deliberate day-of edit: the payoff belongs right after the
+promotion, and the published PDF predates the change.
 
 ### Three kinds of context
 
