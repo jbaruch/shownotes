@@ -94,7 +94,9 @@ is the value `critical` and a blocked merge.
 - **The same pull request is the spine.** Showing it mergeable first, then
   unchanged but blocked, is what makes the claim concrete: the code, the check
   and the approval didn't change; the knowledge about who depends on the code
-  did.
+  did. The proof is a live state change, not an assertion, which is also why
+  the "high" and "push" slips matter: the precise result is the property value
+  `critical` and a blocked merge.
 - **The objection is answered up front.** "Why not keep everything in GitHub?"
   gets its answer in the first minute and a half, before the demo, so the demo
   only has to show the mechanism.
