@@ -118,8 +118,8 @@ seconds.
 
 ### The takeaway the speaker leaves the room with
 
-"You pick the source of truth. It lives outside GitHub. GitHub can still use
-it." For Printf that's Port; for someone else it might be a CMDB or "a
+"You pick the source of truth. Your service data can live outside GitHub.
+GitHub can still use it." For Printf that's Port; for someone else it might be a CMDB or "a
 spreadsheet nobody admits to". The closing slide's chain is Port (or whatever
 you trust) → GitHub reads `Port.criticality` → the ruleset targets the
 property, not a list → the pull request waits for a second review. The demo's
