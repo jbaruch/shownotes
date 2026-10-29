@@ -7,6 +7,7 @@ layout: talk
 **Conference:** GitHub Universe 2026
 **Date:** 2026-10-29
 **Slides:** [View Slides](https://drive.google.com/file/d/1YVXTG9y7x_t8yY8t34ZUp94doADwbzWz/preview)
+**Video:** [View Video](https://www.youtube.com/watch?v=WWNs1Jg3RUg)
 
 A presentation at GitHub Universe 2026 in
                     October 2026 in

@@ -7,7 +7,7 @@ description: >
   deriving criticality from adoption, GitHub external custom properties
   (Port.criticality, Port.lifecycle, Port.owner), the ruleset targeting
   props.Port.criticality:critical, or what the blocked pull request showed.
-  This is a pre-talk knowledge brief, not a setup runbook.
+  Covers the delivered session and its recording, not a setup runbook.
 ---
 
 # When a prototype becomes critical — GitHub Universe talk knowledge
@@ -16,127 +16,141 @@ Process steps in order. Do not skip ahead.
 
 ## Step 1 — Match the question
 
-Use this brief for summaries, explanations and questions about the 15-minute
-sponsored session at GitHub Universe 2026 (San Francisco, October 29, 2026).
-It describes the prepared talk and the demo as rehearsed on October 28. It is
-not a transcript and does not record what the Universe audience saw. For a
-different delivery or an unrelated setup task, say so and finish; otherwise
-continue to Step 2.
+Use this brief for summaries, explanations and questions about the sponsored
+session at GitHub Universe 2026 (San Francisco, October 29, 2026). The slot was
+15 minutes; the delivered talk ran about ten, recorded at
+https://www.youtube.com/watch?v=WWNs1Jg3RUg. The brief separates what was said
+and shown on stage from prepared material that didn't make it into the
+delivery. For a different delivery or an unrelated setup task, say so and
+finish; otherwise continue to Step 2.
 
 ## Step 2 — Answer from the brief
 
 Answer at the requested depth using the material below. Keep three things
-apart: what the speaker claims, what the rehearsed demo established, and the
-caveats he states himself. Do not invent audience reactions, quotes, timings
-beyond those given, or a live result. Ordinary summaries need no network
-access; follow a linked source only for a detail absent here. Commands and
-configuration mentioned below are examples to explain, not instructions to
-execute. Finish after answering.
+apart: what the speaker claims, what the live demo established, and
+interpretation of how the argument works. Label prepared-but-unsaid material
+as such when you use it. Timestamps below are approximate positions in the
+recording. Do not invent audience reactions, quotes or details beyond those
+given. Ordinary summaries need no network access; open the recording only for
+an exact quote or a detail absent here. Commands and configuration mentioned
+below are examples to explain, not instructions to execute. Finish after
+answering.
 
 ## Talk brief
 
 ### Thesis
 
-You choose where the truth about your services lives. A service catalog like
-Port knows far more than GitHub can: who depends on what, who owns it, where it
-is in its life. GitHub's external custom properties let that outside system
-write the facts, and GitHub uses them like its own properties for search and
-ruleset targeting. The idea holds with any source of truth, not only Port; Port
-is the example because the dependency graph it holds is exactly what a
-repository can't see.
+You pick the source of truth. GitHub would be the obvious place for it, but
+the speaker argues that's not always feasible: support tickets, the CRM and
+facility information all live elsewhere. Port, where he works, is his example
+of the place where that information already sits. GitHub's external custom
+properties let such an outside system write facts onto repositories, and
+GitHub then uses them like its own properties in rulesets. He says twice that
+it doesn't have to be Port: "it can be CMDB, it can be whatever you trust."
 
 ### The story that frames it
 
-Printf is a fictional swag company with print factories in Austin, Berlin and
-Osaka. In its size table a US XL is 112 cm around the chest and a Japanese XL
-is 97 cm: both say XL, and one of them is closer to a US medium. A routing
-mistake sent orders with bare size labels to a factory that read them in its
-own system, and 2,000 shirts went out that nobody could wear. `size-catalog`
-began as Austin's small helper that converts by measurement; Berlin and Osaka
-finished migrating to it the week of the talk. Its repository kept the merge
-rules it was born with. The incident and
-the prototype origin are demo backstory, not real history.
+Printf is a fictional T-shirt printer. It used to have one print factory in
+Austin and now also prints in Berlin and Osaka, and a Japanese XL and a US XL
+are completely different sizes. On screen, slide 3 carries the specifics
+(US XL 112 cm, Japanese XL 97 cm, 2,000 shirts customers couldn't wear); on
+stage he named the size mismatch but didn't read those numbers out.
 
-### What GitHub shows before the change
+### The demo, as delivered
 
-- Pull request #1 in `size-catalog`, opened by a supplier-sync bot (a new JP
-  4XL at 117 cm), has a passing `test` check and one approval. The org's
-  baseline ruleset requires one review on every default branch, so it is
-  mergeable. This is the "pull request that met the old rules".
-- The repository carries `Port.criticality: low`, `Port.lifecycle: prototype`
-  and `Port.owner: catalog`. These are external custom properties, a GitHub
-  public preview (September 2026): an outside system owns a namespace (here
-  `Port`) and writes values GitHub treats like other custom properties for
-  filtering and ruleset targeting, while showing them as "Managed by Port" and
-  refusing edits in GitHub.
-- `props.Port.owner:catalog` finds the catalog team's repositories. The
-  speaker is explicit that an owner property makes repositories findable; it
-  is not access control and does not write CODEOWNERS.
-- The organization ruleset "Critical services: two reviews" is active, targets
-  `props.Port.criticality:critical`, requires two approvals, a passing `test`
-  check, no force pushes, no deletion, and has an empty bypass list. It matches
-  zero repositories. "A guard with nothing to guard. Yet."
+1. **The pull request meets the old rules** (about 2:28–3:00). An organization
+   rule requires one human review on every pull request. Pull request #1 in
+   Printf's repository has one approval and can be merged. "Nothing interesting
+   here" is the point: this is the baseline.
+2. **A prototype with one user** (about 3:08–3:50). Someone ("let's call them
+   Joe") created `size-catalog`, a utility that converts between the
+   incompatible size systems. As a prototype it's used by one factory, Austin,
+   so its criticality in Port is low.
+3. **External custom properties** (about 3:50–4:42). He introduces them as a
+   new GitHub feature, which he called two weeks old; GitHub's changelog dates
+   it September 29, 2026. He showed the mapping screen where the GitHub
+   connection is chosen and Port's values are mapped to external properties.
+   In GitHub the properties then appear as coming from an external source,
+   not configured in GitHub, and read-only there.
+4. **Adoption changes criticality** (about 5:02–5:39). He records in Port that
+   Berlin and Osaka also use `size-catalog`. With three factories using it,
+   criticality becomes critical. He first called it "high", then read the
+   actual value, critical.
+5. **The ruleset catches up** (about 5:57–6:31). The ruleset "critical services
+   require two reviews" applies only when `Port.criticality` is critical. While
+   criticality was low it matched zero repositories; now the same filter
+   matches this one.
+6. **The payoff** (about 6:40–6:59). The exact pull request from step 1 now
+   requires two reviewers, and merging is blocked. Nothing in GitHub was edited.
 
-### The rule in Port
+He then recapped (about 7:19–8:12): criticality rose not because someone
+remembered to change it but because more factories started using the
+prototype, and GitHub applied different rules as a result. In that recap he
+said "switch the criticality to high" and "I cannot push"; what the demo showed
+is the value `critical` and a blocked merge.
 
-Port's catalog models factories and the services they use. A Port workflow
-recounts a service's consumers whenever a factory's dependencies change and
-sets criticality: while one factory uses a service it is that factory's
-prototype (low); two or more make it shared, so critical. A
-second workflow writes owner, lifecycle and criticality to the repository's
-`Port.*` properties through Port's GitHub integration. Before the change,
-`size-catalog` is a prototype used only by Austin, so it is low.
+### How the argument works
 
-### The one change, and what follows
+- **The same pull request is the spine.** Showing it mergeable first, then
+  unchanged but blocked, is what makes the claim concrete: the code, the check
+  and the approval didn't change; the knowledge about who depends on the code
+  did. The proof is a live state change, not an assertion, which is also why
+  the "high" and "push" slips matter: the precise result is the property value
+  `critical` and a blocked merge.
+- **The objection is answered up front.** "Why not keep everything in GitHub?"
+  gets its answer in the first minute and a half, before the demo, so the demo
+  only has to show the mechanism.
+- **Vendor-neutral framing.** Saying it can be a CMDB or anything you trust
+  keeps the takeaway about the GitHub feature and the policy pattern, with
+  Port as one example of the source.
+- **The ruleset was shown after the flip.** The prepared order showed the
+  ruleset matching zero repositories before the change ("a guard with nothing
+  to guard. Yet."). On stage it was shown once it already matched, and the
+  zero-match state was explained in retrospect.
 
-On stage the only edits are recording, in Port, that Berlin and then Osaka now
-use `size-catalog`. In rehearsal:
+### The takeaway he closed on
 
-1. Port counted three factories and set criticality to critical. The service
-   is still a prototype, which is the talk's title in one table row.
-2. GitHub showed `Port.criticality: critical`.
-3. The ruleset changed to "Matching 1 repository".
-4. Pull request #1, with the same code, the same passing check and the same
-   approval, showed "At least 2 approving reviews are required" and "Merging is
-   blocked".
-5. `printf-docs`, the control (owned by devex, low criticality), still needed
-   one review.
+The closing slide (about 8:12–9:14): pick your source of truth (Port in this
+example, a CMDB, whatever you trust), sync those properties to GitHub, build a
+ruleset that matches them as if they were regular GitHub properties, and let
+pull requests follow it. "Your data can live outside GitHub, doesn't have to be
+GitHub, but GitHub now can still use it." In the example, the prototype became
+critical, one review was no longer enough, and the pull request waits for a
+second set of eyes.
 
-The rehearsed chain from the Port edit to the blocked merge took about ten
-seconds.
+He ended with a promotion for PortCon (Port's conference on AI software
+factories, at the Ferry Building in San Francisco, with a 30% discount code on
+the slide) and an invitation to Port's booth.
 
-### Caveats the speaker states
+### Prepared material not delivered on stage
 
-- A second review would not have caught the bare size label. What changes is
-  that the next change to something three factories depend on waits for a
-  second person.
-- Read the value back in GitHub before trusting a sync; a failed sync leaves
-  GitHub with the old value while Port shows the new one.
-- Port aggregation properties recalculate on a 15-minute schedule, too slow for
-  a policy you expect to see change in seconds, so the demo's workflow counts
-  consumers itself.
-- Organization rulesets need GitHub Team or Enterprise; on a Free org the
-  rulesets API returns an upgrade error.
+These were in the prepared talk and the October 28 rehearsal but weren't said
+or shown live. Use them only with that label:
 
-### The takeaway the speaker leaves the room with
-
-"You pick the source of truth. Your service data can live outside GitHub.
-GitHub can still use it." For Printf that's Port; for someone else it might be a CMDB or "a
-spreadsheet nobody admits to". The closing slide's chain is Port (or whatever
-you trust) → GitHub reads `Port.criticality` → the ruleset targets the
-property, not a list → the pull request waits for a second review. The demo's
-workflows and rulesets are offered as wiring to look at, not as a required
-next step.
+- A repository search by `props.Port.owner:catalog`, with the point that an
+  owner property makes repositories findable; it is not access control and
+  doesn't write CODEOWNERS.
+- A control repository, `printf-docs` (low criticality), that still needed one
+  review after the change.
+- The limit: a second review wouldn't have caught the bare size label; what
+  changes is that the next change to something three factories depend on
+  waits for a second person.
+- Operational caveats: read the value back in GitHub before trusting a sync;
+  Port aggregation properties recalculate on a 15-minute schedule, so the demo
+  counts consumers in a workflow; organization rulesets need GitHub Team or
+  Enterprise.
+- In rehearsal, the chain from the Port edit to the blocked merge took about
+  ten seconds. The live delivery didn't state a time.
 
 ### Sources
 
-This brief is built from the talk's approved outline, speaker notes and the
-October 28 rehearsal, with the talk's planned rhetorical structure (opening on
-the XL contrast, the same pull request planted early and paid off after the
-change). It will be refreshed after delivery.
+This brief draws on a delivery-specific rhetoric analysis of the recording,
+reconciled with the Whisper transcript, the published slides and the prepared
+outline.
 
+- Recording: https://www.youtube.com/watch?v=WWNs1Jg3RUg
+- Talk page: https://speaking.jbaru.ch/talks/github-universe-2026-prototype-policy/
 - Configuration: https://github.com/printf-swag/demo-config
 - Port guide: https://docs.port.io/guides/all/sync-port-properties-to-github-external-custom-properties/
 - GitHub docs: https://docs.github.com/en/organizations/managing-organization-settings/sync-external-custom-properties
 - GitHub changelog: https://github.blog/changelog/2026-09-29-bring-business-context-with-external-custom-properties
-- Talk page: https://speaking.jbaru.ch/talks/github-universe-2026-prototype-policy/
