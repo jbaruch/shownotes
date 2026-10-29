@@ -18,8 +18,14 @@ A T-shirt sizing helper now feeds three print factories, but its GitHub reposito
 
 ## Resources
 
-In the demo, nobody types "critical". Port counts how many of Printf's factories
-use `size-catalog` and derives its criticality: three or more makes it critical.
+You pick the source of truth for your services. It doesn't have to be GitHub,
+and it doesn't have to be Port: a service catalog, a CMDB, whatever your
+organization trusts. GitHub's external custom properties let that system write
+the facts, and GitHub uses them for search and rulesets like any other property.
+
+The demo uses Port, because a service catalog knows things a repository can't.
+Nobody types "critical". Port counts how many of Printf's factories use
+`size-catalog` and derives its criticality: three or more makes it critical.
 A Port workflow writes that value to the repository as the external custom
 property `Port.criticality`, which GitHub shows as managed by Port and read-only.
 An organization ruleset targeting `props.Port.criticality:critical` then applies

@@ -37,11 +37,13 @@ execute. Finish after answering.
 
 ### Thesis
 
-A repository's merge requirements should follow what the service has become,
-not what someone remembered to configure. Let Port derive the classification,
-write it to GitHub as an external custom property, and point rulesets at that
-property. Then policy follows the service without anyone editing a list of
-repositories.
+You choose where the truth about your services lives. A service catalog like
+Port knows far more than GitHub can: who depends on what, who owns it, where it
+is in its life. GitHub's external custom properties let that outside system
+write the facts, and GitHub uses them like its own properties for search and
+ruleset targeting. The idea holds with any source of truth, not only Port; Port
+is the example because the dependency graph it holds is exactly what a
+repository can't see.
 
 ### The story that frames it
 
@@ -114,12 +116,15 @@ seconds.
 - Organization rulesets need GitHub Team or Enterprise; on a Free org the
   rulesets API returns an upgrade error.
 
-### Recommended next step
+### The takeaway the speaker leaves the room with
 
-Pick one repository your team already treats as critical, sync its
-classification from Port, point a ruleset at the property, and open a test
-pull request to confirm GitHub asks for the second review before widening the
-ruleset.
+"You pick the source of truth. It lives outside GitHub. GitHub can still use
+it." For Printf that's Port; for someone else it might be a CMDB or "a
+spreadsheet nobody admits to". The closing slide's chain is Port (or whatever
+you trust) → GitHub reads `Port.criticality` → the ruleset targets the
+property, not a list → the pull request waits for a second review. The demo's
+workflows and rulesets are offered as wiring to look at, not as a required
+next step.
 
 ### Sources
 
