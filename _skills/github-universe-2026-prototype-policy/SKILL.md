@@ -62,7 +62,7 @@ the prototype origin are demo backstory, not real history.
   4XL at 117 cm), has a passing `test` check and one approval. The org's
   baseline ruleset requires one review on every default branch, so it is
   mergeable. This is the "pull request that met the old rules".
-- The repository carries `Port.criticality: high`, `Port.lifecycle: prototype`
+- The repository carries `Port.criticality: low`, `Port.lifecycle: prototype`
   and `Port.owner: catalog`. These are external custom properties, a GitHub
   public preview (September 2026): an outside system owns a namespace (here
   `Port`) and writes values GitHub treats like other custom properties for
@@ -80,15 +80,16 @@ the prototype origin are demo backstory, not real history.
 
 Port's catalog models factories and the services they use. A Port workflow
 recounts a service's consumers whenever a factory's dependencies change and
-sets criticality: one factory medium, two high, three or more critical. A
+sets criticality: while one factory uses a service it is that factory's
+prototype (low); two or more make it shared, so critical. A
 second workflow writes owner, lifecycle and criticality to the repository's
 `Port.*` properties through Port's GitHub integration. Before the change,
-`size-catalog` is a prototype with two consumers, so it is high.
+`size-catalog` is a prototype used only by Austin, so it is low.
 
 ### The one change, and what follows
 
-On stage the only edit is recording, in Port, that Osaka now uses
-`size-catalog`. In rehearsal:
+On stage the only edits are recording, in Port, that Berlin and then Osaka now
+use `size-catalog`. In rehearsal:
 
 1. Port counted three factories and set criticality to critical. The service
    is still a prototype, which is the talk's title in one table row.

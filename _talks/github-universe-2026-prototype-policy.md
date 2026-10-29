@@ -25,7 +25,8 @@ the facts, and GitHub uses them for search and rulesets like any other property.
 
 The demo uses Port, because a service catalog knows things a repository can't.
 Nobody types "critical". Port counts how many of Printf's factories use
-`size-catalog` and derives its criticality: three or more makes it critical.
+`size-catalog` and derives its criticality: while only Austin uses it, it is
+Austin's prototype and low; the moment a second factory depends on it, it is critical.
 A Port workflow writes that value to the repository as the external custom
 property `Port.criticality`, which GitHub shows as managed by Port and read-only.
 An organization ruleset targeting `props.Port.criticality:critical` then applies
