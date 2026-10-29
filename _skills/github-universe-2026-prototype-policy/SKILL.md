@@ -52,8 +52,9 @@ Osaka. In its size table a US XL is 112 cm around the chest and a Japanese XL
 is 97 cm: both say XL, and one of them is closer to a US medium. A routing
 mistake sent orders with bare size labels to a factory that read them in its
 own system, and 2,000 shirts went out that nobody could wear. `size-catalog`
-began as a small helper that converts by measurement. Austin adopted it, then
-Berlin. Its repository kept the merge rules it was born with. The incident and
+began as Austin's small helper that converts by measurement; Berlin and Osaka
+finished migrating to it the week of the talk. Its repository kept the merge
+rules it was born with. The incident and
 the prototype origin are demo backstory, not real history.
 
 ### What GitHub shows before the change
@@ -101,7 +102,7 @@ use `size-catalog`. In rehearsal:
 5. `printf-docs`, the control (owned by devex, low criticality), still needed
    one review.
 
-The rehearsed chain from the Port edit to the blocked merge took about eight
+The rehearsed chain from the Port edit to the blocked merge took about ten
 seconds.
 
 ### Caveats the speaker states

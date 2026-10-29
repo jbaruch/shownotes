@@ -6,6 +6,7 @@ layout: talk
 
 **Conference:** GitHub Universe 2026
 **Date:** 2026-10-29
+**Slides:** [View Slides](https://drive.google.com/file/d/1YVXTG9y7x_t8yY8t34ZUp94doADwbzWz/preview)
 
 A presentation at GitHub Universe 2026 in
                     October 2026 in
@@ -32,7 +33,7 @@ property `Port.criticality`, which GitHub shows as managed by Port and read-only
 An organization ruleset targeting `props.Port.criticality:critical` then applies
 to the repository, and a pull request that already had its one approval and a
 passing check needs a second review. In rehearsal the whole chain, from the
-Port edit to the blocked merge, took about eight seconds.
+Port edit to the blocked merge, took about ten seconds.
 
 ### Configuration to try on one repository
 
