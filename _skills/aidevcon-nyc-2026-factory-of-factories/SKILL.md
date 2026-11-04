@@ -110,20 +110,25 @@ accountable owner and matching service identities. Monica and Bill find a
 better cost estimate than human effort: token usage harvested from the
 agents' own logs, correlated with delivered work, projected as a range (not a
 promise) for planned volume. The approved allowance is enforced by the runner,
-which pauses and asks Monica for more. Back in the conference room, each
-approver receives one folder with the evidence for their own decision and
-nothing else. Missing evidence is neither signed through nor a failed run: it
-requires investigation, first by the agent (refresh the stale feed, find the
+which pauses and asks Monica for more. How does each of them get that evidence
+without a new integration project for every request? Brent draws one shared
+context lake underneath the blueprint: the same company records (services,
+owners, dependencies, incidents, delivery, token costs) and the relationships
+between them. John, Patty and Monica ask it different questions, and nobody
+rediscovers the organization for every request. Back in the conference room,
+each approver receives one folder, filled from the lake, with the evidence for
+their own decision and nothing else. Missing evidence is neither signed
+through nor a failed run: it requires investigation, first by the agent (refresh the stale feed, find the
 owner, rerun the check), then by the human who owns that source if the agent
 still cannot establish the facts. Before execution, the workflow checks that
 the scope and current conditions still fit the decision; a recorded signature
 is useful only alongside the controls that determine what happens next.
 
-**Meeting 4 — The context lake.** Bill asks whether every department and every
-factory must rebuild these integrations. Brent, delighted, wants to build the
-platform himself; Bill sees the cost. The same records (services, owners,
-dependencies, incidents, delivery, token costs) serve everyone, so building
-and maintaining that shared foundation is the expensive part, while a custom
+**Meeting 4 — Enterprise context consolidation.** Brent, delighted, wants to
+build the context lake himself: integrations, ingestion, an entity graph,
+freshness, permissions, governance, an audit log, "v1: 2 weeks". Bill sees the
+cost. Collecting, reconciling and keeping those records current is the
+expensive, never-ending part of that shared foundation, while a custom
 workflow on top of an adopted platform costs practically nothing. They adopt;
 Brent is the only one heartbroken. Product gets capacity back, Security gets
 an assessed tool, Finance avoids a duplicate build, Compliance reuses the
