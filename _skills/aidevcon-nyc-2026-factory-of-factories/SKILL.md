@@ -110,8 +110,14 @@ accountable owner and matching service identities. Monica and Bill find a
 better cost estimate than human effort: token usage harvested from the
 agents' own logs, correlated with delivered work, projected as a range (not a
 promise) for planned volume. The approved allowance is enforced by the runner,
-which pauses and asks Monica for more. Each approver then receives the
-evidence for their own statement; Ruth follows the records.
+which pauses and asks Monica for more. Back in the conference room, each
+approver receives one folder with the evidence for their own decision and
+nothing else. Missing evidence is neither signed through nor a failed run: it
+requires investigation, first by the agent (refresh the stale feed, find the
+owner, rerun the check), then by the human who owns that source if the agent
+still cannot establish the facts. Before execution, the workflow checks that
+the scope and current conditions still fit the decision; a recorded signature
+is useful only alongside the controls that determine what happens next.
 
 **Meeting 4 — The context lake.** Bill asks whether every department and every
 factory must rebuild these integrations. Brent, delighted, wants to build the
