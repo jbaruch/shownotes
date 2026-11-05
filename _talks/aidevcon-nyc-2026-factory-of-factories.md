@@ -7,6 +7,7 @@ layout: talk
 **Conference:** AI DevCon NYC 2026
 **Date:** 2026-11-04
 **Slides:** [View Slides](https://drive.google.com/file/d/1rKR028s_0XAZvmK2LJK5cL3pk795Obh7/preview)
+**Video:** [View Video](https://youtu.be/rGT3sxA7TwM)
 
 A presentation at AI DevCon NYC 2026 in
                     November 2026 in
