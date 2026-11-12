@@ -7,6 +7,7 @@ layout: talk
 **Conference:** KubeCon + CloudNativeCon North America 2026
 **Date:** 2026-11-11
 **Slides:** [View Slides](https://drive.google.com/file/d/1t00kDwEkQC-B8YFSBpzi0vbmxxkNlVMP/preview)
+**Video:** [Watch Video](https://www.youtube.com/watch?v=8NsThpFwo7o)
 
 A presentation at KubeCon + CloudNativeCon North America 2026 (Demo Theater) in
                     November 2026 in
