@@ -1,3 +1,5 @@
+require 'nokogiri'
+
 module Jekyll
   # Hook to process markdown-only files by adding frontmatter during site initialization
   Jekyll::Hooks.register :site, :after_init do |site|
@@ -59,6 +61,10 @@ module Jekyll
             if !doc.data['extracted_abstract'] || doc.data['extracted_abstract'].empty?
               doc.data['extracted_abstract'] = extract_abstract_from_content(content)
             end
+            # Link previews describe the talk; explicit front matter takes priority.
+            if doc.data['description'].to_s.strip.empty?
+              doc.data['description'] = extract_preview_description(content, site)
+            end
             doc.data['extracted_resources'] = extract_resources_from_content(content)
             doc.data['extracted_presentation_context'] = extract_and_process_presentation_context(content, site)
           rescue => e
@@ -93,6 +99,17 @@ module Jekyll
     end
 
     private
+
+    def extract_preview_description(content, site)
+      # Keep paragraph boundaries so previews use only the first abstract paragraph.
+      section = content.to_s.split(/^##[ \t]+Abstract[ \t]*\r?$/i, 2)[1]
+      return '' unless section
+
+      abstract = section.split(/^\#{1,2}[ \t]+/, 2).first.to_s
+      html = site.find_converter_instance(Jekyll::Converters::Markdown).convert(abstract)
+      paragraph = Nokogiri::HTML.fragment(html).at_css('p')
+      paragraph ? paragraph.text.gsub(/\s+/, ' ').strip : ''
+    end
 
     def extract_title_from_content(content)
       return 'Untitled Talk' unless content

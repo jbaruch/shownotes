@@ -44,13 +44,14 @@
     {% endif %}
 
     <!-- SEO -->
+    {% assign meta_description = page.description | default: site.speaker.bio %}
     <link rel="describedby" href="{{ '/llms.txt' | relative_url }}" type="text/plain" title="Guide for AI agents">
     <title>{% if page.title %}{{ page.title | escape }} - {% endif %}{% if site.speaker.display_name and site.speaker.display_name != "" %}Presentations by {{ site.speaker.display_name }}{% elsif site.speaker.name and site.speaker.name != "" %}Presentations by {{ site.speaker.name }}{% else %}Presentations{% endif %}</title>
-    <meta name="description" content="{% if page.description %}{{ page.description | escape }}{% else %}{{ site.speaker.bio }}{% endif %}">
+    <meta name="description" content="{{ meta_description | escape }}">
     
     <!-- Open Graph -->
     <meta property="og:title" content="{% if page.title %}{{ page.title | escape }}{% else %}{% if site.speaker.display_name and site.speaker.display_name != "" %}Presentations by {{ site.speaker.display_name }}{% elsif site.speaker.name and site.speaker.name != "" %}Presentations by {{ site.speaker.name }}{% else %}Presentations{% endif %}{% endif %}">
-    <meta property="og:description" content="{% if page.description %}{{ page.description | escape }}{% else %}{{ site.speaker.bio }}{% endif %}">
+    <meta property="og:description" content="{{ meta_description | escape }}">
     <meta property="og:type" content="{% if page.layout == 'talk' %}article{% else %}website{% endif %}">
     <meta property="og:url" content="{{ page.url | absolute_url }}">
     
@@ -63,7 +64,7 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="{% if page.layout == 'talk' %}summary_large_image{% else %}summary{% endif %}">
     <meta name="twitter:title" content="{% if page.title %}{{ page.title | escape }}{% else %}{% if site.speaker.display_name and site.speaker.display_name != "" %}Presentations by {{ site.speaker.display_name }}{% elsif site.speaker.name and site.speaker.name != "" %}Presentations by {{ site.speaker.name }}{% else %}Presentations{% endif %}{% endif %}">
-    <meta name="twitter:description" content="{% if page.description %}{{ page.description | escape }}{% else %}{{ site.speaker.bio }}{% endif %}">
+    <meta name="twitter:description" content="{{ meta_description | escape }}">
     {% if page.layout == 'talk' %}
     <meta name="twitter:image" content="{{ '/assets/images/thumbnails/' | append: talk_slug | append: '-thumbnail.png' | absolute_url }}">
     {% endif %}
