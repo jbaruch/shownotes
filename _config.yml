@@ -49,7 +49,18 @@ plugins:
 speaker:
   name: "Baruch Sadogursky"
   display_name: ""                 # Optional: Override for display (if empty, uses name)
-  bio: "Developer Advocate obsessed with how AI agents actually write code. At Tessl, an AI agent enablement platform, Baruch focuses on context engineering, management, and sharing."
+  # Current speaker bio: https://sessionize.com/jbaruch
+  bio: >-
+    Baruch Sadogursky (@jbaruch) did Java before it had generics, DevOps before
+    there was Docker, and DevRel before it had a name. He built DevRel at JFrog
+    from a ten-person company through an IPO, co-authored "Liquid Software" and
+    "DevOps Tools for Java Developers," and is a Java Champion, a Microsoft MVP
+    for AI, and a CNCF Ambassador alum. Today he's head of DevRel at Port, working
+    on the agentic SDLC, and a self-certified Level 3 AI Context Sommelier. In
+    addition to sharing knowledge with AI agents, Baruch also shares knowledge
+    with developers through blog posts, meetups, and conferences such as DevNexus,
+    QCon, Kubecon, and Devoxx, mostly on how to use Agentic SDLC platforms to turn
+    off the lights in your software factory once and for all.
   avatar_url: ""                   # Optional: Custom avatar URL (fallback if no social media avatars available)
   # Social media handles (all optional - leave empty to hide)
   social:
