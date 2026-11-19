@@ -6,6 +6,7 @@ layout: talk
 
 **Conference:** QCon San Francisco 2026
 **Date:** 2026-11-19
+**Slides:** [View slides (PDF)](https://speaking.jbaru.ch/assets/slides/qcon-sf-2026-skill-issue.pdf)
 
 A presentation at QCon San Francisco in November 2026 in San Francisco, USA by
 {{ site.speaker.display_name | default: site.speaker.name }}
