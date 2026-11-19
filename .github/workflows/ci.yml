@@ -57,7 +57,7 @@ jobs:
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: '3.4.5'
+        ruby-version: '3.4.13'
         bundler-cache: true
     
     - name: Run performance tests
@@ -72,7 +72,7 @@ jobs:
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: '3.4.5'
+        ruby-version: '3.4.13'
         bundler-cache: true
     
     - name: Security scan
@@ -87,7 +87,7 @@ jobs:
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: '3.4.5'
+        ruby-version: '3.4.13'
         bundler-cache: true
     
     - name: Run E2E tests
@@ -102,7 +102,7 @@ jobs:
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: '3.4.5'
+        ruby-version: '3.4.13'
         bundler-cache: true
     
     - name: Run tool tests
@@ -118,7 +118,7 @@ jobs:
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: '3.4.5'
+        ruby-version: '3.4.13'
         bundler-cache: true
     
     - name: Run external tests
@@ -137,7 +137,7 @@ jobs:
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: '3.4.5'
+        ruby-version: '3.4.13'
         bundler-cache: true
     
     - name: Build Jekyll site
