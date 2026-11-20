@@ -14,6 +14,8 @@ module ResourceEmbedFilters
       return unless uri.path.start_with?('/') && !url.to_s.start_with?('//')
 
       local = true
+    elsif uri.scheme.nil? && uri.host && !uri.userinfo
+      local = false
     else
       return unless resource_uri(url)
 
