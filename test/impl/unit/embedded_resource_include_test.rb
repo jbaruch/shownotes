@@ -240,6 +240,17 @@ class EmbeddedResourceIncludeTest < Minitest::Test
     end
   end
 
+  def test_external_pdf_provider_text_still_falls_back_to_the_pdf_link
+    [
+      'https://example.com/talk.pdf?source=https://docs.google.com/presentation/d/abc/edit',
+      'https://example.com/talk.pdf#https://drive.google.com/file/d/abc/preview'
+    ].each do |url|
+      html = render(url, type: 'slides')
+      refute_includes html, '<iframe'
+      assert_includes html, "href=\"#{url}\""
+    end
+  end
+
   def test_unknown_host_falls_back_to_link
     html = render('https://example.com/talk')
 

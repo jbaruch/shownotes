@@ -29,7 +29,7 @@ Usage: {% include embedded_resource.html url=page.slides type="slides" %}
 {% comment %} Check if URL is YouTube {% endcomment %}
 {% assign youtube = url | youtube_resource %}
 {% assign notist_url = url | notist_embed_url %}
-{% assign local_pdf = url | local_pdf_url: site.url %}
+{% assign pdf = url | pdf_resource: site.url %}
 
 {% comment %} Check if URL is Vimeo {% endcomment %}
 {% assign is_vimeo = false %}
@@ -37,7 +37,8 @@ Usage: {% include embedded_resource.html url=page.slides type="slides" %}
   {% assign is_vimeo = true %}
 {% endif %}
 
-{% if local_pdf and type == 'slides' %}
+{% if pdf and type == 'slides' %}
+  {% if pdf.local %}
   {% if preview_mode %}
     {% assign thumb_url = placeholder_url %}
     {% if include.talk %}
@@ -55,11 +56,14 @@ Usage: {% include embedded_resource.html url=page.slides type="slides" %}
       </div>
     </div>
   {% else %}
-    {% assign pdf_url = local_pdf | relative_url %}
+    {% assign pdf_url = pdf.url | relative_url %}
     <div class="embed-container local-pdf-embed">
       <iframe src="{{ pdf_url | escape }}" loading="lazy" title="{{ title | escape }}" class="responsive-iframe local-pdf-iframe" allowfullscreen></iframe>
     </div>
     <p class="pdf-actions"><a href="{{ pdf_url | escape }}" target="_blank" rel="noopener noreferrer" class="resource-link">Open slides (PDF)</a></p>
+  {% endif %}
+  {% else %}
+    <div class="resource-fallback"><a href="{{ pdf.url | escape }}" target="_blank" rel="noopener noreferrer" class="resource-link">{{ title | escape }}</a></div>
   {% endif %}
 
 {% elsif is_google_slides %}
