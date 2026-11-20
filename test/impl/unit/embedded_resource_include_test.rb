@@ -210,6 +210,18 @@ class EmbeddedResourceIncludeTest < Minitest::Test
     assert_includes render('/assets/slides/talk.PDF', type: 'slides'), '<iframe src="/assets/slides/talk.PDF"'
   end
 
+  def test_local_pdf_takes_precedence_over_provider_text_in_queries_and_fragments
+    [
+      '/assets/slides/talk.pdf?source=https://docs.google.com/presentation/d/abc/edit',
+      'https://speaking.jbaru.ch/assets/slides/talk.pdf#https://drive.google.com/file/d/abc/preview'
+    ].each do |url|
+      html = render(url, type: 'slides')
+      assert_includes html, "<iframe src=\"#{url}\""
+      assert_includes html, 'local-pdf-iframe'
+      assert_includes html, 'Open slides (PDF)'
+    end
+  end
+
   def test_self_hosted_pdf_preview_uses_the_talk_thumbnail_without_loading_a_pdf
     html = render('/assets/slides/talk.pdf', type: 'slides', preview_mode: true,
                   talk: { 'path' => '_talks/qcon-sf-2026-skill-issue.md' },
