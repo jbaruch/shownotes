@@ -4,6 +4,29 @@ require 'liquid'
 require 'uri'
 
 module ResourceEmbedFilters
+  # Native PDF viewers use the site's existing frame-src 'self' permission.
+  # Keep external PDFs as links instead of silently loading a frame CSP blocks.
+  def pdf_resource(url, site_url)
+    uri = URI.parse(url.to_s)
+    return unless uri.path&.downcase&.end_with?('.pdf')
+
+    if uri.scheme.nil? && uri.host.nil?
+      return unless uri.path.start_with?('/') && !url.to_s.start_with?('//')
+
+      local = true
+    elsif uri.scheme.nil? && uri.host && !uri.userinfo
+      local = false
+    else
+      return unless resource_uri(url)
+
+      site = resource_uri(site_url)
+      local = site && [uri.scheme, uri.host.downcase, uri.port] == [site.scheme, site.host.downcase, site.port]
+    end
+    { 'url' => url, 'local' => !!local }
+  rescue URI::InvalidURIError
+    nil
+  end
+
   # Share links use t (seconds or h/m/s); the iframe player requires start in seconds.
   def youtube_resource(url)
     uri = resource_uri(url)
