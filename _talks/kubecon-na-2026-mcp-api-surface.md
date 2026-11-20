@@ -7,6 +7,7 @@ layout: talk
 **Conference:** Agentics Day: MCP + Agents North America 2026
 **Date:** 2026-11-09
 **Slides:** [View Slides](https://drive.google.com/file/d/1nJeMjSiaSkf7tqzS85z0wBkUcv5hbSf7/preview)
+**Video:** [View Video](https://www.youtube.com/watch?v=7fqPr9oUUw8)
 
 A presentation at Agentics Day: MCP + Agents North America 2026, co-located with KubeCon + CloudNativeCon North America, in
                     November 2026 in
