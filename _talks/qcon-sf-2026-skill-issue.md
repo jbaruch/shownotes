@@ -19,6 +19,7 @@ A Brickbox customer thinks they paid twice. In this workshop, you build a skill 
 
 ### Run the workshop
 
+- [Slides (Google Drive)](https://drive.google.com/file/d/1QgSCjrbTA802pr36UOdTz2VE1zeTlUGl/view)
 - [Starter repository and setup](https://github.com/jbaruch/skill-issue-order-handoff)
 - [Attendee workbook](https://github.com/jbaruch/skill-issue-order-handoff/blob/main/WORKBOOK.md)
 - [Working copies](https://github.com/jbaruch/skill-issue-order-handoff/tree/main/answers)
