@@ -1,5 +1,5 @@
 {% comment %}
-Embedded resources for Google Slides, Drive PDFs, Notist, YouTube, and Vimeo.
+Embedded resources for Google Slides, Drive and local PDFs, Notist, YouTube, and Vimeo.
 Usage: {% include embedded_resource.html url=page.slides type="slides" %}
        {% include embedded_resource.html url=page.video type="video" %}
 {% endcomment %}
@@ -29,6 +29,7 @@ Usage: {% include embedded_resource.html url=page.slides type="slides" %}
 {% comment %} Check if URL is YouTube {% endcomment %}
 {% assign youtube = url | youtube_resource %}
 {% assign notist_url = url | notist_embed_url %}
+{% assign local_pdf = url | local_pdf_url: site.url %}
 
 {% comment %} Check if URL is Vimeo {% endcomment %}
 {% assign is_vimeo = false %}
@@ -132,6 +133,31 @@ Usage: {% include embedded_resource.html url=page.slides type="slides" %}
     {% endif %}
   {% else %}
     {% if not preview_mode %}<div class="resource-fallback"><a href="{{ url }}" target="_blank" rel="noopener noreferrer" class="resource-link">{{ title }}</a></div>{% endif %}
+  {% endif %}
+
+{% elsif local_pdf and type == 'slides' %}
+  {% if preview_mode %}
+    {% assign thumb_url = placeholder_url %}
+    {% if include.talk %}
+      {% assign talk_slug = include.talk.path | split: "/" | last | remove: ".md" %}
+      {% assign local_thumbnail_path = "/assets/images/thumbnails/" | append: talk_slug | append: "-thumbnail.png" %}
+      {% assign thumb_url = local_thumbnail_path | relative_url %}
+    {% endif %}
+    <div class="preview-thumbnail-wrapper">
+      <div class="talk-preview-{{ size }}">
+        {% if include.talk_url %}<a href="{{ include.talk_url }}" class="preview-link">{% endif %}
+          <div class="pdf-thumbnail-preview thumbnail-container">
+            <img src="{{ thumb_url }}" alt="{{ title | escape }}" class="thumbnail-image preview-image" loading="lazy" data-fallback="{{ placeholder_url }}" onerror="this.onerror=null;this.src=this.dataset.fallback;">
+          </div>
+        {% if include.talk_url %}</a>{% endif %}
+      </div>
+    </div>
+  {% else %}
+    {% assign pdf_url = local_pdf | relative_url %}
+    <div class="embed-container local-pdf-embed">
+      <iframe src="{{ pdf_url | escape }}" loading="lazy" title="{{ title | escape }}" class="responsive-iframe local-pdf-iframe" allowfullscreen></iframe>
+    </div>
+    <p class="pdf-actions"><a href="{{ pdf_url | escape }}" target="_blank" rel="noopener noreferrer" class="resource-link">Open slides (PDF)</a></p>
   {% endif %}
 
 {% elsif notist_url %}

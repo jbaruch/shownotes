@@ -24,7 +24,8 @@ class EmbeddedResourceIncludeTest < Minitest::Test
   end
 
   def render(url, type: 'video', **extra)
-    html = @template.render({ 'include' => { 'url' => url, 'type' => type }.merge(extra.transform_keys(&:to_s)) })
+    html = @template.render({ 'site' => { 'url' => 'https://speaking.jbaru.ch' },
+                              'include' => { 'url' => url, 'type' => type }.merge(extra.transform_keys(&:to_s)) })
     assert_empty @template.errors, "Liquid errors while rendering #{url}"
     html
   end
@@ -193,6 +194,38 @@ class EmbeddedResourceIncludeTest < Minitest::Test
 
     assert_includes html, 'pdf-embed'
     refute_includes html, 'player.vimeo.com', 'Drive URLs must not hit the Vimeo branch'
+  end
+
+  def test_self_hosted_pdf_renders_native_viewer_and_an_always_visible_link
+    url = 'https://speaking.jbaru.ch/assets/slides/qcon-sf-2026-skill-issue.pdf?download=0&v=1#page=2'
+    html = render(url, type: 'slides')
+
+    assert_includes html, '<iframe src="https://speaking.jbaru.ch/assets/slides/qcon-sf-2026-skill-issue.pdf?download=0&amp;v=1#page=2"'
+    assert_includes html, 'Open slides (PDF)'
+    refute_includes html, 'class="responsive-iframe pdf-iframe"', 'Native PDFs must not use the Drive-specific blocked-frame detector'
+    refute_includes html, 'resource-fallback'
+  end
+
+  def test_root_relative_pdf_is_embedded
+    assert_includes render('/assets/slides/talk.PDF', type: 'slides'), '<iframe src="/assets/slides/talk.PDF"'
+  end
+
+  def test_self_hosted_pdf_preview_uses_the_talk_thumbnail_without_loading_a_pdf
+    html = render('/assets/slides/talk.pdf', type: 'slides', preview_mode: true,
+                  talk: { 'path' => '_talks/qcon-sf-2026-skill-issue.md' },
+                  talk_url: '/talks/qcon-sf-2026-skill-issue/')
+
+    assert_includes html, 'src="/assets/images/thumbnails/qcon-sf-2026-skill-issue-thumbnail.png"'
+    assert_includes html, 'href="/talks/qcon-sf-2026-skill-issue/"'
+    refute_includes html, '<iframe'
+  end
+
+  def test_external_or_non_pdf_urls_do_not_use_the_native_viewer
+    %w[https://example.com/talk.pdf https://speaking.jbaru.ch.example.com/talk.pdf
+       //example.com/talk.pdf javascript:talk.pdf /download?file=talk.pdf
+       https://user@speaking.jbaru.ch/talk.pdf].each do |url|
+      refute_includes render(url, type: 'slides'), '<iframe', url
+    end
   end
 
   def test_unknown_host_falls_back_to_link
