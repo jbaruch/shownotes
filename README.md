@@ -77,7 +77,7 @@ assets/images/thumbnails/2024-06-12-conference-talk-title-thumbnail.png
 ```
 *The platform automatically resizes images to 400x300 while maintaining aspect ratio.*
 
-### 5. Add a Skill (Optional)
+### 5. Add a Skill (Required for New Talks)
 Ship the talk's know-how as an [Agent Skill](https://agentskills.io) that visitors can install into Claude Code, Codex, Cursor, Gemini CLI, and any other agent that supports the format. Create `_skills/2024-06-12-conference-talk-title/SKILL.md` (the folder name is the talk's filename without `.md`):
 ```markdown
 ---
@@ -89,7 +89,7 @@ description: What the skill does and when an agent should use it.
 
 Instructions for the agent, in markdown.
 ```
-The talk page gains a Skill section directly under the slides and video: the description, a one-line install command, a download link, and the skill content. No skill file, no section. `name` must be lowercase letters, digits, and hyphens (it becomes the install folder); `description` is required. A malformed file fails the build and names the file and the problem. See the [Usage Guide](docs/USAGE.md#skills) for details.
+The talk page gains a Skill section directly under the slides and video: the description, a one-line install command, a download link, and the skill content. `name` must be lowercase letters, digits, and hyphens (it becomes the install folder); `description` is required. CI and deployment require a valid skill for every new talk and check that the built `llms.txt` links to its published `SKILL.md`. Existing talks without skills are recorded in `.github/legacy-talks-without-skills.txt`; remove an entry when adding its skill, and do not add new exceptions. See the [Usage Guide](docs/USAGE.md#skills) for details.
 
 ### 6. Deploy
 - Push to GitHub
