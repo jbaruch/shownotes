@@ -25,6 +25,6 @@ group :test do
   gem 'capybara', '~> 3.40'
   gem 'nokogiri', '>= 1.19.1'  # Security fix for GHSA-wx95-c6cv-8532
   gem 'selenium-webdriver', '~> 4.35'
-  gem 'simplecov', '~> 0.22', require: false  # Code coverage analysis
+  gem 'simplecov', '~> 1.0', require: false  # Code coverage analysis
   gem 'minitest-reporters', '~> 1.7', require: false  # Better test output
 end
