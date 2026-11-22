@@ -1,4 +1,24 @@
-# Implementation Plan
+# Archived Implementation Plan
+
+## Disposition — 2026-11-22
+
+This is a historical checklist, not an active backlog. The original cleanup was
+followed by merged template PRs [#3](https://github.com/jbaruch/shownotes-template/pull/3)
+and [#5](https://github.com/jbaruch/shownotes-template/pull/5), and the later reusable
+feature migrations [#56](https://github.com/jbaruch/shownotes-template/pull/56)
+and [#58](https://github.com/jbaruch/shownotes-template/pull/58). PR #58 merged on
+2026-09-24 with all seven CI jobs passing; it includes the global `llms.txt`, skill
+discovery, portable resource embeds, documentation, and regression tests.
+
+The old requirement to keep `_talks/` empty has been superseded by the template's
+three explicitly named `DEMO-*` examples and its current fork-and-clean workflow.
+They are sample content, not personal conference talks. The legacy checkbox
+states below are retained as history rather than presented as outstanding work.
+No new release tag is needed to close an obsolete migration plan.
+
+The recheck did find one remaining template-integrity issue: the default speaker
+profile still contained Baruch's name and social accounts. Neutral speaker
+defaults are tracked in [template PR #60](https://github.com/jbaruch/shownotes-template/pull/60).
 
 ## Overview
 

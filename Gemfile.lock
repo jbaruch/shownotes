@@ -26,6 +26,7 @@ GEM
     csv (3.3.5)
     declarative (0.0.20)
     docile (1.4.1)
+    drb (2.2.3)
     em-websocket (0.5.3)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0)
@@ -120,7 +121,9 @@ GEM
     mercenary (0.4.0)
     mini_mime (1.1.5)
     mini_portile2 (2.8.9)
-    minitest (5.27.0)
+    minitest (6.1.0)
+      drb (~> 2.0)
+      prism (>= 1.5, < 3)
     minitest-reporters (1.8.0)
       ansi
       builder
@@ -141,6 +144,8 @@ GEM
     ostruct (0.6.3)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
+    prism (2.1.0)
+    prism (2.1.0-x86_64-linux-gnu)
     pstore (0.3.0)
     public_suffix (7.0.5)
     racc (1.8.1)
@@ -214,7 +219,7 @@ DEPENDENCIES
   jekyll-sitemap
   kramdown-parser-gfm
   liquid (>= 4.0.4)
-  minitest (~> 5.25)
+  minitest (~> 6.0)
   minitest-reporters (~> 1.7)
   nokogiri (>= 1.19.1)
   ostruct
