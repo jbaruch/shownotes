@@ -6,6 +6,8 @@ on:
   push:
     branches: [ develop, main ]
     paths:
+      - '_talks/**'
+      - '.github/legacy-talks-without-skills.txt'
       - 'lib/**'
       - 'test/**'
       - '_plugins/**'
@@ -148,6 +150,11 @@ jobs:
       run: |
         test -d _site
         test -f _site/index.html
+
+    - name: Verify talk skills and llms.txt in the build artifact
+      run: bundle exec ruby utils/validate_talk_skills.rb
+      env:
+        JEKYLL_ENV: production
     
     - name: Upload build artifacts
       uses: actions/upload-artifact@v4
