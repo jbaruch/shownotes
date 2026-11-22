@@ -250,7 +250,18 @@ Benefits:
 
 ## Skills
 
-A talk can ship an [Agent Skill](https://agentskills.io): a `SKILL.md` file that packages the talk's know-how for coding agents (Claude Code, Codex, Cursor, Gemini CLI, and 30+ others support the format). Visitors install it from the talk page with one command.
+Every new talk must ship an [Agent Skill](https://agentskills.io): a `SKILL.md` file that packages the talk's know-how for coding agents (Claude Code, Codex, Cursor, Gemini CLI, and 30+ others support the format). Visitors install it from the talk page with one command.
+
+CI and deployment validate the built artifact before uploading it. Each new talk must have a valid skill, its entry in the global `llms.txt` must link directly to that skill, and the published download must match the source file. Existing talks without skills are listed in `.github/legacy-talks-without-skills.txt`. They remain publishable; remove their exception when adding a skill. Do not add new exceptions or use a talk's date to bypass the requirement.
+
+To run the same check locally:
+
+```bash
+bundle exec jekyll build
+bundle exec ruby utils/validate_talk_skills.rb
+```
+
+When building under a subpath, pass the same `--baseurl /your-subpath` to both commands. The validator also accepts `--source` and `--destination` for a separate build directory. `bundle exec rake quick` includes the `llms.txt` regression tests.
 
 ### Location
 
