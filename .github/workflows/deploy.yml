@@ -46,7 +46,7 @@ jobs:
     
     - name: Setup Pages
       id: pages
-      uses: actions/configure-pages@v4
+      uses: actions/configure-pages@v6
       with:
         # Don't try to auto-enable GitHub Pages - requires manual setup first
         enablement: false
