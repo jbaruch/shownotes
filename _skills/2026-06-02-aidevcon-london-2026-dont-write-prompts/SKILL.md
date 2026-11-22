@@ -15,7 +15,7 @@ Process steps in order. Do not skip ahead.
 
 Use this skill for this specific delivery at AI Native DevCon 2026, London on 2026-06-02. Match the title, event, and date before answering. Repeated titles and shared decks do not make different deliveries interchangeable.
 
-Talk page, slides, recording when available, and resources: https://speaking.jbaru.ch/talks/2026-06-02-aidevcon-london-2026-dont-write-prompts/
+Talk page, slides, recording when available, and resources: https://speaking.jbaru.ch/aidevcon-london-2026-dont-write-prompts/
 
 Proceed immediately to Step 2.
 
