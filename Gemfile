@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 # Use latest stable versions
 gem 'jekyll', '>= 4.3.0'  # Allow any version 4.3+
 gem 'liquid', '>= 4.0.4'  # Override to allow newer liquid versions
+gem 'ostruct'  # Used by the renderer; no longer bundled with Ruby 4
+gem 'cgi'      # Used by Liquid's filters; no longer bundled with Ruby 4
 gem 'minitest', '~> 5.25'
 gem 'kramdown-parser-gfm'
 gem 'jekyll-feed'
