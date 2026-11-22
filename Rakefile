@@ -121,6 +121,7 @@ task :quick do
   essential_tests = [
     'test/impl/unit/comprehensive_scenarios_test.rb',
     'test/impl/integration/jekyll_build_test.rb',
+    'test/impl/integration/llms_txt_test.rb',
     'test/impl/e2e/user_workflow_test.rb'
   ]
   
