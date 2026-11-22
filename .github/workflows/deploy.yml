@@ -16,6 +16,10 @@ on:
       - 'pdfs/**'
       - '*.html'
       - '_config.yml'
+      - '.github/legacy-talks-without-skills.txt'
+      - '.github/workflows/deploy.yml'
+      - 'lib/talk_skill_validator.rb'
+      - 'utils/validate_talk_skills.rb'
   workflow_dispatch:
 
 permissions:
@@ -56,6 +60,11 @@ jobs:
       env:
         JEKYLL_ENV: production
     
+    - name: Verify talk skills and llms.txt in the deployment artifact
+      run: bundle exec ruby utils/validate_talk_skills.rb --baseurl "${{ steps.pages.outputs.base_path }}"
+      env:
+        JEKYLL_ENV: production
+
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3
 
