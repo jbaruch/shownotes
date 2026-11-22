@@ -33,7 +33,7 @@ jobs:
       fail-fast: false
     
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v7
     
     - name: Set up Ruby ${{ matrix.ruby-version }}
       uses: ruby/setup-ruby@v1
@@ -54,12 +54,12 @@ jobs:
     runs-on: ubuntu-24.04
     
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v7
     
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: '3.4.5'
+        ruby-version: '3.4.13'
         bundler-cache: true
     
     - name: Run performance tests
@@ -69,12 +69,12 @@ jobs:
     runs-on: ubuntu-24.04
     
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v7
     
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: '3.4.5'
+        ruby-version: '3.4.13'
         bundler-cache: true
     
     - name: Security scan
@@ -84,12 +84,12 @@ jobs:
     runs-on: ubuntu-24.04
     
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v7
     
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: '3.4.5'
+        ruby-version: '3.4.13'
         bundler-cache: true
     
     - name: Run E2E tests
@@ -99,12 +99,12 @@ jobs:
     runs-on: ubuntu-24.04
     
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v7
     
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: '3.4.5'
+        ruby-version: '3.4.13'
         bundler-cache: true
     
     - name: Run tool tests
@@ -115,12 +115,12 @@ jobs:
     continue-on-error: true  # External tests may fail due to network/API issues
     
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v7
     
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: '3.4.5'
+        ruby-version: '3.4.13'
         bundler-cache: true
     
     - name: Run external tests
@@ -134,12 +134,12 @@ jobs:
     needs: [test, security, performance, e2e, tools]  # Note: external tests not required for build
     
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v7
     
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: '3.4.5'
+        ruby-version: '3.4.13'
         bundler-cache: true
     
     - name: Build Jekyll site
